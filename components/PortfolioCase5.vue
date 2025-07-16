@@ -45,7 +45,7 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 		overflow: hidden; // Дополнительная защита от переполнения
 	}
@@ -53,15 +53,15 @@
 	&__title {
 		transform: rotate(180deg);
 		position: absolute;
-		top: 93px;
+		top: 79px;
 		left: 0;
-		width: 146px;
-		height: 796px;
+		width: 124px;
+		height: 674px;
 		z-index: 2; // Поверх большого iPad
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -74,7 +74,7 @@
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -89,15 +89,15 @@
 
 	&__description {
 		position: absolute;
-		top: 80px;
-		left: 229px;
-		width: 1263px;
-		height: 50px;
+		top: 68px;
+		left: 194px;
+		width: 1070px;
+		height: 42px;
 		z-index: 2;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 2rem; // 32px
+			font-size: 1.7rem; // 27px
 			line-height: 1.563;
 			color: color(text-primary);
 			text-align: right;
@@ -108,8 +108,8 @@
 
 	&__case-label {
 		position: absolute;
-		top: 32px;
-		right: 12px;
+		top: 27px;
+		right: 10px;
 		display: flex;
 		align-items: center;
 		gap: spacing(2);
@@ -146,10 +146,10 @@
 		position: absolute;
 
 		&--ipad-large {
-			top: -167px; // Отрицательное позиционирование из дизайна
-			left: -64px; // Отрицательное позиционирование из дизайна
-			width: 1639.39px;
-			height: 1419.55px;
+			top: -141px; // Адаптированное позиционирование (167*0.847)
+			left: -54px; // Адаптированное позиционирование (64*0.847)
+			width: 1388px; // Уменьшенные размеры (1639*0.847)
+			height: 1202px; // Уменьшенные размеры (1419*0.847)
 			z-index: 1; // Под текстом
 		}
 
@@ -158,6 +158,7 @@
 			height: 100%;
 			object-fit: contain;
 			border-radius: border-radius(lg);
+			transform: scale(0.87);
 		}
 	}
 }

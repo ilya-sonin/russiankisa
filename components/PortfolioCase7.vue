@@ -16,8 +16,8 @@
 					<p class="portfolio-case7__description-text">
 						О проекте:<br />
 						дизайн сайта выполнен в стиле 1990–2000-х годов<br />
-						с использованием пиксельной графики — характерного визуального языка
-						той эпохи. Он отсылает ко времени<br />
+						с использованием пиксельной графики — характерного<br />визуального
+						языка той эпохи. Он отсылает ко времени<br />
 						первых персональных компьютеров и ранних<br />
 						веб-сайтов, когда изображения создавались<br />
 						из ярких, чётких пикселей, а интерфейсы отличались<br />
@@ -87,21 +87,21 @@
 
 	&__content {
 		position: relative;
-		height: 982px;
+		height: 832px;
 		width: 100%;
 	}
 
 	&__title {
 		transform: rotate(180deg);
 		position: absolute;
-		top: 93px;
+		top: 79px;
 		left: 0;
-		width: 146px;
-		height: 796px;
+		width: 124px;
+		height: 674px;
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -121,7 +121,7 @@
 				position: static;
 			}
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -162,13 +162,13 @@
 	&__description {
 		position: absolute;
 		top: 160px;
-		left: 189px;
+		left: 95px;
 		width: 893px;
 		height: 558px;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 2rem; // 32px
+			font-size: 1.7rem; // 32px
 			line-height: 1.563;
 			color: color(text-primary);
 			text-align: center;
@@ -181,7 +181,7 @@
 
 		&--iphone {
 			top: 81px;
-			right: 77px; // 1512 - 1091 - 344 = 77px от правого края
+			right: 0;
 			width: 344px;
 			height: 721px;
 		}
@@ -197,7 +197,7 @@
 	&__timeline {
 		position: absolute;
 		top: 806px;
-		left: 220px;
+		left: 140px;
 		width: 1096px;
 		height: 166px;
 	}
@@ -218,6 +218,7 @@
 		line-height: 1;
 		color: color(primary);
 		text-align: center;
+		z-index: 2;
 
 		&--start {
 			top: 102px;

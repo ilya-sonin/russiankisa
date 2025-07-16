@@ -43,21 +43,21 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 	}
 
 	&__title {
 		transform: rotate(180deg);
 		position: absolute;
-		top: 93px;
+		top: 79px;
 		left: 0;
-		width: 146px;
-		height: 796px;
+		width: 124px;
+		height: 674px;
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -70,7 +70,7 @@
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -86,13 +86,13 @@
 	&__description {
 		position: absolute;
 		top: 80px;
-		left: 146px;
+		left: -100px;
 		width: 1346px;
 		height: 100px;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 2rem; // 32px
+			font-size: 1.7rem; // 32px
 			line-height: 1.563;
 			color: color(text-primary);
 			text-align: right;

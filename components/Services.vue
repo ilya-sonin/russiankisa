@@ -101,20 +101,20 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 	}
 
 	&__title {
 		position: absolute;
-		top: 108px;
-		right: 31px;
-		width: 146px;
-		height: 730px;
+		top: 91px;
+		right: 0;
+		width: 124px;
+		height: 618px;
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -128,7 +128,7 @@
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -158,32 +158,32 @@
 		// Позиции звездочек согласно дизайну
 		&--1 {
 			top: 30px;
-			left: 734px;
+			left: 622px;
 		}
 
 		&--2 {
 			top: 206px;
-			left: 734px;
+			left: 622px;
 		}
 
 		&--3 {
 			top: 382px;
-			left: 734px;
+			left: 622px;
 		}
 
 		&--4 {
 			top: 558px;
-			left: 734px;
+			left: 622px;
 		}
 
 		&--5 {
 			top: 734px;
-			left: 734px;
+			left: 622px;
 		}
 
 		&--6 {
 			top: 910px;
-			left: 734px;
+			left: 622px;
 		}
 	}
 
@@ -196,7 +196,7 @@
 
 	&__item {
 		position: absolute;
-		width: 1280px; // Уменьшил с 1459px, чтобы не наезжать на заголовок
+		width: 1084px; // Уменьшил для контейнера 1280px
 		height: 128px;
 		left: 21px;
 
@@ -247,7 +247,7 @@
 			position: absolute;
 			top: 0;
 			left: 248px;
-			width: 1032px; // Уменьшил с 1211px соответственно новой ширине элемента (1280-248=1032)
+			width: 874px; // Уменьшил для контейнера 1280px (1084-210=874)
 			height: 128px;
 		}
 	}

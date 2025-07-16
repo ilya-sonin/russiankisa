@@ -71,27 +71,27 @@
 	background-color: #fff6f4;
 	padding: 0;
 	width: 100%;
-	height: 982px;
+	height: 832px;
 	position: relative;
 	overflow: hidden;
 
 	&__container {
 		position: relative;
-		width: 1512px;
+		width: 1280px;
 		height: 100%;
 		margin: 0 auto;
 	}
 
 	&__title {
 		position: absolute;
-		right: 31px;
-		top: 74px;
-		width: 146px;
-		height: 834px;
+		right: 26px;
+		top: 63px;
+		width: 124px;
+		height: 706px;
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -105,7 +105,7 @@
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -118,19 +118,19 @@
 	}
 
 	&__content {
-		padding-right: 177px;
+		padding-right: 150px;
 		height: 100%;
 		position: relative;
 	}
 
 	&__call-to-action {
 		position: absolute;
-		left: 17px;
-		top: 75px;
-		width: 936px;
-		height: 128px;
+		left: 14px;
+		top: 64px;
+		width: 793px;
+		height: 108px;
 		font-family: 'Oranienbaum', serif;
-		font-size: 36px;
+		font-size: 30px;
 		font-weight: 400;
 		line-height: 1.7777777777777777;
 		color: #000000;
@@ -139,12 +139,12 @@
 
 	&__quote {
 		position: absolute;
-		left: 31px;
-		top: 236px;
-		width: 1228px;
-		height: 156px;
+		left: 26px;
+		top: 200px;
+		width: 1040px;
+		height: 132px;
 		font-family: 'Disruptors Script', cursive;
-		font-size: 64px;
+		font-size: 54px;
 		font-weight: 400;
 		line-height: 0.8125;
 		color: #db2e28;
@@ -155,12 +155,12 @@
 
 	&__quote-author {
 		position: absolute;
-		right: 253px;
-		top: 416px;
-		width: 239px;
-		height: 48px;
+		right: 214px;
+		top: 352px;
+		width: 202px;
+		height: 41px;
 		font-family: 'Disruptors Script', cursive;
-		font-size: 64px;
+		font-size: 54px;
 		font-weight: 400;
 		line-height: 0.75;
 		color: #db2e28;
@@ -171,12 +171,13 @@
 	&__qr-codes {
 		position: absolute;
 		left: -1px;
-		top: 493px;
+		top: 417px;
 		width: 1280px;
-		height: 445px;
+		height: 377px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: flex-start;
+		gap: 46px;
 	}
 
 	&__qr-item {
@@ -199,8 +200,8 @@
 	}
 
 	&__qr-image {
-		width: 387px;
-		height: 387px;
+		width: 328px;
+		height: 328px;
 		border-radius: 12px;
 		overflow: hidden;
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -221,12 +222,12 @@
 
 	&__qr-label {
 		font-family: 'Oranienbaum', serif;
-		font-size: 40px;
+		font-size: 34px;
 		font-weight: 400;
 		line-height: 1.15;
 		color: #db2e28;
 		text-align: center;
-		margin-top: 7px;
+		margin-top: 6px;
 	}
 }
 
@@ -234,17 +235,17 @@
 @media (max-width: 1600px) {
 	.contact-section {
 		height: auto;
-		min-height: 982px;
+		min-height: 832px;
 
 		&__container {
 			width: 100%;
-			max-width: 1512px;
+			max-width: 1280px;
 			padding: 0 20px;
 		}
 
 		&__title {
-			font-size: clamp(80px, 8vw, 140px);
-			width: clamp(80px, 8vw, 146px);
+			font-size: clamp(68px, 8vw, 118px);
+			width: clamp(68px, 8vw, 124px);
 			right: 20px;
 
 			&-main {
@@ -266,7 +267,7 @@
 		}
 
 		&__content {
-			padding-right: clamp(100px, 10vw, 177px);
+			padding-right: clamp(100px, 10vw, 150px);
 			padding: 20px;
 		}
 
@@ -276,7 +277,7 @@
 			top: 0;
 			width: 100%;
 			height: auto;
-			font-size: clamp(20px, 3vw, 36px);
+			font-size: clamp(20px, 3vw, 30px);
 			margin-bottom: 40px;
 		}
 
@@ -286,7 +287,7 @@
 			top: 0;
 			width: 100%;
 			height: auto;
-			font-size: clamp(24px, 4vw, 64px);
+			font-size: clamp(24px, 4vw, 54px);
 			text-align: center;
 			margin-bottom: 20px;
 		}
@@ -297,7 +298,7 @@
 			top: 0;
 			width: 100%;
 			height: auto;
-			font-size: clamp(20px, 3vw, 64px);
+			font-size: clamp(20px, 3vw, 54px);
 			text-align: center;
 			margin-bottom: 60px;
 		}
@@ -322,12 +323,12 @@
 		}
 
 		&__qr-image {
-			width: clamp(200px, 30vw, 387px);
-			height: clamp(200px, 30vw, 387px);
+			width: clamp(200px, 30vw, 328px);
+			height: clamp(200px, 30vw, 328px);
 		}
 
 		&__qr-label {
-			font-size: clamp(24px, 3vw, 40px);
+			font-size: clamp(24px, 3vw, 34px);
 		}
 	}
 }

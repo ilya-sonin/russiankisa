@@ -50,21 +50,21 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 	}
 
 	&__title {
 		transform: rotate(180deg);
 		position: absolute;
-		top: 93px;
+		top: 79px;
 		left: 0;
-		width: 146px;
-		height: 796px;
+		width: 124px;
+		height: 674px;
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -77,7 +77,7 @@
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -92,14 +92,14 @@
 
 	&__description {
 		position: absolute;
-		top: 80px;
-		left: 229px;
-		width: 1263px;
-		height: 100px;
+		top: 68px;
+		left: 194px;
+		width: 1070px;
+		height: 85px;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 2rem; // 32px
+			font-size: 1.7rem; // 27px
 			line-height: 1.563;
 			color: color(text-primary);
 			text-align: right;
@@ -109,8 +109,8 @@
 
 	&__case-label {
 		position: absolute;
-		top: 32px;
-		right: 12px;
+		top: 27px;
+		right: 10px;
 		display: flex;
 		align-items: center;
 		gap: spacing(2);
@@ -146,17 +146,17 @@
 		position: absolute;
 
 		&--mac {
-			top: 196px;
-			left: 146px;
-			width: 944px;
-			height: 736px;
+			top: 166px;
+			left: 124px;
+			width: 800px;
+			height: 623px;
 		}
 
 		&--iphone {
-			top: 261px;
-			left: 1037px;
-			width: 424px;
-			height: 548px;
+			top: 221px;
+			left: 878px;
+			width: 359px;
+			height: 464px;
 		}
 
 		&-img {

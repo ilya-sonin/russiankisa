@@ -9,8 +9,8 @@
 
 				<div class="portfolio-case3__description">
 					<p class="portfolio-case3__description-text">
-						Моя первая самостоятельная разработка интерфейса сайта,<br />
-						выполненная в рамках интенсива.
+						Моя первая самостоятельная разработка интерфейса сайта, выполненная
+						в рамках интенсива.
 					</p>
 				</div>
 
@@ -50,21 +50,21 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 	}
 
 	&__title {
 		transform: rotate(180deg);
 		position: absolute;
-		top: 93px;
+		top: 79px;
 		left: 0;
-		width: 146px;
-		height: 796px;
+		width: 124px;
+		height: 674px;
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -77,7 +77,7 @@
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -92,14 +92,14 @@
 
 	&__description {
 		position: absolute;
-		top: 80px;
-		left: 694px;
-		width: 798px;
-		height: 100px;
+		top: 68px;
+		left: 588px;
+		width: 676px;
+		height: 85px;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 2rem; // 32px
+			font-size: 1.7rem; // 27px
 			line-height: 1.563;
 			color: color(text-primary);
 			text-align: right;
@@ -109,8 +109,8 @@
 
 	&__case-label {
 		position: absolute;
-		top: 32px;
-		right: 12px;
+		top: 27px;
+		right: 10px;
 		display: flex;
 		align-items: center;
 		gap: spacing(2);

@@ -44,29 +44,29 @@
 
 	&__decorative {
 		position: absolute;
-		top: 120px;
-		left: 213px;
+		top: 95px;
+		left: 180px;
 		z-index: 1;
 	}
 
 	&__title {
 		position: absolute;
-		top: 290px;
-		left: 56px;
+		top: 245px;
+		left: 47px;
 		z-index: 2;
-		max-width: 1399px;
-		height: 312px;
+		max-width: 1185px;
+		height: 264px;
 	}
 
 	&__image {
 		position: absolute;
-		top: -180px;
+		top: -150px;
 		right: 0;
 		z-index: 0;
 
 		&-img {
-			width: 704px;
-			height: 719px;
+			width: 596px;
+			height: 608px;
 			object-fit: cover;
 		}
 	}

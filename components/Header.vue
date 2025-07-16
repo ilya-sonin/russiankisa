@@ -103,8 +103,8 @@ onUnmounted(() => {
 
 		&-container {
 			position: relative;
-			width: 200px;
-			height: 78px;
+			width: 169px;
+			height: 66px;
 		}
 
 		&-img {

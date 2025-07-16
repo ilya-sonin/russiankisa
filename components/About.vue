@@ -139,15 +139,15 @@
 
 	&__content {
 		position: relative;
-		height: 982px;
+		height: 832px;
 		width: 100%;
 	}
 
 	&__intro {
 		position: absolute;
-		top: 33px;
-		left: 20px;
-		right: 20px;
+		top: 28px;
+		left: 17px;
+		right: 17px;
 
 		&-text {
 			font-family: font-family(primary);
@@ -167,12 +167,12 @@
 
 	&__title {
 		position: absolute;
-		top: 283px;
+		top: 240px;
 		right: 0;
 
 		&-text {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.155;
 			color: color(text-primary);
 			margin: 0;
@@ -181,7 +181,7 @@
 
 			.decorative-text {
 				font-family: font-family(decorative);
-				font-size: 8.75rem;
+				font-size: 7.4rem;
 				color: color(primary);
 				line-height: inherit;
 			}
@@ -190,12 +190,12 @@
 
 	&__photo {
 		position: absolute;
-		top: 294px;
-		left: 756px;
+		top: 249px;
+		left: 640px;
 
 		&-img {
-			width: 553px;
-			height: 395px;
+			width: 468px;
+			height: 335px;
 			border-radius: 10px;
 			object-fit: cover;
 		}
@@ -207,12 +207,12 @@
 		text-align: center;
 
 		&--print {
-			top: 193px;
+			top: 164px;
 			left: 0;
 		}
 
 		&--digital {
-			top: 730px;
+			top: 618px;
 			left: 0;
 		}
 
@@ -227,9 +227,9 @@
 
 	&__tools {
 		position: absolute;
-		top: 301px;
-		left: 140px;
-		width: 446px;
+		top: 255px;
+		left: 119px;
+		width: 378px;
 
 		&-header {
 			margin-bottom: 32px;
@@ -298,9 +298,9 @@
 
 	&__outro {
 		position: absolute;
-		bottom: 42px;
-		left: 20px;
-		right: 20px;
+		bottom: 36px;
+		left: 17px;
+		right: 17px;
 
 		&-text {
 			font-family: font-family(primary);

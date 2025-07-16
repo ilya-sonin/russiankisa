@@ -15,8 +15,8 @@
 				<p class="portfolio-case10__description">
 					Купоны желаний ко Дню святого Валентина — серия печатных материалов
 					для романтических сюрпризов второй половинке. В проекте я создала
-					дизайн открыток с тёплыми иллюстрациями и лаконичной типографикой,
-					чтобы подарить любимым маленькое исполнение мечты.
+					дизайн открыток с тёплыми иллюстрациями<br />и лаконичной
+					типографикой, чтобы подарить любимым маленькое исполнение мечты.
 				</p>
 
 				<div class="portfolio-case10__cards-grid">
@@ -55,13 +55,13 @@ const cards = [
 	background-color: #fff6f4;
 	padding: 0;
 	width: 100%;
-	height: 982px;
+	height: 832px;
 	position: relative;
 	overflow: hidden;
 
 	&__container {
 		position: relative;
-		width: 1512px;
+		width: 1280px;
 		height: 100%;
 		margin: 0 auto;
 	}
@@ -70,13 +70,13 @@ const cards = [
 		transform: rotate(180deg);
 		position: absolute;
 		left: 0;
-		top: 93px;
-		width: 146px;
-		height: 796px;
+		top: 79px;
+		width: 124px;
+		height: 674px;
 
 		&-decorative {
 			font-family: font-family(decorative);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
@@ -89,7 +89,7 @@ const cards = [
 
 		&-main {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 140px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -103,15 +103,15 @@ const cards = [
 	}
 
 	&__content {
-		margin-left: 146px;
-		padding-top: 32px;
-		height: calc(100% - 32px);
+		margin-left: 124px;
+		padding-top: 27px;
+		height: calc(100% - 27px);
 		position: relative;
 	}
 
 	&__case-label {
 		position: absolute;
-		right: 43px;
+		right: 36px;
 		top: 0;
 		display: flex;
 		align-items: center;
@@ -136,12 +136,12 @@ const cards = [
 
 	&__description {
 		position: absolute;
-		right: 20px;
-		top: 48px;
-		width: 1346px;
-		height: 150px;
+		right: 17px;
+		top: 41px;
+		width: 1140px;
+		height: 127px;
 		font-family: 'Oranienbaum', serif;
-		font-size: 32px;
+		font-size: 27px;
 		font-weight: 400;
 		line-height: 1.5625;
 		color: #000000;
@@ -151,19 +151,19 @@ const cards = [
 
 	&__cards-grid {
 		position: absolute;
-		left: 44.88px;
-		top: 226px;
-		width: 1301.12px;
-		height: 631.97px;
+		left: 38px;
+		top: 191px;
+		width: 1102px;
+		height: 535px;
 		display: grid;
-		grid-template-columns: repeat(4, 297.4px);
-		grid-template-rows: repeat(2, 297.4px);
-		gap: 37.17px 37.15px;
+		grid-template-columns: repeat(4, 252px);
+		grid-template-rows: repeat(2, 252px);
+		gap: 31px;
 	}
 
 	&__card {
-		width: 297.4px;
-		height: 297.4px;
+		width: 252px;
+		height: 252px;
 		border-radius: 8px;
 		overflow: hidden;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -186,17 +186,17 @@ const cards = [
 @media (max-width: 1600px) {
 	.portfolio-case10 {
 		height: auto;
-		min-height: 982px;
+		min-height: 832px;
 
 		&__container {
 			width: 100%;
-			max-width: 1512px;
+			max-width: 1280px;
 			padding: 0 20px;
 		}
 
 		&__title {
-			font-size: clamp(80px, 8vw, 140px);
-			width: clamp(80px, 8vw, 146px);
+			font-size: clamp(68px, 8vw, 118px);
+			width: clamp(68px, 8vw, 124px);
 			left: 20px;
 
 			&-decorative {
@@ -218,7 +218,7 @@ const cards = [
 		}
 
 		&__content {
-			margin-left: clamp(100px, 10vw, 146px);
+			margin-left: clamp(100px, 10vw, 124px);
 			padding: 20px;
 		}
 
@@ -244,7 +244,7 @@ const cards = [
 			top: 0;
 			width: 100%;
 			text-align: left;
-			font-size: clamp(18px, 2.5vw, 32px);
+			font-size: clamp(18px, 2.5vw, 27px);
 			margin-bottom: 40px;
 		}
 

@@ -97,20 +97,20 @@
 
 	&__content {
 		position: relative;
-		height: 982px; // Высота из дизайна
+		height: 832px; // Высота из дизайна
 		width: 100%;
 	}
 
 	&__title {
 		position: absolute;
-		top: 112px;
+		top: 95px;
 		left: 0;
-		width: 146px;
-		height: 758px;
+		width: 124px;
+		height: 642px;
 
 		&-vertical {
 			font-family: font-family(primary);
-			font-size: 8.75rem; // 140px
+			font-size: 7.4rem; // 118px
 			line-height: 1.043;
 			color: color(text-primary);
 			margin: 0;
@@ -124,13 +124,13 @@
 		}
 
 		&-decorative {
+			top: -25px;
+			left: -25px;
 			font-family: font-family(decorative);
 			font-size: 8.75rem; // 48px
 			line-height: 1.2;
 			margin: 0;
 			position: absolute;
-			top: 0;
-			left: 0;
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
 			transform: rotate(180deg);
@@ -140,10 +140,10 @@
 
 	&__diagram {
 		position: absolute;
-		top: 130px;
-		left: 248px;
-		width: 1244px;
-		height: 722px;
+		top: 110px;
+		left: 210px;
+		width: 1054px;
+		height: 612px;
 	}
 
 	&__path {
@@ -182,37 +182,37 @@
 
 		&--step2 {
 			top: 0;
-			left: 700px;
+			left: 600px;
 		}
 
 		&--step3 {
-			top: 241px;
+			top: 204px;
 			left: 350px;
 		}
 
 		&--step4 {
-			top: 241px;
-			left: 1050px;
+			top: 204px;
+			left: 900px;
 		}
 
 		&--step5 {
-			top: 481px;
+			top: 408px;
 			left: 350px;
 		}
 
 		&--step6 {
-			top: 481px;
-			left: 1050px;
+			top: 408px;
+			left: 900px;
 		}
 
 		&--step7 {
-			top: 723px;
+			top: 611px;
 			left: 0;
 		}
 
 		&--step8 {
-			top: 723px;
-			left: 700px;
+			top: 611px;
+			left: 600px;
 		}
 	}
 
@@ -234,49 +234,49 @@
 
 		&--briefing {
 			top: -58px;
-			left: 602px;
+			left: 503px;
 			width: 214px;
 			text-align: center;
 		}
 
 		&--prepayment {
-			top: 182px;
+			top: 147px;
 			left: 165px;
 			width: 386px;
 			text-align: center;
 		}
 
 		&--contract {
-			top: 182px;
-			left: 782px;
+			top: 147px;
+			left: 655px;
 			width: 421px;
 			text-align: center;
 		}
 
 		&--approval {
-			top: 422px;
+			top: 350px;
 			left: 187px;
 			width: 343px;
 			text-align: center;
 		}
 
 		&--layout {
-			top: 404px;
-			left: 720px;
+			top: 335px;
+			left: 587px;
 			width: 572px;
 			text-align: center;
 		}
 
 		&--delivery {
-			top: 646px;
+			top: 537px;
 			left: -30px;
 			width: 156px;
 			text-align: center;
 		}
 
 		&--payment {
-			top: 665px;
-			left: 586px;
+			top: 555px;
+			left: 485px;
 			width: 247px;
 			text-align: center;
 		}
