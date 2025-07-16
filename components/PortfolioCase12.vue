@@ -1,24 +1,24 @@
 <template>
 	<section class="portfolio-case12">
 		<div class="portfolio-case12__container">
-			<div class="portfolio-case12__title">
+			<div class="portfolio-case12__title trig-slide-left" data-trig>
 				<div class="portfolio-case12__title-decorative">МОИ</div>
 				<div class="portfolio-case12__title-main">ПРОЕКТЫ</div>
 			</div>
 
 			<div class="portfolio-case12__content">
-				<div class="portfolio-case12__case-label">
+				<div class="portfolio-case12__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case12__case-text">Кейс</span>
 					<span class="portfolio-case12__case-number">5</span>
 				</div>
 
-				<p class="portfolio-case12__description">
+				<p class="portfolio-case12__description trig-fade-in trig-stagger-2" data-trig>
 					Мудборд и визитная карточка компании - проект,<br />
 					выполненный в рамках обучения в центре АЗы.
 				</p>
 
-				<div class="portfolio-case12__images-layout">
-					<div class="portfolio-case12__main-image">
+				<div class="portfolio-case12__images-layout trig-fade-in trig-stagger-3" data-trig>
+					<div class="portfolio-case12__main-image portfolio-device-animation trig-stagger-4" data-trig>
 						<img
 							src="/images/moodboard-main.png"
 							alt="Мудборд компании"
@@ -28,7 +28,8 @@
 
 					<div class="portfolio-case12__side-images">
 						<div
-							class="portfolio-case12__side-image portfolio-case12__side-image--top"
+							class="portfolio-case12__side-image portfolio-case12__side-image--top portfolio-device-animation trig-stagger-5"
+							data-trig
 						>
 							<img
 								src="/images/business-card-2.png"
@@ -37,7 +38,8 @@
 							/>
 						</div>
 						<div
-							class="portfolio-case12__side-image portfolio-case12__side-image--bottom"
+							class="portfolio-case12__side-image portfolio-case12__side-image--bottom portfolio-device-animation trig-stagger-6"
+							data-trig
 						>
 							<img
 								src="/images/business-card-1.png"

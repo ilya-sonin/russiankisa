@@ -2,26 +2,27 @@
 	<section id="portfolio-case5" class="portfolio-case5">
 		<div class="container">
 			<div class="portfolio-case5__content">
-				<div class="portfolio-case5__title">
+				<div class="portfolio-case5__title trig-slide-left" data-trig>
 					<div class="portfolio-case5__title-decorative">МОИ</div>
 					<div class="portfolio-case5__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case5__description">
+				<div class="portfolio-case5__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case5__description-text">
 						Второй интенсивный курс от Yudaev.School был посвящён работе с
 						анимацией в Figma.
 					</p>
 				</div>
 
-				<div class="portfolio-case5__case-label">
+				<div class="portfolio-case5__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case5__case-text">Кейс</span>
 					<span class="portfolio-case5__case-number">2</span>
 				</div>
 
 				<div class="portfolio-case5__case portfolio-case5__case--fifth">
 					<div
-						class="portfolio-case5__device portfolio-case5__device--ipad-large"
+						class="portfolio-case5__device portfolio-case5__device--ipad-large portfolio-device-animation trig-stagger-3"
+						data-trig
 					>
 						<img
 							src="/images/case5-ipad-large.png"

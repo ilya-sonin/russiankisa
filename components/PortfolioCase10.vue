@@ -1,29 +1,31 @@
 <template>
 	<section class="portfolio-case10">
 		<div class="portfolio-case10__container">
-			<div class="portfolio-case10__title">
+			<div class="portfolio-case10__title trig-slide-left" data-trig>
 				<div class="portfolio-case10__title-decorative">МОИ</div>
 				<div class="portfolio-case10__title-main">ПРОЕКТЫ</div>
 			</div>
 
 			<div class="portfolio-case10__content">
-				<div class="portfolio-case10__case-label">
+				<div class="portfolio-case10__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case10__case-text">Кейс</span>
 					<span class="portfolio-case10__case-number">4</span>
 				</div>
 
-				<p class="portfolio-case10__description">
+				<p class="portfolio-case10__description trig-fade-in trig-stagger-2" data-trig>
 					Купоны желаний ко Дню святого Валентина — серия печатных материалов
 					для романтических сюрпризов второй половинке. В проекте я создала
 					дизайн открыток с тёплыми иллюстрациями<br />и лаконичной
 					типографикой, чтобы подарить любимым маленькое исполнение мечты.
 				</p>
 
-				<div class="portfolio-case10__cards-grid">
+				<div class="portfolio-case10__cards-grid trig-fade-in trig-stagger-3" data-trig>
 					<div
 						v-for="(card, index) in cards"
 						:key="index"
-						class="portfolio-case10__card"
+						class="portfolio-case10__card trig-scale-up"
+						:class="`trig-stagger-${Math.min(index + 4, 8)}`"
+						data-trig
 					>
 						<img
 							:src="card.src"

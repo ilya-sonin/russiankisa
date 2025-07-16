@@ -1,0 +1,257 @@
+/* Trig.js Animation Styles */
+
+/* Базовые анимации появления */
+.trig-fade-in {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trig-fade-in.trig {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Анимации слайда слева */
+.trig-slide-left {
+	opacity: 0;
+	transform: translateX(-50px);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trig-slide-left.trig {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Анимации слайда справа */
+.trig-slide-right {
+	opacity: 0;
+	transform: translateX(50px);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trig-slide-right.trig {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Анимации масштабирования */
+.trig-scale-up {
+	opacity: 0;
+	transform: scale(0.8);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trig-scale-up.trig {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* Анимации вращения */
+.trig-rotate-in {
+	opacity: 0;
+	transform: rotate(-10deg) scale(0.9);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trig-rotate-in.trig {
+	opacity: 1;
+	transform: rotate(0deg) scale(1);
+}
+
+/* Stagger анимации для групп элементов */
+.trig-stagger-1 { transition-delay: 0.1s; }
+.trig-stagger-2 { transition-delay: 0.2s; }
+.trig-stagger-3 { transition-delay: 0.3s; }
+.trig-stagger-4 { transition-delay: 0.4s; }
+.trig-stagger-5 { transition-delay: 0.5s; }
+.trig-stagger-6 { transition-delay: 0.6s; }
+.trig-stagger-7 { transition-delay: 0.7s; }
+.trig-stagger-8 { transition-delay: 0.8s; }
+
+/* Специальные анимации для Hero секции */
+.hero-title-animation {
+	opacity: 0;
+	transform: translateY(50px) scale(0.95);
+	transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-title-animation.trig {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.hero-decorative-animation {
+	opacity: 0;
+	transform: translateX(-30px) rotate(-5deg);
+	transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-decorative-animation.trig {
+	opacity: 1;
+	transform: translateX(0) rotate(0deg);
+}
+
+.hero-image-animation {
+	opacity: 0;
+	transform: translateX(30px) scale(0.9);
+	transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-image-animation.trig {
+	opacity: 1;
+	transform: translateX(0) scale(1);
+}
+
+/* Анимации для About секции */
+.about-photo-animation {
+	opacity: 0;
+	transform: scale(0.8) rotate(5deg);
+	transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-photo-animation.trig {
+	opacity: 1;
+	transform: scale(1) rotate(0deg);
+}
+
+.about-tools-animation {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-tools-animation.trig {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Анимации для Workflow секции */
+.workflow-step-animation {
+	opacity: 0;
+	transform: translateY(30px) scale(0.9);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.workflow-step-animation.trig {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.workflow-path-animation {
+	opacity: 0;
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	transition: stroke-dashoffset 3s ease-in-out, opacity 0.5s ease;
+}
+
+.workflow-path-animation.trig {
+	opacity: 1;
+	stroke-dashoffset: 0;
+}
+
+/* Анимации для Services секции */
+.services-star-animation {
+	opacity: 0;
+	transform: scale(0) rotate(180deg);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-star-animation.trig {
+	opacity: 1;
+	transform: scale(1) rotate(0deg);
+}
+
+.services-card-animation {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-card-animation.trig {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Анимации для Portfolio секции */
+.portfolio-device-animation {
+	opacity: 0;
+	transform: translateY(50px) rotateY(15deg);
+	transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-device-animation.trig {
+	opacity: 1;
+	transform: translateY(0) rotateY(0deg);
+}
+
+/* Анимации для Contact секции */
+.contact-qr-animation {
+	opacity: 0;
+	transform: scale(0.7) rotate(-10deg);
+	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-qr-animation.trig {
+	opacity: 1;
+	transform: scale(1) rotate(0deg);
+}
+
+/* Параллакс эффекты */
+.trig-parallax {
+	transform: translateY(var(--trig-px, 0));
+}
+
+.trig-parallax-reverse {
+	transform: translateY(var(--trig-px-reverse, 0));
+}
+
+/* Адаптивность - уменьшаем анимации на мобильных */
+@media (max-width: 768px) {
+	.trig-fade-in,
+	.trig-slide-left,
+	.trig-slide-right,
+	.trig-scale-up,
+	.trig-rotate-in,
+	.hero-title-animation,
+	.hero-decorative-animation,
+	.hero-image-animation,
+	.about-photo-animation,
+	.about-tools-animation,
+	.workflow-step-animation,
+	.services-star-animation,
+	.services-card-animation,
+	.portfolio-device-animation,
+	.contact-qr-animation {
+		transition-duration: 0.5s;
+	}
+	
+	/* Уменьшаем сдвиги на мобильных */
+	.trig-fade-in { transform: translateY(20px); }
+	.trig-slide-left { transform: translateX(-30px); }
+	.trig-slide-right { transform: translateX(30px); }
+}
+
+/* Настройки для пользователей с ограниченной анимацией */
+@media (prefers-reduced-motion: reduce) {
+	.trig-fade-in,
+	.trig-slide-left,
+	.trig-slide-right,
+	.trig-scale-up,
+	.trig-rotate-in,
+	.hero-title-animation,
+	.hero-decorative-animation,
+	.hero-image-animation,
+	.about-photo-animation,
+	.about-tools-animation,
+	.workflow-step-animation,
+	.services-star-animation,
+	.services-card-animation,
+	.portfolio-device-animation,
+	.contact-qr-animation {
+		transition: none;
+		transform: none;
+		opacity: 1;
+	}
+} 

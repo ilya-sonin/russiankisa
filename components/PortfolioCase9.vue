@@ -2,17 +2,17 @@
 	<section id="portfolio-case9" class="portfolio-case9">
 		<div class="container">
 			<div class="portfolio-case9__content">
-				<div class="portfolio-case9__title">
+				<div class="portfolio-case9__title trig-slide-left" data-trig>
 					<div class="portfolio-case9__title-decorative">МОИ</div>
 					<div class="portfolio-case9__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case9__case-label">
+				<div class="portfolio-case9__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case9__case-text">Кейс</span>
 					<span class="portfolio-case9__case-number">3</span>
 				</div>
 
-				<div class="portfolio-case9__description">
+				<div class="portfolio-case9__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case9__description-text">
 						Особое внимание уделено визуальному программированию и творческому
 						контенту, что делает сайт не просто визиткой, а живой платформой для
@@ -21,7 +21,8 @@
 				</div>
 
 				<div
-					class="portfolio-case9__device portfolio-case9__device--ipad-large"
+					class="portfolio-case9__device portfolio-case9__device--ipad-large portfolio-device-animation trig-stagger-3"
+					data-trig
 				>
 					<img
 						src="/images/case9-ipad-large.png"

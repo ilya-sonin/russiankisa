@@ -1,6 +1,10 @@
 // Импорт переменных
 @use 'variables' as *;
 
+// Импорт анимаций Trig.js
+@import 'trig-animations.scss';
+@import 'trig-mobile-optimizations.scss';
+
 @font-face {
 	font-family: 'Disruptors Script';
 	src: url("/fonts/Disruptor's Script.otf") format('opentype');

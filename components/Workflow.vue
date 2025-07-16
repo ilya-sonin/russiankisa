@@ -2,17 +2,17 @@
 	<section id="workflow" class="workflow">
 		<div class="container">
 			<div class="workflow__content">
-				<div class="workflow__title">
+				<div class="workflow__title trig-slide-left trig-stagger-1" data-trig>
 					<div class="workflow__title-decorative">РАБОТЫ</div>
 					<div class="workflow__title-vertical">ЭТАПЫ</div>
 				</div>
 
 				<div class="workflow__diagram">
-					<div class="workflow__path">
+					<div class="workflow__path trig-fade-in trig-stagger-2" data-trig>
 						<img
 							src="/images/workflow-path.svg"
 							alt="Путь этапов работы"
-							class="workflow__path-svg"
+							class="workflow__path-svg workflow-path-animation"
 						/>
 					</div>
 
@@ -28,38 +28,38 @@
 					</div>
 
 					<div class="workflow__steps">
-						<div class="workflow__step workflow__step--knowledge">
+						<div class="workflow__step workflow__step--knowledge workflow-step-animation trig-stagger-3" data-trig>
 							<h3 class="workflow__step-title">ЗНАКОМСТВО</h3>
 							<p class="workflow__step-description">установление контакта</p>
 						</div>
 
-						<div class="workflow__step workflow__step--briefing">
+						<div class="workflow__step workflow__step--briefing workflow-step-animation trig-stagger-4" data-trig>
 							<h3 class="workflow__step-title">БРИФИНГ</h3>
 							<p class="workflow__step-description">выявление потребностей</p>
 						</div>
 
-						<div class="workflow__step workflow__step--prepayment">
+						<div class="workflow__step workflow__step--prepayment workflow-step-animation trig-stagger-5" data-trig>
 							<h3 class="workflow__step-title">ПРЕДОПЛАПЛАТА</h3>
 							<p class="workflow__step-description">
 								финансовое подтверждение сотрудничества
 							</p>
 						</div>
 
-						<div class="workflow__step workflow__step--contract">
+						<div class="workflow__step workflow__step--contract workflow-step-animation trig-stagger-6" data-trig>
 							<h3 class="workflow__step-title">ПОДПИСАНИЕ ДОГОВОРА</h3>
 							<p class="workflow__step-description">
 								юридическое оформление согласованных условий
 							</p>
 						</div>
 
-						<div class="workflow__step workflow__step--approval">
+						<div class="workflow__step workflow__step--approval workflow-step-animation trig-stagger-7" data-trig>
 							<h3 class="workflow__step-title">УТВЕРЖДЕНИЕ МАКЕТА</h3>
 							<p class="workflow__step-description">
 								внесение правок, согласование
 							</p>
 						</div>
 
-						<div class="workflow__step workflow__step--layout">
+						<div class="workflow__step workflow__step--layout workflow-step-animation trig-stagger-8" data-trig>
 							<h3 class="workflow__step-title workflow__step-title--multiline">
 								УТВЕРЖДЕНИЕ<br />СВЁРСТАННОГО МАКЕТА
 							</h3>
@@ -68,14 +68,14 @@
 							</p>
 						</div>
 
-						<div class="workflow__step workflow__step--delivery">
+						<div class="workflow__step workflow__step--delivery workflow-step-animation trig-stagger-1" data-trig>
 							<h3 class="workflow__step-title workflow__step-title--multiline">
 								СДАЧА<br />ПРОЕКТА
 							</h3>
 							<p class="workflow__step-description">передача работы</p>
 						</div>
 
-						<div class="workflow__step workflow__step--payment">
+						<div class="workflow__step workflow__step--payment workflow-step-animation trig-stagger-2" data-trig>
 							<h3 class="workflow__step-title">ОПЛАТА</h3>
 							<p class="workflow__step-description">
 								расчёт за оказанную услугу

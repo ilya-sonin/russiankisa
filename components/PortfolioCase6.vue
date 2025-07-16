@@ -2,12 +2,12 @@
 	<section id="portfolio-case6" class="portfolio-case6">
 		<div class="container">
 			<div class="portfolio-case6__content">
-				<div class="portfolio-case6__title">
+				<div class="portfolio-case6__title trig-slide-left" data-trig>
 					<div class="portfolio-case6__title-decorative">МОИ</div>
 					<div class="portfolio-case6__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case6__description">
+				<div class="portfolio-case6__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case6__description-text">
 						На сегодняшний день моей гордостью и любимой работой является проект
 						сайта, созданный мной<br />
@@ -15,13 +15,13 @@
 					</p>
 				</div>
 
-				<div class="portfolio-case6__case-label">
+				<div class="portfolio-case6__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case6__case-text">Кейс</span>
 					<span class="portfolio-case6__case-number">3</span>
 				</div>
 
 				<div class="portfolio-case6__case portfolio-case6__case--sixth">
-					<div class="portfolio-case6__device portfolio-case6__device--mac">
+					<div class="portfolio-case6__device portfolio-case6__device--mac portfolio-device-animation trig-stagger-3" data-trig>
 						<img
 							src="/images/case6-mac.png"
 							alt="Mac Studio - проект сайта с нуля"

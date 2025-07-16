@@ -2,7 +2,7 @@
 	<section id="about" class="about">
 		<div class="container">
 			<div class="about__content">
-				<div class="about__intro">
+				<div class="about__intro trig-fade-in trig-stagger-1" data-trig>
 					<p class="about__intro-text">
 						Привет и добро пожаловать в мой творческий уголок! Меня зовут
 						Екатерина,
@@ -11,13 +11,13 @@
 					</p>
 				</div>
 
-				<div class="about__title">
+				<div class="about__title trig-slide-left trig-stagger-2" data-trig>
 					<h2 class="about__title-text">
 						КТО <span class="decorative-text">Я</span> ?
 					</h2>
 				</div>
 
-				<div class="about__photo">
+				<div class="about__photo about-photo-animation trig-stagger-3" data-trig>
 					<img
 						src="/images/about-photo.png"
 						alt="Екатерина - графический и веб-дизайнер"
@@ -37,7 +37,7 @@
 					>
 				</div>
 
-				<div class="about__tools">
+				<div class="about__tools trig-fade-in trig-stagger-4" data-trig>
 					<div class="about__tools-header">
 						<h3 class="about__tools-title">
 							РАБОЧИЙ ИНСТРУМЕНТ<span class="decorative-text">арий</span> :
@@ -45,7 +45,7 @@
 					</div>
 
 					<div class="about__tools-grid">
-						<div class="about__tool">
+						<div class="about__tool about-tools-animation trig-stagger-1" data-trig>
 							<img
 								src="/images/tool-figma.svg"
 								alt="Figma"
@@ -54,7 +54,7 @@
 							<span class="about__tool-name">Figma</span>
 						</div>
 
-						<div class="about__tool">
+						<div class="about__tool about-tools-animation trig-stagger-2" data-trig>
 							<img
 								src="/images/tool-tilda.svg"
 								alt="Tilda"
@@ -63,7 +63,7 @@
 							<span class="about__tool-name">Tilda</span>
 						</div>
 
-						<div class="about__tool about__tool--multiline">
+						<div class="about__tool about__tool--multiline about-tools-animation trig-stagger-3" data-trig>
 							<img
 								src="/images/tool-slides.svg"
 								alt="Google Slides"
@@ -74,7 +74,7 @@
 							>
 						</div>
 
-						<div class="about__tool">
+						<div class="about__tool about-tools-animation trig-stagger-4" data-trig>
 							<img
 								src="/images/tool-picsart.svg"
 								alt="PicsArt"
@@ -83,7 +83,7 @@
 							<span class="about__tool-name">PicsArt</span>
 						</div>
 
-						<div class="about__tool about__tool--multiline">
+						<div class="about__tool about__tool--multiline about-tools-animation trig-stagger-5" data-trig>
 							<img
 								src="/images/tool-office.svg"
 								alt="Microsoft Office"
@@ -94,7 +94,7 @@
 							>
 						</div>
 
-						<div class="about__tool">
+						<div class="about__tool about-tools-animation trig-stagger-6" data-trig>
 							<img
 								src="/images/tool-recraft.svg"
 								alt="Recraft AI"
@@ -105,7 +105,7 @@
 							>
 						</div>
 
-						<div class="about__tool">
+						<div class="about__tool about-tools-animation trig-stagger-7" data-trig>
 							<img
 								src="/images/tool-midjourney.svg"
 								alt="Midjourney"

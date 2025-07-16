@@ -2,25 +2,25 @@
 	<section id="portfolio-case4" class="portfolio-case4">
 		<div class="container">
 			<div class="portfolio-case4__content">
-				<div class="portfolio-case4__title">
+				<div class="portfolio-case4__title trig-slide-left" data-trig>
 					<div class="portfolio-case4__title-decorative">МОИ</div>
 					<div class="portfolio-case4__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case4__description">
+				<div class="portfolio-case4__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case4__description-text">
 						Второй интенсивный курс от Yudaev.School был посвящён работе с
 						анимацией в Figma.
 					</p>
 				</div>
 
-				<div class="portfolio-case4__case-label">
+				<div class="portfolio-case4__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case4__case-text">Кейс</span>
 					<span class="portfolio-case4__case-number">2</span>
 				</div>
 
 				<div class="portfolio-case4__case portfolio-case4__case--fourth">
-					<div class="portfolio-case4__device portfolio-case4__device--tablet">
+					<div class="portfolio-case4__device portfolio-case4__device--tablet portfolio-device-animation trig-stagger-3" data-trig>
 						<img
 							src="/images/case4-tablet.png"
 							alt="Galaxy Tab S8 Ultra - анимация в Figma"

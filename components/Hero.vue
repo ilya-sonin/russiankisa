@@ -2,15 +2,15 @@
 	<section class="hero">
 		<div class="container">
 			<div class="hero__content">
-				<div class="hero__decorative">
+				<div class="hero__decorative hero-decorative-animation trig-stagger-1" data-trig>
 					<span class="decorative-text">Творческое</span>
 				</div>
 
-				<div class="hero__title">
+				<div class="hero__title hero-title-animation trig-stagger-2" data-trig>
 					<h1 class="hero-title">ПОРТФОЛИО</h1>
 				</div>
 
-				<div class="hero__image">
+				<div class="hero__image hero-image-animation trig-stagger-3" data-trig>
 					<img
 						src="/images/hero-image.png"
 						alt="Creative Portfolio"
@@ -18,7 +18,7 @@
 					/>
 				</div>
 
-				<div class="hero__action">
+				<div class="hero__action trig-fade-in trig-stagger-4" data-trig>
 					<a href="#portfolio" class="btn"> СМОТРЕТЬ РАБОТЫ </a>
 				</div>
 			</div>

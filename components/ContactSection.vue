@@ -1,28 +1,29 @@
 <template>
 	<section class="contact-section">
 		<div class="contact-section__container">
-			<div class="contact-section__title">
+			<div class="contact-section__title trig-slide-left trig-stagger-1" data-trig>
 				<div class="contact-section__title-main">СВЯЗЬ СО</div>
 				<div class="contact-section__title-decorative">МНОЙ</div>
 			</div>
 
 			<div class="contact-section__content">
-				<p class="contact-section__call-to-action">
+				<p class="contact-section__call-to-action trig-fade-in trig-stagger-2" data-trig>
 					Каждый проект — это возможность рассказать новую историю. Хотите
 					рассказать свою? Напишите мне!
 				</p>
 
-				<blockquote class="contact-section__quote">
+				<blockquote class="contact-section__quote trig-fade-in trig-stagger-3" data-trig>
 					«Дизайн — это не просто внешний вид и ощущения. Дизайн — это то, как
 					это работает. И настоящая простота приходит не тогда, когда больше
 					нечего добавить, а когда нечего убрать».
 				</blockquote>
 
-				<cite class="contact-section__quote-author">Стив Джобс</cite>
+				<cite class="contact-section__quote-author trig-fade-in trig-stagger-4" data-trig>Стив Джобс</cite>
 
 				<div class="contact-section__qr-codes">
 					<a
-						class="contact-section__qr-item"
+						class="contact-section__qr-item contact-qr-animation trig-stagger-1"
+						data-trig
 						href="https://vk.com/russiankisa"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -34,7 +35,8 @@
 					</a>
 
 					<a
-						class="contact-section__qr-item"
+						class="contact-section__qr-item contact-qr-animation trig-stagger-2"
+						data-trig
 						href="https://t.me/kt_mch"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -46,7 +48,8 @@
 					</a>
 
 					<a
-						class="contact-section__qr-item"
+						class="contact-section__qr-item contact-qr-animation trig-stagger-3"
+						data-trig
 						href="https://www.instagram.com/kt.mch/"
 						target="_blank"
 						rel="noopener noreferrer"

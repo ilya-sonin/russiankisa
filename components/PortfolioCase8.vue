@@ -2,17 +2,17 @@
 	<section id="portfolio-case8" class="portfolio-case8">
 		<div class="container">
 			<div class="portfolio-case8__content">
-				<div class="portfolio-case8__title">
+				<div class="portfolio-case8__title trig-slide-left" data-trig>
 					<div class="portfolio-case8__title-decorative">МОИ</div>
 					<div class="portfolio-case8__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case8__case-label">
+				<div class="portfolio-case8__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case8__case-text">Кейс</span>
 					<span class="portfolio-case8__case-number">3</span>
 				</div>
 
-				<div class="portfolio-case8__description">
+				<div class="portfolio-case8__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case8__description-text">
 						В проекте уделено особое внимание удобству и интуитивной навигации,
 						чтобы пользователь легко ориентировался и получал удовольствие от
@@ -21,7 +21,8 @@
 				</div>
 
 				<div
-					class="portfolio-case8__device portfolio-case8__device--tablet-left"
+					class="portfolio-case8__device portfolio-case8__device--tablet-left portfolio-device-animation trig-stagger-3"
+					data-trig
 				>
 					<img
 						src="/images/case8-tablet-left.png"
@@ -30,9 +31,10 @@
 					/>
 				</div>
 
-				<div class="portfolio-case8__tablet-group">
+				<div class="portfolio-case8__tablet-group trig-fade-in trig-stagger-4" data-trig>
 					<div
-						class="portfolio-case8__device portfolio-case8__device--tablet-right"
+						class="portfolio-case8__device portfolio-case8__device--tablet-right portfolio-device-animation trig-stagger-5"
+						data-trig
 					>
 						<img
 							src="/images/case8-tablet-right.png"

@@ -1,15 +1,15 @@
 <template>
-	<header class="header" :class="{ 'header--scrolled': isScrolled }">
+	<header class="header trig-fade-in" data-trig :class="{ 'header--scrolled': isScrolled }">
 		<div class="container">
 			<div class="header__content">
-				<nav class="header__nav header__nav--left">
+				<nav class="header__nav header__nav--left trig-slide-left trig-stagger-1" data-trig>
 					<a href="#about" class="nav-link">Обо мне</a>
 					<a href="#workflow" class="nav-link header__nav-workflow">
 						Этапы<br />работы
 					</a>
 				</nav>
 
-				<div class="header__logo">
+				<div class="header__logo trig-scale-up trig-stagger-2" data-trig>
 					<a href="#">
 						<div class="header__logo-container">
 							<img
@@ -28,7 +28,7 @@
 					</a>
 				</div>
 
-				<nav class="header__nav header__nav--right">
+				<nav class="header__nav header__nav--right trig-slide-right trig-stagger-3" data-trig>
 					<a href="#services" class="nav-link">Услуги</a>
 					<a href="#contacts" class="nav-link">Контакты</a>
 				</nav>

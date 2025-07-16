@@ -2,25 +2,25 @@
 	<section id="portfolio-case3" class="portfolio-case3">
 		<div class="container">
 			<div class="portfolio-case3__content">
-				<div class="portfolio-case3__title">
+				<div class="portfolio-case3__title trig-slide-right trig-stagger-1" data-trig>
 					<div class="portfolio-case3__title-decorative">МОИ</div>
 					<div class="portfolio-case3__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case3__description">
+				<div class="portfolio-case3__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case3__description-text">
 						Моя первая самостоятельная разработка интерфейса сайта, выполненная
 						в рамках интенсива.
 					</p>
 				</div>
 
-				<div class="portfolio-case3__case-label">
+				<div class="portfolio-case3__case-label trig-scale-up trig-stagger-3" data-trig>
 					<span class="portfolio-case3__case-text">Кейс</span>
 					<span class="portfolio-case3__case-number">1</span>
 				</div>
 
 				<div class="portfolio-case3__case portfolio-case3__case--third">
-					<div class="portfolio-case3__device portfolio-case3__device--iphone">
+					<div class="portfolio-case3__device portfolio-case3__device--iphone portfolio-device-animation trig-stagger-4" data-trig>
 						<img
 							src="/images/case3-iphone.png"
 							alt="iPhone 13 Pro - мобильная версия"
@@ -28,7 +28,7 @@
 						/>
 					</div>
 
-					<div class="portfolio-case3__device portfolio-case3__device--ipad">
+					<div class="portfolio-case3__device portfolio-case3__device--ipad portfolio-device-animation trig-stagger-5" data-trig>
 						<img
 							src="/images/case3-ipad.png"
 							alt="iPad Mini - планшетная версия"

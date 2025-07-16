@@ -2,17 +2,17 @@
 	<section id="portfolio-case7" class="portfolio-case7">
 		<div class="container">
 			<div class="portfolio-case7__content">
-				<div class="portfolio-case7__title">
+				<div class="portfolio-case7__title trig-slide-left" data-trig>
 					<div class="portfolio-case7__title-decorative">МОИ</div>
 					<div class="portfolio-case7__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case7__case-label">
+				<div class="portfolio-case7__case-label trig-scale-up trig-stagger-1" data-trig>
 					<span class="portfolio-case7__case-text">Кейс</span>
 					<span class="portfolio-case7__case-number">3</span>
 				</div>
 
-				<div class="portfolio-case7__description">
+				<div class="portfolio-case7__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio-case7__description-text">
 						О проекте:<br />
 						дизайн сайта выполнен в стиле 1990–2000-х годов<br />
@@ -28,7 +28,7 @@
 					</p>
 				</div>
 
-				<div class="portfolio-case7__device portfolio-case7__device--iphone">
+				<div class="portfolio-case7__device portfolio-case7__device--iphone portfolio-device-animation trig-stagger-3" data-trig>
 					<img
 						src="/images/case7-iphone.png"
 						alt="iPhone 16 Pro - ретро-проект"
@@ -36,16 +36,18 @@
 					/>
 				</div>
 
-				<div class="portfolio-case7__timeline">
+				<div class="portfolio-case7__timeline trig-fade-in trig-stagger-4" data-trig>
 					<div class="portfolio-case7__timeline-line"></div>
 
 					<div
-						class="portfolio-case7__timeline-year portfolio-case7__timeline-year--start"
+						class="portfolio-case7__timeline-year portfolio-case7__timeline-year--start trig-slide-left trig-stagger-5"
+						data-trig
 					>
 						1990-е
 					</div>
 					<div
-						class="portfolio-case7__timeline-year portfolio-case7__timeline-year--end"
+						class="portfolio-case7__timeline-year portfolio-case7__timeline-year--end trig-slide-right trig-stagger-6"
+						data-trig
 					>
 						2020-е
 					</div>
@@ -54,22 +56,26 @@
 						<img
 							src="/images/pixel-image-3.svg"
 							alt="Пиксельная графика 1"
-							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--1"
+							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--1 trig-scale-up trig-stagger-6"
+							data-trig
 						/>
 						<img
 							src="/images/pixel-image-2.svg"
 							alt="Пиксельная графика 2"
-							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--2"
+							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--2 trig-scale-up trig-stagger-7"
+							data-trig
 						/>
 						<img
 							src="/images/pixel-image-1.svg"
 							alt="Пиксельная графика 3"
-							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--3"
+							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--3 trig-scale-up trig-stagger-8"
+							data-trig
 						/>
 						<img
 							src="/images/tool-figma.svg"
 							alt="Пиксельная графика 4"
-							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--4"
+							class="portfolio-case7__pixel-img portfolio-case7__pixel-img--4 trig-scale-up trig-stagger-8"
+							data-trig
 						/>
 					</div>
 				</div>

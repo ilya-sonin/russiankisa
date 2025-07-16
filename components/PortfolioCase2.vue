@@ -2,25 +2,37 @@
 	<section id="portfolio-case2" class="portfolio-case2">
 		<div class="container">
 			<div class="portfolio-case2__content">
-				<div class="portfolio-case2__title">
+				<div
+					class="portfolio-case2__title trig-slide-left trig-stagger-1"
+					data-trig
+				>
 					<div class="portfolio-case2__title-decorative">МОИ</div>
 					<div class="portfolio-case2__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio-case2__description">
+				<div
+					class="portfolio-case2__description trig-fade-in trig-stagger-2"
+					data-trig
+				>
 					<p class="portfolio-case2__description-text">
 						Свои первые работы я осуществила благодаря интенсиву Yudaev.School,
 						где впервые познакомилась с Figma и её функционалом.
 					</p>
 				</div>
 
-				<div class="portfolio-case2__case-label">
+				<div
+					class="portfolio-case2__case-label trig-scale-up trig-stagger-3"
+					data-trig
+				>
 					<span class="portfolio-case2__case-text">Кейс</span>
 					<span class="portfolio-case2__case-number">1</span>
 				</div>
 
 				<div class="portfolio-case2__case portfolio-case2__case--second">
-					<div class="portfolio-case2__device portfolio-case2__device--tablet">
+					<div
+						class="portfolio-case2__device portfolio-case2__device--tablet portfolio-device-animation trig-stagger-4"
+						data-trig
+					>
 						<img
 							src="/images/case2-tablet.png"
 							alt="Galaxy Tab S8 Ultra - дизайн проект"

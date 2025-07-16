@@ -2,25 +2,25 @@
 	<section id="portfolio" class="portfolio">
 		<div class="container">
 			<div class="portfolio__content">
-				<div class="portfolio__title">
+				<div class="portfolio__title trig-slide-left trig-stagger-1" data-trig>
 					<div class="portfolio__title-decorative">МОИ</div>
 					<div class="portfolio__title-main">ПРОЕКТЫ</div>
 				</div>
 
-				<div class="portfolio__description">
+				<div class="portfolio__description trig-fade-in trig-stagger-2" data-trig>
 					<p class="portfolio__description-text">
 						Свои первые работы я осуществила благодаря интенсиву Yudaev.School,
 						где впервые познакомилась с Figma и её функционалом.
 					</p>
 				</div>
 
-				<div class="portfolio__case-label">
+				<div class="portfolio__case-label trig-scale-up trig-stagger-3" data-trig>
 					<span class="portfolio__case-text">Кейс</span>
 					<span class="portfolio__case-number">1</span>
 				</div>
 
 				<div class="portfolio__case portfolio__case--first">
-					<div class="portfolio__device portfolio__device--mac">
+					<div class="portfolio__device portfolio__device--mac portfolio-device-animation trig-stagger-4" data-trig>
 						<img
 							src="/images/case1-mac.png"
 							alt="Mac Studio - дизайн проект"
@@ -28,7 +28,7 @@
 						/>
 					</div>
 
-					<div class="portfolio__device portfolio__device--iphone">
+					<div class="portfolio__device portfolio__device--iphone portfolio-device-animation trig-stagger-5" data-trig>
 						<img
 							src="/images/case1-iphone.png"
 							alt="iPhone - мобильная версия"

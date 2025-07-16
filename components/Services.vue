@@ -2,7 +2,7 @@
 	<section id="services" class="services">
 		<div class="container">
 			<div class="services__content">
-				<div class="services__title">
+				<div class="services__title trig-fade-in trig-stagger-1" data-trig>
 					<div class="services__title-main">СПЕКТР</div>
 					<div class="services__title-decorative">УСЛУГ</div>
 				</div>
@@ -11,37 +11,43 @@
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--1"
+						class="services__star services__star--1 services-star-animation trig-stagger-1"
+						data-trig
 					/>
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--2"
+						class="services__star services__star--2 services-star-animation trig-stagger-2"
+						data-trig
 					/>
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--3"
+						class="services__star services__star--3 services-star-animation trig-stagger-3"
+						data-trig
 					/>
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--4"
+						class="services__star services__star--4 services-star-animation trig-stagger-4"
+						data-trig
 					/>
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--5"
+						class="services__star services__star--5 services-star-animation trig-stagger-5"
+						data-trig
 					/>
 					<img
 						src="/images/star-icon.svg"
 						alt=""
-						class="services__star services__star--6"
+						class="services__star services__star--6 services-star-animation trig-stagger-6"
+						data-trig
 					/>
 				</div>
 
 				<div class="services__list">
-					<div class="services__item services__item--web">
+					<div class="services__item services__item--web services-card-animation trig-stagger-2" data-trig>
 						<h3 class="services__item-title">ВЕБ-ДИЗАЙН</h3>
 						<p class="services__item-description">
 							создание лэндингов и многостраничных сайтов, ориентированных на
@@ -49,7 +55,7 @@
 						</p>
 					</div>
 
-					<div class="services__item services__item--print">
+					<div class="services__item services__item--print services-card-animation trig-stagger-3" data-trig>
 						<h3 class="services__item-title services__item-title--multiline">
 							ДИЗАЙН<br />ПОЛИГРАФИИ
 						</h3>
@@ -59,7 +65,7 @@
 						</p>
 					</div>
 
-					<div class="services__item services__item--presentations">
+					<div class="services__item services__item--presentations services-card-animation trig-stagger-4" data-trig>
 						<h3 class="services__item-title">ПРЕЗЕНТАЦИИ</h3>
 						<p class="services__item-description">
 							оформление презентаций для бизнеса, обучения и личных проектов,
@@ -67,7 +73,7 @@
 						</p>
 					</div>
 
-					<div class="services__item services__item--banners">
+					<div class="services__item services__item--banners services-card-animation trig-stagger-5" data-trig>
 						<h3 class="services__item-title services__item-title--multiline">
 							ДИЗАЙН<br />БАННЕРОВ
 						</h3>
@@ -77,7 +83,7 @@
 						</p>
 					</div>
 
-					<div class="services__item services__item--guides">
+					<div class="services__item services__item--guides services-card-animation trig-stagger-6" data-trig>
 						<h3 class="services__item-title services__item-title--multiline">
 							ЧЕК-ЛИСТЫ<br />И ГАЙДЫ
 						</h3>
