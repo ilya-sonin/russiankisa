@@ -1,0 +1,282 @@
+// Импорт переменных
+@use 'variables' as *;
+
+@font-face {
+	font-family: 'Disruptors Script';
+	src: url("/fonts/Disruptor's Script.otf") format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: optional;
+}
+
+.decorative-text,
+.hero-title {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+@mixin button-primary {
+	background-color: color(primary);
+	color: color(background);
+	border: none;
+	border-radius: border-radius(button);
+	padding: spacing(4) spacing(8);
+	font-family: font-family(primary);
+	font-size: font-size('4xl');
+	font-weight: font-weight(normal);
+	line-height: 1.155;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: shadow(lg);
+		opacity: 0.9;
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+@mixin text-hero {
+	font-family: font-family(primary);
+	font-size: font-size(hero);
+	font-weight: font-weight(normal);
+	line-height: 1.155;
+	letter-spacing: 0.02em;
+	color: color(text-primary);
+}
+
+@mixin text-decorative {
+	font-family: font-family(decorative);
+	font-size: font-size(decorative);
+	font-weight: font-weight(normal);
+	line-height: 1.2;
+	color: color(text-primary);
+}
+
+@mixin text-navigation {
+	font-family: font-family(primary);
+	font-size: font-size(lg);
+	font-weight: font-weight(normal);
+	line-height: 1.155;
+	color: color(text-primary);
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: color(primary);
+	}
+}
+
+@mixin container {
+	max-width: breakpoint(desktop);
+	margin: 0 auto;
+	padding: 0 spacing(4);
+	width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: font-family(primary);
+	color: color(text-primary);
+	background-color: color(background);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: font-family(primary);
+	font-weight: font-weight(normal);
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+@each $key, $value in $spacing {
+	.m-#{$key} {
+		margin: $value;
+	}
+	.mt-#{$key} {
+		margin-top: $value;
+	}
+	.mr-#{$key} {
+		margin-right: $value;
+	}
+	.mb-#{$key} {
+		margin-bottom: $value;
+	}
+	.ml-#{$key} {
+		margin-left: $value;
+	}
+	.mx-#{$key} {
+		margin-left: $value;
+		margin-right: $value;
+	}
+	.my-#{$key} {
+		margin-top: $value;
+		margin-bottom: $value;
+	}
+
+	.p-#{$key} {
+		padding: $value;
+	}
+	.pt-#{$key} {
+		padding-top: $value;
+	}
+	.pr-#{$key} {
+		padding-right: $value;
+	}
+	.pb-#{$key} {
+		padding-bottom: $value;
+	}
+	.pl-#{$key} {
+		padding-left: $value;
+	}
+	.px-#{$key} {
+		padding-left: $value;
+		padding-right: $value;
+	}
+	.py-#{$key} {
+		padding-top: $value;
+		padding-bottom: $value;
+	}
+}
+
+.w-full {
+	width: 100%;
+}
+
+.h-full {
+	height: 100%;
+}
+
+.min-h-screen {
+	min-height: 100vh;
+}
+
+.btn {
+	@include button-primary;
+}
+
+.container {
+	@include container;
+}
+
+.hero-title {
+	@include text-hero;
+}
+
+.decorative-text {
+	@include text-decorative;
+}
+
+.nav-link {
+	@include text-navigation;
+}
+
+@media (max-width: breakpoint(lg)) {
+	.hero-title {
+		font-size: font-size('8xl');
+	}
+
+	.decorative-text {
+		font-size: font-size('7xl');
+	}
+}
+
+@media (max-width: breakpoint(md)) {
+	.hero-title {
+		font-size: font-size('6xl');
+	}
+
+	.decorative-text {
+		font-size: font-size('5xl');
+	}
+
+	.btn {
+		font-size: font-size('2xl');
+		padding: spacing(3) spacing(6);
+	}
+}

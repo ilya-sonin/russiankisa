@@ -1,20 +1,42 @@
-<script setup lang="ts">
-// SEO для главной страницы
+<script setup>
 useSeoMeta({
-  title: 'Главная страница - Nuxt App',
-  description: 'Добро пожаловать в современное Nuxt приложение'
+	title: 'RussianKisa - Творческое портфолио',
+	description:
+		'Творческое портфолио RussianKisa. Смотрите мои работы и узнайте больше обо мне.',
+	ogTitle: 'RussianKisa - Творческое портфолио',
+	ogDescription:
+		'Творческое портфолио RussianKisa. Смотрите мои работы и узнайте больше обо мне.',
+	ogType: 'website',
+	twitterCard: 'summary_large_image',
 })
 </script>
 
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+	<div class="page">
+		<Header />
+		<Hero />
+		<About />
+		<Workflow />
+		<Services />
+		<Portfolio />
+		<PortfolioCase2 />
+		<PortfolioCase3 />
+		<PortfolioCase4 />
+		<PortfolioCase5 />
+		<PortfolioCase6 />
+		<PortfolioCase7 />
+		<PortfolioCase8 />
+		<PortfolioCase9 />
+		<PortfolioCase10 />
+		<PortfolioCase11 />
+		<PortfolioCase12 />
+		<ContactSection />
+	</div>
 </template>
 
-<style scoped>
-div {
-  padding: 2rem;
+<style lang="scss" scoped>
+.page {
+	min-height: 100vh;
+	background-color: color(background);
 }
-</style> 
+</style>

@@ -17,13 +17,13 @@ onMounted(() => {
 </script>
 
 <template>
-	<div>
+	<div id="app">
 		<NuxtPage />
 	</div>
 </template>
 
-<style scoped>
-div {
-	min-height: 100vh;
+<style>
+#app {
+	height: 100%;
 }
 </style>
