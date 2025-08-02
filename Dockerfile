@@ -1,55 +1,33 @@
-FROM node:20-alpine AS builder
+# syntax=docker/dockerfile:1
 
+ARG NODE_VERSION=20-alpine
+
+FROM node:${NODE_VERSION} AS base
 WORKDIR /app
+EXPOSE 3000
 
-COPY package.json pnpm-lock.yaml ./
+FROM base AS deps
+COPY package.json pnpm-lock.yaml* ./
+RUN corepack enable pnpm
+RUN --mount=type=cache,target=/root/.pnpm-store pnpm install --frozen-lockfile
 
-RUN npm install -g pnpm
-
-RUN pnpm install 
-
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+RUN corepack enable pnpm
+RUN pnpm build
 
-RUN pnpm run generate
+FROM base AS runner
+ENV NODE_ENV=production
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=3000
 
-FROM nginx:alpine
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nuxtjs
 
-COPY <<EOF /etc/nginx/conf.d/default.conf
-server {
-    listen 80;
-    server_name _;
-    root /usr/share/nginx/html;
-    index index.html;
+COPY --from=builder --chown=nuxtjs:nodejs /app/.output ./.output
+COPY --from=builder --chown=nuxtjs:nodejs /app/package.json ./package.json
 
-    location / {
-        try_files \$uri \$uri/ /index.html;
-    }
+USER nuxtjs
 
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-    }
-
-    gzip on;
-    gzip_vary on;
-    gzip_min_length 1024;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_types
-        text/plain
-        text/css
-        text/xml
-        text/javascript
-        application/javascript
-        application/xml+rss
-        application/json;
-}
-EOF
-
-COPY --from=builder /app/.output/public /usr/share/nginx/html
-
-RUN chown -R nginx:nginx /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"] 
+CMD ["node", ".output/server/index.mjs"] 
