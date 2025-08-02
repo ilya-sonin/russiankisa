@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'trig-animations.scss';
+@import 'trig-mobile-optimizations.scss';
+
+@font-face {
+	font-family: 'Disruptors Script';
+	src: url("/fonts/Disruptor's Script.otf") format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: optional;
+}
+
+.decorative-text,
+.hero-title {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: theme('fontFamily.primary');
+	color: theme('colors.text-primary');
+	background-color: theme('colors.background');
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: theme('fontFamily.primary');
+	font-weight: theme('fontWeight.normal');
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.btn {
+	@apply bg-primary text-background border-none rounded-button px-8 py-4 font-primary text-4xl font-normal leading-[1.155] cursor-pointer transition-all duration-300 ease-in-out no-underline inline-block text-center;
+
+	&:hover {
+		@apply -translate-y-0.5 shadow-lg opacity-90;
+	}
+
+	&:active {
+		@apply translate-y-0;
+	}
+}
+
+.container {
+	@apply max-w-desktop mx-auto px-4 w-full;
+
+	@media (max-width: theme('screens.xl')) {
+		@apply max-w-6xl;
+	}
+
+	@media (max-width: theme('screens.lg')) {
+		@apply max-w-5xl;
+	}
+
+	@media (max-width: theme('screens.tablet')) {
+		@apply max-w-4xl px-2;
+	}
+
+	@media (max-width: theme('screens.md')) {
+		@apply max-w-3xl px-2;
+	}
+
+	@media (max-width: theme('screens.sm')) {
+		@apply max-w-full px-2;
+	}
+}
+
+.hero-title {
+	@apply font-primary text-hero font-normal leading-[1.155] tracking-[0.02em] text-text-primary;
+}
+
+.decorative-text {
+	@apply font-decorative text-decorative font-normal leading-[1.2] text-text-primary;
+}
+
+.nav-link {
+	@apply font-primary text-lg font-normal leading-[1.155] text-text-primary no-underline transition-colors duration-200;
+
+	&:hover {
+		@apply text-primary;
+	}
+}
+
+@media (max-width: theme('screens.xl')) {
+	.hero-title {
+		@apply text-hero-xl;
+	}
+
+	.decorative-text {
+		@apply text-hero-xl;
+	}
+}
+
+@media (max-width: theme('screens.lg')) {
+	.hero-title {
+		@apply text-hero-lg;
+	}
+
+	.decorative-text {
+		@apply text-hero-lg;
+	}
+}
+
+@media (max-width: theme('screens.tablet')) {
+	.hero-title {
+		@apply text-hero-tablet;
+	}
+
+	.nav-link {
+		@apply text-base;
+	}
+}
+
+@media (max-width: theme('screens.md')) {
+	.hero-title {
+		@apply text-9xl;
+	}
+
+	.decorative-text {
+		@apply text-9xl;
+	}
+
+	.btn {
+		@apply text-xl px-6 py-3;
+	}
+}
+
+@media (max-width: theme('screens.sm')) {
+	.hero-title {
+		@apply text-6xl;
+	}
+
+	.decorative-text {
+		@apply text-6xl;
+	}
+
+	.btn {
+		@apply text-base px-6 py-3;
+	}
+}

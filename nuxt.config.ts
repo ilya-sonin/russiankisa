@@ -1,28 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	compatibilityDate: '2025-07-14',
-	devtools: { enabled: true },
+	compatibilityDate: '2025-08-02',
+	devtools: { enabled: false },
 
-	// Статическая генерация для SEO
+	modules: ['@nuxtjs/tailwindcss'],
+
+	tailwindcss: {
+		cssPath: '~/assets/scss/main.scss',
+	},
+
 	nitro: {
 		prerender: {
-			routes: ['/']
-		}
+			routes: ['/'],
+		},
 	},
 
-	// SEO и мета настройки
 	ssr: true,
 	experimental: {
-		payloadExtraction: false
+		payloadExtraction: false,
 	},
-
-	css: ['@/assets/scss/main.scss'],
 
 	vite: {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: '@use "@/assets/scss/_variables.scss" as *;',
+					additionalData: '@use "~/assets/scss/_variables.scss" as *;',
 				},
 			},
 		},
@@ -31,7 +33,7 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			htmlAttrs: {
-				lang: 'ru'
+				lang: 'ru',
 			},
 			meta: [
 				{
@@ -39,12 +41,12 @@ export default defineNuxtConfig({
 					content: 'width=device-width, initial-scale=1',
 				},
 				{
-					charset: 'utf-8'
+					charset: 'utf-8',
 				},
 				{
 					name: 'robots',
-					content: 'index, follow'
-				}
+					content: 'index, follow',
+				},
 			],
 			link: [
 				{
@@ -71,21 +73,19 @@ export default defineNuxtConfig({
 			script: [
 				{
 					src: 'https://cdn.jsdelivr.net/npm/trig-js/src/trig.min.js',
-					defer: true
-				}
-			]
+					defer: true,
+				},
+			],
 		},
 	},
 
-	// Production оптимизации
 	build: {
-		analyze: false
+		analyze: false,
 	},
 
-	// Настройки для деплоя
 	runtimeConfig: {
 		public: {
-			baseURL: process.env.BASE_URL || '/'
-		}
-	}
+			baseURL: process.env.BASE_URL || '/',
+		},
+	},
 })

@@ -12,15 +12,14 @@
 		"typecheck": "nuxt prepare && vue-tsc -b --noEmit"
 	},
 	"dependencies": {
-		"nuxt": "^3.17.7",
-		"trig-js": "^4.2.0",
-		"vue": "^3.5.17",
-		"vue-router": "^4.5.1"
+		"nuxt": "^4.0.1",
+		"trig-js": "^4.2.0"
 	},
 	"packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
 	"devDependencies": {
-		"@stagewise-plugins/vue": "^0.5.2",
-		"@stagewise/toolbar": "^0.5.2",
+		"@nuxtjs/tailwindcss": "^6.14.0",
+		"@stagewise-plugins/vue": "^0.6.2",
+		"@stagewise/toolbar": "^0.6.2",
 		"sass": "^1.89.2",
 		"typescript": "^5.8.3",
 		"vue-tsc": "^3.0.1"
