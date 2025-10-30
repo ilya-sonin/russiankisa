@@ -31,6 +31,7 @@ useSeoMeta({
 		<PortfolioCase11 />
 		<PortfolioCase12 />
 		<ContactSection />
+		<DevScreenSize />
 	</div>
 </template>
 

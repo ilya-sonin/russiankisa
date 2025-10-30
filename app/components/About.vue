@@ -17,7 +17,10 @@
 					</h2>
 				</div>
 
-				<div class="about__photo about-photo-animation trig-stagger-3" data-trig>
+				<div
+					class="about__photo about-photo-animation trig-stagger-3"
+					data-trig
+				>
 					<img
 						src="/images/about-photo.png"
 						alt="Екатерина - графический и веб-дизайнер"
@@ -45,7 +48,10 @@
 					</div>
 
 					<div class="about__tools-grid">
-						<div class="about__tool about-tools-animation trig-stagger-1" data-trig>
+						<div
+							class="about__tool about-tools-animation trig-stagger-1"
+							data-trig
+						>
 							<img
 								src="/images/tool-figma.svg"
 								alt="Figma"
@@ -54,7 +60,10 @@
 							<span class="about__tool-name">Figma</span>
 						</div>
 
-						<div class="about__tool about-tools-animation trig-stagger-2" data-trig>
+						<div
+							class="about__tool about-tools-animation trig-stagger-2"
+							data-trig
+						>
 							<img
 								src="/images/tool-tilda.svg"
 								alt="Tilda"
@@ -63,7 +72,10 @@
 							<span class="about__tool-name">Tilda</span>
 						</div>
 
-						<div class="about__tool about__tool--multiline about-tools-animation trig-stagger-3" data-trig>
+						<div
+							class="about__tool about__tool--multiline about-tools-animation trig-stagger-3"
+							data-trig
+						>
 							<img
 								src="/images/tool-slides.svg"
 								alt="Google Slides"
@@ -74,7 +86,10 @@
 							>
 						</div>
 
-						<div class="about__tool about-tools-animation trig-stagger-4" data-trig>
+						<div
+							class="about__tool about-tools-animation trig-stagger-4"
+							data-trig
+						>
 							<img
 								src="/images/tool-picsart.svg"
 								alt="PicsArt"
@@ -83,7 +98,10 @@
 							<span class="about__tool-name">PicsArt</span>
 						</div>
 
-						<div class="about__tool about__tool--multiline about-tools-animation trig-stagger-5" data-trig>
+						<div
+							class="about__tool about__tool--multiline about-tools-animation trig-stagger-5"
+							data-trig
+						>
 							<img
 								src="/images/tool-office.svg"
 								alt="Microsoft Office"
@@ -94,7 +112,10 @@
 							>
 						</div>
 
-						<div class="about__tool about-tools-animation trig-stagger-6" data-trig>
+						<div
+							class="about__tool about-tools-animation trig-stagger-6"
+							data-trig
+						>
 							<img
 								src="/images/tool-recraft.svg"
 								alt="Recraft AI"
@@ -105,7 +126,10 @@
 							>
 						</div>
 
-						<div class="about__tool about-tools-animation trig-stagger-7" data-trig>
+						<div
+							class="about__tool about-tools-animation trig-stagger-7"
+							data-trig
+						>
 							<img
 								src="/images/tool-midjourney.svg"
 								alt="Midjourney"
@@ -313,154 +337,446 @@
 	}
 }
 
-@media (max-width: breakpoint(lg)) {
+// Адаптив для мобильных устройств (xs): до 550px
+@media (max-width: calc(breakpoint('sm') - 1px)) {
 	.about {
 		&__content {
+			display: flex;
+			flex-direction: column;
 			height: auto;
-			min-height: 800px;
-		}
-
-		&__intro {
-			position: static;
-			margin-bottom: spacing(8);
-
-			&-text {
-				font-size: font-size('2xl');
-				text-align: center;
-
-				.decorative-text {
-					font-size: font-size('4xl'); // 32px на планшетах
-				}
-			}
+			gap: spacing(6);
+			padding: spacing(4) 0;
 		}
 
 		&__title {
 			position: static;
-			text-align: center;
-			margin-bottom: spacing(8);
+			order: 1;
+			margin-bottom: spacing(4);
 
 			&-text {
-				font-size: font-size('6xl');
-				writing-mode: initial;
+				font-size: font-size('xl'); // 20px
+				writing-mode: horizontal-tb;
 				text-orientation: initial;
+				line-height: 1.2;
+
+				.decorative-text {
+					font-size: font-size('xl');
+				}
 			}
 		}
 
-		&__photo {
+		&__intro {
 			position: static;
-			text-align: center;
-			margin-bottom: spacing(8);
+			order: 2;
+			background-color: color(base);
+			padding: spacing(4);
+			border-radius: 10px;
 
-			&-img {
-				width: 400px;
-				height: 285px;
-				margin: 0 auto;
+			&-text {
+				font-size: font-size('lg'); // 18px
+				line-height: 1.5;
+
+				.decorative-text {
+					font-size: font-size('xl'); // 20px
+				}
 			}
 		}
 
 		&__decorative {
 			position: static;
-			text-align: center;
-			margin: spacing(6) 0;
+
+			&--print {
+				order: 3;
+				padding: spacing(4) 0;
+			}
+
+			&--digital {
+				order: 6;
+				padding: spacing(4) 0;
+			}
 
 			&-text {
-				font-size: font-size('4xl'); // соответствует decorative-text
+				font-size: font-size('5xl'); // 48px
+			}
+		}
+
+		&__photo {
+			position: static;
+			order: 4;
+			display: flex;
+			justify-content: center;
+
+			&-img {
+				width: 100%;
+				height: auto;
+				border-radius: 10px;
 			}
 		}
 
 		&__tools {
 			position: static;
+			order: 5;
 			width: 100%;
-			margin: spacing(8) 0;
+			padding: spacing(4) 0;
+
+			&-header {
+				margin-bottom: spacing(4);
+			}
 
 			&-title {
+				font-size: font-size('lg'); // 18px
+				left: 0;
+
 				.decorative-text {
-					font-size: inherit;
+					font-size: font-size('xl'); // 20px
 				}
 			}
 
 			&-grid {
-				justify-content: space-around;
+				flex-wrap: wrap;
+				gap: spacing(3);
 			}
 		}
 
 		&__tool {
-			flex: 0 0 calc(33.333% - spacing(4));
+			flex: 0 0 calc(33.333% - spacing(2));
+
+			&-icon {
+				width: 30px;
+				height: 30px;
+			}
+
+			&-name {
+				font-size: font-size('sm'); // 14px
+			}
 		}
 
 		&__outro {
 			position: static;
-			margin-top: spacing(8);
+			order: 7;
+			background-color: color(base);
+			padding: spacing(4);
+			border-radius: 10px;
 
 			&-text {
-				font-size: font-size('2xl');
-				text-align: center;
+				font-size: font-size('lg'); // 18px
+				text-align: left;
+				line-height: 1.5;
 			}
 		}
 	}
 }
 
-@media (max-width: breakpoint(md)) {
+// Адаптив для sm до md: 550px - 768px
+@media (min-width: breakpoint('sm')) and (max-width: calc(breakpoint('md') - 1px)) {
 	.about {
-		padding: spacing(8) 0;
+		&__content {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			gap: spacing(6);
+			padding: spacing(4) 0;
+		}
 
-		&__intro,
-		&__outro {
+		&__title {
+			position: static;
+			order: 1;
+			margin-bottom: spacing(4);
+
 			&-text {
-				font-size: font-size('lg');
-				line-height: 1.6;
+				font-size: font-size('xl'); // 20px
+				writing-mode: horizontal-tb;
+				text-orientation: initial;
+				line-height: 1.2;
 
 				.decorative-text {
-					font-size: font-size('2xl'); // 24px на мобильных
+					font-size: font-size('xl');
 				}
 			}
 		}
 
-		&__title {
-			&-text {
-				font-size: font-size('5xl');
-			}
-		}
+		&__intro {
+			position: static;
+			order: 2;
+			background-color: color(base);
+			padding: spacing(4);
+			border-radius: 10px;
 
-		&__photo {
-			&-img {
-				width: 300px;
-				height: 214px;
+			&-text {
+				font-size: font-size('lg'); // 18px
+				line-height: 1.5;
+
+				.decorative-text {
+					font-size: font-size('xl'); // 20px
+				}
 			}
 		}
 
 		&__decorative {
+			position: static;
+
+			&--print {
+				order: 3;
+				padding: spacing(4) 0;
+			}
+
+			&--digital {
+				order: 6;
+				padding: spacing(4) 0;
+			}
+
 			&-text {
-				font-size: font-size(
-					'2xl'
-				); // соответствует decorative-text на мобильных
+				font-size: font-size('5xl'); // 48px
+			}
+		}
+
+		&__photo {
+			position: static;
+			order: 4;
+			display: flex;
+			justify-content: center;
+
+			&-img {
+				width: 380px;
+				height: auto;
+				border-radius: 10px;
 			}
 		}
 
 		&__tools {
+			position: static;
+			order: 5;
+			width: 100%;
+			padding: spacing(4) 0;
+
+			&-header {
+				margin-bottom: spacing(4);
+			}
+
 			&-title {
-				font-size: font-size('xl');
+				font-size: font-size('lg'); // 18px
+				left: 0;
 
 				.decorative-text {
-					font-size: inherit;
+					font-size: font-size('xl'); // 20px
 				}
 			}
 
 			&-grid {
-				justify-content: space-around;
+				flex-wrap: wrap;
+				gap: spacing(3);
 			}
 		}
 
 		&__tool {
-			flex: 0 0 calc(50% - spacing(2));
+			flex: 0 0 calc(33.333% - spacing(2));
 
 			&-icon {
-				width: 40px;
-				height: 40px;
+				width: 30px;
+				height: 30px;
 			}
 
 			&-name {
-				font-size: font-size('base');
+				font-size: font-size('sm'); // 14px
+			}
+		}
+
+		&__outro {
+			position: static;
+			order: 7;
+			background-color: color(base);
+			padding: spacing(4);
+			border-radius: 10px;
+
+			&-text {
+				font-size: font-size('lg'); // 18px
+				text-align: left;
+				line-height: 1.5;
+			}
+		}
+	}
+}
+
+@media (min-width: breakpoint('md')) and (max-width: calc(breakpoint('tablet') - 1px)) {
+	.about {
+		&__content {
+			height: 680px;
+		}
+
+		&__intro {
+			&-text {
+				font-size: font-size('xl'); // 20px вместо 36px
+
+				.decorative-text {
+					font-size: font-size('2xl'); // 24px вместо 48px
+				}
+			}
+		}
+
+		&__decorative--print {
+			top: 120px;
+		}
+
+		&__decorative--digital {
+			top: 500px;
+		}
+
+		&__tools {
+			left: 10px;
+			top: 180px;
+
+			&-title {
+				font-size: font-size('xl'); // 20px
+			}
+
+			&-header {
+				margin-bottom: 16px;
+			}
+
+			&-grid {
+				.about__tool {
+					&-icon {
+						width: 30px;
+						height: 30px;
+					}
+
+					&-name {
+						font-size: font-size('base');
+					}
+				}
+			}
+		}
+
+		&__photo {
+			top: 240px;
+			left: 410px;
+
+			&-img {
+				width: 250px;
+				height: auto;
+			}
+		}
+
+		&__title {
+			top: 220px;
+
+			&-text {
+				font-size: font-size('8xl'); // 80px
+
+				.decorative-text {
+					font-size: font-size('8xl');
+				}
+			}
+		}
+
+		&__outro {
+			&-text {
+				font-size: font-size('xl'); // 20px вместо 36px
+			}
+		}
+	}
+}
+
+@media (min-width: breakpoint('tablet')) and (max-width: calc(breakpoint('lg') - 1px)) {
+	.about {
+		&__content {
+			height: 732px;
+		}
+
+		&__intro {
+			&-text {
+				font-size: font-size('xl'); // 20px вместо 36px
+
+				.decorative-text {
+					font-size: font-size('2xl'); // 24px вместо 48px
+				}
+			}
+		}
+
+		&__decorative--print {
+			top: 130px;
+		}
+
+		&__decorative--digital {
+			top: 550px;
+		}
+
+		&__tools {
+			left: 20px;
+			top: 180px;
+
+			&-title {
+				font-size: font-size('xl'); // 20px
+			}
+		}
+
+		&__photo {
+			top: 250px;
+			left: 450px;
+
+			&-img {
+				width: 280px;
+				height: auto;
+			}
+		}
+
+		&__title {
+			top: 220px;
+
+			&-text {
+				font-size: font-size('8xl'); // 80px
+
+				.decorative-text {
+					font-size: font-size('8xl');
+				}
+			}
+		}
+
+		&__outro {
+			&-text {
+				font-size: font-size('xl'); // 20px вместо 36px
+			}
+		}
+	}
+}
+
+@media (min-width: breakpoint('lg')) and (max-width: calc(breakpoint('xl') - 1px)) {
+	.about {
+		&__intro {
+			&-text {
+				font-size: font-size('2xl'); // 24px вместо 36px
+
+				.decorative-text {
+					font-size: font-size('3xl'); // 30px вместо 48px
+				}
+			}
+		}
+
+		&__photo {
+			top: 265px;
+			left: 550px;
+
+			&-img {
+				width: 350px;
+				height: auto;
+			}
+		}
+
+		&__title {
+			top: 265px;
+
+			&-text {
+				font-size: font-size('8xl'); // 80px вместо 118px
+
+				.decorative-text {
+					font-size: font-size('8xl');
+				}
+			}
+		}
+
+		&__outro {
+			&-text {
+				font-size: font-size('2xl'); // 24px вместо 36px
 			}
 		}
 	}
