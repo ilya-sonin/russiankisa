@@ -337,14 +337,12 @@
 	}
 }
 
-// Адаптив для мобильных устройств (xs): до 550px
-@media (max-width: calc(breakpoint('sm') - 1px)) {
+@media (max-width: calc(breakpoint('md') - 1px)) {
 	.about {
 		&__content {
 			display: flex;
 			flex-direction: column;
 			height: auto;
-			gap: spacing(6);
 			padding: spacing(4) 0;
 		}
 
@@ -354,13 +352,14 @@
 			margin-bottom: spacing(4);
 
 			&-text {
-				font-size: font-size('xl'); // 20px
+				font-size: font-size('3xl');
 				writing-mode: horizontal-tb;
 				text-orientation: initial;
 				line-height: 1.2;
+				text-align: center;
 
 				.decorative-text {
-					font-size: font-size('xl');
+					font-size: font-size('3xl');
 				}
 			}
 		}
@@ -369,15 +368,14 @@
 			position: static;
 			order: 2;
 			background-color: color(base);
-			padding: spacing(4);
 			border-radius: 10px;
 
 			&-text {
-				font-size: font-size('lg'); // 18px
+				font-size: font-size('lg');
 				line-height: 1.5;
 
 				.decorative-text {
-					font-size: font-size('xl'); // 20px
+					font-size: font-size('xl');
 				}
 			}
 		}
@@ -392,11 +390,11 @@
 
 			&--digital {
 				order: 6;
-				padding: spacing(4) 0;
+				padding-bottom: spacing(4);
 			}
 
 			&-text {
-				font-size: font-size('5xl'); // 48px
+				font-size: font-size('3xl');
 			}
 		}
 
@@ -417,24 +415,26 @@
 			position: static;
 			order: 5;
 			width: 100%;
-			padding: spacing(4) 0;
+			padding-top: spacing(8);
 
 			&-header {
 				margin-bottom: spacing(4);
 			}
 
 			&-title {
-				font-size: font-size('lg'); // 18px
+				font-size: font-size('2xl');
 				left: 0;
+				text-align: center;
 
 				.decorative-text {
-					font-size: font-size('xl'); // 20px
+					font-size: font-size('3xl');
 				}
 			}
 
 			&-grid {
 				flex-wrap: wrap;
 				gap: spacing(3);
+				margin-top: spacing(6);
 			}
 		}
 
@@ -442,12 +442,12 @@
 			flex: 0 0 calc(33.333% - spacing(2));
 
 			&-icon {
-				width: 30px;
-				height: 30px;
+				width: 40px;
+				height: 40px;
 			}
 
 			&-name {
-				font-size: font-size('sm'); // 14px
+				font-size: font-size('base');
 			}
 		}
 
@@ -455,141 +455,10 @@
 			position: static;
 			order: 7;
 			background-color: color(base);
-			padding: spacing(4);
 			border-radius: 10px;
 
 			&-text {
-				font-size: font-size('lg'); // 18px
-				text-align: left;
-				line-height: 1.5;
-			}
-		}
-	}
-}
-
-// Адаптив для sm до md: 550px - 768px
-@media (min-width: breakpoint('sm')) and (max-width: calc(breakpoint('md') - 1px)) {
-	.about {
-		&__content {
-			display: flex;
-			flex-direction: column;
-			height: auto;
-			gap: spacing(6);
-			padding: spacing(4) 0;
-		}
-
-		&__title {
-			position: static;
-			order: 1;
-			margin-bottom: spacing(4);
-
-			&-text {
-				font-size: font-size('xl'); // 20px
-				writing-mode: horizontal-tb;
-				text-orientation: initial;
-				line-height: 1.2;
-
-				.decorative-text {
-					font-size: font-size('xl');
-				}
-			}
-		}
-
-		&__intro {
-			position: static;
-			order: 2;
-			background-color: color(base);
-			padding: spacing(4);
-			border-radius: 10px;
-
-			&-text {
-				font-size: font-size('lg'); // 18px
-				line-height: 1.5;
-
-				.decorative-text {
-					font-size: font-size('xl'); // 20px
-				}
-			}
-		}
-
-		&__decorative {
-			position: static;
-
-			&--print {
-				order: 3;
-				padding: spacing(4) 0;
-			}
-
-			&--digital {
-				order: 6;
-				padding: spacing(4) 0;
-			}
-
-			&-text {
-				font-size: font-size('5xl'); // 48px
-			}
-		}
-
-		&__photo {
-			position: static;
-			order: 4;
-			display: flex;
-			justify-content: center;
-
-			&-img {
-				width: 380px;
-				height: auto;
-				border-radius: 10px;
-			}
-		}
-
-		&__tools {
-			position: static;
-			order: 5;
-			width: 100%;
-			padding: spacing(4) 0;
-
-			&-header {
-				margin-bottom: spacing(4);
-			}
-
-			&-title {
-				font-size: font-size('lg'); // 18px
-				left: 0;
-
-				.decorative-text {
-					font-size: font-size('xl'); // 20px
-				}
-			}
-
-			&-grid {
-				flex-wrap: wrap;
-				gap: spacing(3);
-			}
-		}
-
-		&__tool {
-			flex: 0 0 calc(33.333% - spacing(2));
-
-			&-icon {
-				width: 30px;
-				height: 30px;
-			}
-
-			&-name {
-				font-size: font-size('sm'); // 14px
-			}
-		}
-
-		&__outro {
-			position: static;
-			order: 7;
-			background-color: color(base);
-			padding: spacing(4);
-			border-radius: 10px;
-
-			&-text {
-				font-size: font-size('lg'); // 18px
+				font-size: font-size('lg');
 				text-align: left;
 				line-height: 1.5;
 			}

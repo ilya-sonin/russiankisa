@@ -9,11 +9,21 @@
 
 				<div class="workflow__diagram">
 					<div class="workflow__path trig-fade-in trig-stagger-2" data-trig>
-						<img
-							src="/images/workflow-path.svg"
-							alt="Путь этапов работы"
-							class="workflow__path-svg"
-						/>
+						<picture>
+							<source
+								media="(min-width: 1024px)"
+								srcset="/images/workflow-path-desktop.svg"
+							/>
+							<source
+								media="(min-width: 768px)"
+								srcset="/images/workflow-path-tablet.svg"
+							/>
+							<img
+								src="/images/workflow-path-mobile.svg"
+								alt="Путь этапов работы"
+								class="workflow__path-svg"
+							/>
+						</picture>
 					</div>
 
 					<div class="workflow__markers">
@@ -329,75 +339,393 @@
 	}
 }
 
-// Адаптивность
-@media (max-width: breakpoint(lg)) {
+// Mobile: < 768px - вертикальная раскладка
+@media (max-width: calc(breakpoint('md') - 1px)) {
 	.workflow {
+		padding: spacing(8) 0;
+
 		&__content {
+			display: flex;
+			flex-direction: column;
 			height: auto;
-			min-height: 800px;
+			padding: spacing(4) 0;
 		}
 
 		&__title {
 			position: static;
+			order: 1;
 			width: 100%;
 			height: auto;
+			margin-bottom: spacing(6);
 			text-align: center;
-			margin-bottom: spacing(8);
 
 			&-vertical {
-				font-size: font-size('6xl');
-				writing-mode: initial;
+				font-size: font-size('4xl'); // 32px
+				writing-mode: horizontal-tb;
 				text-orientation: initial;
-				display: inline;
-				margin-right: spacing(2);
 				transform: none;
+				position: static;
+				text-align: center;
 			}
 
 			&-decorative {
-				position: static;
-				font-size: font-size('5xl');
-				writing-mode: initial;
+				font-size: font-size('5xl'); // 40px
+				writing-mode: horizontal-tb;
 				text-orientation: initial;
-				display: inline;
 				transform: none;
+				position: static;
+				text-align: center;
+				top: 0;
+				left: 0;
 			}
 		}
 
 		&__diagram {
 			position: static;
+			order: 2;
 			width: 100%;
 			height: auto;
-			min-height: 600px;
-			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: spacing(6);
 		}
 
 		&__path {
-			display: none; // Скрыть сложный путь на мобильных
+			position: static;
+			width: 100%;
+			max-width: 320px;
+			height: auto;
+			order: 2;
+
+			&-svg {
+				width: 100%;
+				height: auto;
+			}
 		}
 
 		&__markers {
-			display: none; // Скрыть маркеры на мобильных
+			display: none; // Скрываем маркеры на мобильных
 		}
 
 		&__steps {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			position: static;
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-direction: column;
 			gap: spacing(8);
-			padding: spacing(4);
+			order: 1;
 		}
 
 		&__step {
 			position: static !important;
-			width: auto !important;
+			width: 100% !important;
 			text-align: center !important;
-			padding: spacing(6);
-			background-color: color(white);
-			border-radius: border-radius(lg);
-			box-shadow: shadow(md);
+			padding: spacing(4);
+			background-color: rgba(color(primary), 0.05);
+			border-radius: 10px;
 
 			&-title {
-				font-size: font-size('xl');
-				margin-bottom: spacing(3);
+				font-size: font-size('2xl'); // 24px
+				line-height: 1.3;
+				margin-bottom: spacing(2);
+
+				&--multiline {
+					br {
+						display: none;
+					}
+				}
+			}
+
+			&-description {
+				font-size: font-size('lg'); // 18px
+			}
+		}
+	}
+}
+
+// Tablet: 768px - 899px
+@media (min-width: breakpoint('md')) and (max-width: calc(breakpoint('tablet') - 1px)) {
+	.workflow {
+		&__content {
+			height: 700px;
+		}
+
+		&__title {
+			top: 50px;
+			width: 80px;
+			height: 520px;
+
+			&-vertical {
+				font-size: font-size('6xl'); // 54px
+			}
+
+			&-decorative {
+				font-size: font-size('7xl'); // 68px
+				top: -15px;
+				left: -15px;
+			}
+		}
+
+		&__diagram {
+			top: 60px;
+			left: 120px;
+			width: 600px;
+			height: 580px;
+		}
+
+		&__markers {
+			top: -10px;
+			left: -5px;
+			width: 620px;
+			height: 600px;
+		}
+
+		&__marker {
+			width: 16px;
+			height: 16px;
+
+			&--step1 {
+				top: 0;
+				left: 0;
+			}
+
+			&--step2 {
+				top: 0;
+				left: 420px;
+			}
+
+			&--step3 {
+				top: 155px;
+				left: 240px;
+			}
+
+			&--step4 {
+				top: 155px;
+				left: 580px;
+			}
+
+			&--step5 {
+				top: 310px;
+				left: 240px;
+			}
+
+			&--step6 {
+				top: 310px;
+				left: 580px;
+			}
+
+			&--step7 {
+				top: 465px;
+				left: 0;
+			}
+
+			&--step8 {
+				top: 465px;
+				left: 420px;
+			}
+		}
+
+		&__step {
+			&--knowledge {
+				top: -50px;
+				left: -25px;
+				width: 160px;
+			}
+
+			&--briefing {
+				top: -50px;
+				left: 350px;
+				width: 150px;
+			}
+
+			&--prepayment {
+				top: 105px;
+				left: 110px;
+				width: 280px;
+			}
+
+			&--contract {
+				top: 105px;
+				left: 440px;
+				width: 300px;
+			}
+
+			&--approval {
+				top: 260px;
+				left: 130px;
+				width: 250px;
+			}
+
+			&--layout {
+				top: 250px;
+				left: 390px;
+				width: 400px;
+			}
+
+			&--delivery {
+				top: 410px;
+				left: -25px;
+				width: 120px;
+			}
+
+			&--payment {
+				top: 425px;
+				left: 330px;
+				width: 180px;
+			}
+
+			&-title {
+				font-size: font-size('xl'); // 20px
+				line-height: 1.4;
+
+				&--multiline {
+					line-height: 1.1;
+				}
+			}
+
+			&-description {
+				font-size: font-size('lg'); // 18px
+			}
+		}
+	}
+}
+
+// Tablet Large: 900px - 1023px
+@media (min-width: breakpoint('tablet')) and (max-width: calc(breakpoint('lg') - 1px)) {
+	.workflow {
+		&__content {
+			height: 750px;
+		}
+
+		&__title {
+			top: 70px;
+			width: 100px;
+			height: 580px;
+
+			&-vertical {
+				font-size: font-size('7xl'); // 68px
+			}
+
+			&-decorative {
+				font-size: font-size('8xl'); // 80px
+				top: -20px;
+				left: -20px;
+			}
+		}
+
+		&__diagram {
+			top: 80px;
+			left: 150px;
+			width: 700px;
+			height: 600px;
+		}
+
+		&__markers {
+			top: -10px;
+			left: -3px;
+			width: 720px;
+			height: 620px;
+		}
+
+		&__marker {
+			width: 18px;
+			height: 18px;
+
+			&--step1 {
+				top: 0;
+				left: 0;
+			}
+
+			&--step2 {
+				top: 0;
+				left: 480px;
+			}
+
+			&--step3 {
+				top: 170px;
+				left: 280px;
+			}
+
+			&--step4 {
+				top: 170px;
+				left: 680px;
+			}
+
+			&--step5 {
+				top: 340px;
+				left: 280px;
+			}
+
+			&--step6 {
+				top: 340px;
+				left: 680px;
+			}
+
+			&--step7 {
+				top: 510px;
+				left: 0;
+			}
+
+			&--step8 {
+				top: 510px;
+				left: 480px;
+			}
+		}
+
+		&__step {
+			&--knowledge {
+				top: -55px;
+				left: -28px;
+				width: 180px;
+			}
+
+			&--briefing {
+				top: -55px;
+				left: 400px;
+				width: 170px;
+			}
+
+			&--prepayment {
+				top: 115px;
+				left: 130px;
+				width: 320px;
+			}
+
+			&--contract {
+				top: 115px;
+				left: 500px;
+				width: 350px;
+			}
+
+			&--approval {
+				top: 285px;
+				left: 150px;
+				width: 280px;
+			}
+
+			&--layout {
+				top: 275px;
+				left: 460px;
+				width: 450px;
+			}
+
+			&--delivery {
+				top: 450px;
+				left: -28px;
+				width: 130px;
+			}
+
+			&--payment {
+				top: 465px;
+				left: 380px;
+				width: 200px;
+			}
+
+			&-title {
+				font-size: font-size('2xl'); // 24px
+				line-height: 1.5;
 
 				&--multiline {
 					line-height: 1.2;
@@ -405,43 +733,153 @@
 			}
 
 			&-description {
-				font-size: font-size('lg');
-				line-height: 1.4;
+				font-size: font-size('xl'); // 20px
 			}
 		}
 	}
 }
 
-@media (max-width: breakpoint(md)) {
+// Desktop: 1024px - 1279px
+@media (min-width: breakpoint('lg')) and (max-width: calc(breakpoint('xl') - 1px)) {
 	.workflow {
-		padding: spacing(8) 0;
+		&__content {
+			height: 780px;
+		}
 
 		&__title {
+			top: 85px;
+			width: 110px;
+			height: 610px;
+
 			&-vertical {
-				font-size: font-size('5xl');
-				transform: none;
+				font-size: font-size('8xl'); // 80px
 			}
 
 			&-decorative {
-				font-size: font-size('4xl');
-				transform: none;
+				font-size: font-size('9xl'); // 108px
 			}
 		}
 
-		&__steps {
-			grid-template-columns: 1fr;
-			gap: spacing(6);
+		&__diagram {
+			top: 95px;
+			left: 180px;
+			width: 850px;
+			height: 590px;
+		}
+
+		&__markers {
+			top: -11px;
+			left: -3px;
+			width: 870px;
+			height: 610px;
+		}
+
+		&__marker {
+			width: 20px;
+			height: 20px;
+
+			&--step1 {
+				top: 0;
+				left: 0;
+			}
+
+			&--step2 {
+				top: 0;
+				left: 500px;
+			}
+
+			&--step3 {
+				top: 185px;
+				left: 300px;
+			}
+
+			&--step4 {
+				top: 185px;
+				left: 750px;
+			}
+
+			&--step5 {
+				top: 370px;
+				left: 300px;
+			}
+
+			&--step6 {
+				top: 370px;
+				left: 750px;
+			}
+
+			&--step7 {
+				top: 555px;
+				left: 0;
+			}
+
+			&--step8 {
+				top: 555px;
+				left: 500px;
+			}
 		}
 
 		&__step {
-			padding: spacing(4);
+			&--knowledge {
+				top: -56px;
+				left: -28px;
+				width: 200px;
+			}
+
+			&--briefing {
+				top: -56px;
+				left: 420px;
+				width: 190px;
+			}
+
+			&--prepayment {
+				top: 130px;
+				left: 140px;
+				width: 340px;
+			}
+
+			&--contract {
+				top: 130px;
+				left: 540px;
+				width: 380px;
+			}
+
+			&--approval {
+				top: 315px;
+				left: 160px;
+				width: 300px;
+			}
+
+			&--layout {
+				top: 305px;
+				left: 480px;
+				width: 500px;
+			}
+
+			&--delivery {
+				top: 495px;
+				left: -28px;
+				width: 140px;
+			}
+
+			&--payment {
+				top: 510px;
+				left: 400px;
+				width: 220px;
+			}
 
 			&-title {
-				font-size: font-size('lg');
+				font-size: font-size('2xl'); // 24px
+				line-height: 1.6;
+
+				&--multiline {
+					line-height: 1.1;
+					margin-bottom: spacing(2);
+				}
 			}
 
 			&-description {
-				font-size: font-size('base');
+				font-size: font-size('2xl'); // 24px
 			}
 		}
 	}
