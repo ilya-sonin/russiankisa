@@ -1,6 +1,7 @@
 <template>
 	<div
 		v-if="isDev"
+		data-testid="section-dev-screen-size"
 		class="fixed bottom-4 left-4 bg-text-primary text-background px-3 py-2 rounded-md text-sm font-mono z-[9999] shadow-lg"
 	>
 		<span class="sm:hidden">xs</span>

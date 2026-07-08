@@ -1,5 +1,5 @@
 <template>
-	<section class="contact-section">
+	<section id="contacts" class="contact-section" data-testid="section-contact">
 		<div class="contact-section__container">
 			<div class="contact-section__title trig-slide-left trig-stagger-1" data-trig>
 				<div class="contact-section__title-main">СВЯЗЬ СО</div>
@@ -132,11 +132,11 @@
 		top: 64px;
 		width: 793px;
 		height: 108px;
-		font-family: 'Oranienbaum', serif;
+		font-family: font-family(primary);
 		font-size: 30px;
 		font-weight: 400;
 		line-height: 1.7777777777777777;
-		color: #000000;
+		color: color(text-primary);
 		margin: 0;
 	}
 
@@ -146,11 +146,11 @@
 		top: 200px;
 		width: 1040px;
 		height: 132px;
-		font-family: 'Disruptors Script', cursive;
+		font-family: font-family(decorative);
 		font-size: 54px;
 		font-weight: 400;
 		line-height: 0.8125;
-		color: #db2e28;
+		color: color(primary);
 		text-align: right;
 		margin: 0;
 		font-style: normal;
@@ -162,11 +162,11 @@
 		top: 352px;
 		width: 202px;
 		height: 41px;
-		font-family: 'Disruptors Script', cursive;
+		font-family: font-family(decorative);
 		font-size: 54px;
 		font-weight: 400;
 		line-height: 0.75;
-		color: #db2e28;
+		color: color(primary);
 		text-align: right;
 		font-style: normal;
 	}
@@ -224,11 +224,11 @@
 	}
 
 	&__qr-label {
-		font-family: 'Oranienbaum', serif;
+		font-family: font-family(primary);
 		font-size: 34px;
 		font-weight: 400;
 		line-height: 1.15;
-		color: #db2e28;
+		color: color(primary);
 		text-align: center;
 		margin-top: 6px;
 	}

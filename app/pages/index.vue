@@ -19,17 +19,6 @@ useSeoMeta({
 		<Workflow />
 		<Services />
 		<Portfolio />
-		<PortfolioCase2 />
-		<PortfolioCase3 />
-		<PortfolioCase4 />
-		<PortfolioCase5 />
-		<PortfolioCase6 />
-		<PortfolioCase7 />
-		<PortfolioCase8 />
-		<PortfolioCase9 />
-		<PortfolioCase10 />
-		<PortfolioCase11 />
-		<PortfolioCase12 />
 		<ContactSection />
 		<DevScreenSize />
 	</div>

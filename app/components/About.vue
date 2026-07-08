@@ -1,5 +1,5 @@
 <template>
-	<section id="about" class="about">
+	<section id="about" class="about" data-testid="section-about">
 		<div class="container">
 			<div class="about__content">
 				<div class="about__intro trig-fade-in trig-stagger-1" data-trig>

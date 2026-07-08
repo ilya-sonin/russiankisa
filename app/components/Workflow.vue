@@ -1,5 +1,5 @@
 <template>
-	<section id="workflow" class="workflow">
+	<section id="workflow" class="workflow" data-testid="section-workflow">
 		<div class="container">
 			<div class="workflow__content">
 				<div class="workflow__title trig-slide-left trig-stagger-1" data-trig>

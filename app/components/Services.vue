@@ -1,5 +1,5 @@
 <template>
-	<section id="services" class="services">
+	<section id="services" class="services" data-testid="section-services">
 		<div class="container">
 			<div class="services__content">
 				<div class="services__title trig-fade-in trig-stagger-1" data-trig>

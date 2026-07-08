@@ -1,5 +1,6 @@
 <template>
 	<header
+		data-testid="section-header"
 		class="fixed top-0 left-0 w-full transition-all duration-300 ease-in-out"
 		:class="{ 'overflow-hidden': !isMobileMenuOpen, 'z-[10000]': true }"
 	>
