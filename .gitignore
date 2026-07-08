@@ -31,3 +31,12 @@ public/uploads/
 .claudepoint
 claudepoint
 CLAUDE.md
+
+# Playwright
+playwright-report/
+test-results/
+/blob-report/
+playwright/.cache/
+tests/e2e/screenshots/
+tests/e2e/.auth/
+tests/e2e/videos/
