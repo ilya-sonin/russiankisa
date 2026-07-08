@@ -12,6 +12,7 @@
 		"typecheck": "nuxt prepare && vue-tsc -b --noEmit"
 	},
 	"dependencies": {
+		"gray-matter": "^4.0.3",
 		"nuxt": "^4.0.1",
 		"trig-js": "^4.2.0"
 	},

@@ -84,6 +84,8 @@ export default defineNuxtConfig({
 	},
 
 	runtimeConfig: {
+		adminPassword: process.env.ADMIN_PASSWORD ?? 'admin',
+		adminSecret: process.env.ADMIN_SECRET ?? 'russiankisa-dev-secret-change-me',
 		public: {
 			baseURL: process.env.BASE_URL || '/',
 		},

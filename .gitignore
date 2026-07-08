@@ -19,6 +19,9 @@ logs
 .fleet
 .idea
 
+# Uploaded images (admin-managed, not in git)
+public/uploads/
+
 # Local env files
 .env
 .env.*
