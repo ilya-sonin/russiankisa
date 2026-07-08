@@ -31,20 +31,12 @@ withDefaults(
 
 <style lang="scss" scoped>
 .vertical-title {
-	position: absolute;
-	width: 124px;
-	height: 674px;
+	display: inline-grid;
+	grid-auto-flow: column;
+	gap: spacing(2);
+	align-items: end;
+	justify-items: center;
 	z-index: 2;
-
-	&--left {
-		left: 0;
-		top: 79px;
-	}
-
-	&--right {
-		right: 0;
-		top: 79px;
-	}
 
 	&--rotated {
 		transform: rotate(180deg);
@@ -52,59 +44,50 @@ withDefaults(
 
 	&__decorative,
 	&__main {
-		position: absolute;
-		left: 0;
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
 		margin: 0;
 	}
 
 	&__decorative {
-		top: 0;
 		font-family: font-family(decorative);
-		font-size: font-size('6xl');
+		font-size: clamp(2.5rem, 5vw, 3.375rem);
 		line-height: 1.2;
 		color: color(primary);
 	}
 
 	&__main {
-		bottom: 0;
 		font-family: font-family(primary);
-		font-size: font-size('6xl');
-		line-height: 1.043;
+		font-size: clamp(2.5rem, 5vw, 3.375rem);
+		line-height: 1.05;
 		color: color(text-primary);
 	}
 
 	&--sm {
 		.vertical-title__decorative,
 		.vertical-title__main {
-			font-size: font-size('5xl');
+			font-size: clamp(2rem, 4vw, 2.5rem);
 		}
 	}
 
 	&--lg {
 		.vertical-title__decorative,
 		.vertical-title__main {
-			font-size: font-size('7xl');
+			font-size: clamp(3rem, 6vw, 4.25rem);
 		}
 	}
 }
 
 @media (max-width: calc(breakpoint('md') - 1px)) {
 	.vertical-title {
-		position: static;
-		width: auto;
-		height: auto;
 		transform: none;
 		text-align: center;
 
 		&__decorative,
 		&__main {
-			position: static;
 			display: inline;
 			writing-mode: initial;
 			text-orientation: initial;
-			font-size: font-size('4xl');
 		}
 	}
 }

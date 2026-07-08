@@ -1,20 +1,13 @@
 <template>
 	<div class="portfolio-section">
-		<PortfolioCaseLayout
-			v-for="item in portfolioCases"
-			:key="item.id"
-			:case-id="item.id"
-			:case-number="item.number"
-			:description="item.description"
-			:variant="item.variant.includes('cards') ? 'cards' : 'standard'"
-		>
-			<PortfolioCaseImages :item="item" />
-		</PortfolioCaseLayout>
+		<PortfolioCaseLayout v-for="item in cases" :key="item.id" :item="item" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { portfolioCases } from '~/data/portfolio'
+import type { PortfolioCase } from '~/types/site-content'
+
+defineProps<{ cases: PortfolioCase[] }>()
 </script>
 
 <style lang="scss" scoped>

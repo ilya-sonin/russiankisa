@@ -1,377 +1,136 @@
 <template>
 	<section id="services" class="services" data-testid="section-services">
 		<div class="container">
-			<div class="services__content">
+			<div class="services__layout">
 				<div class="services__title trig-fade-in trig-stagger-1" data-trig>
-					<div class="services__title-main">СПЕКТР</div>
-					<div class="services__title-decorative">УСЛУГ</div>
+					<h2 class="services__title-main">{{ content.title }}</h2>
+					<span class="services__title-accent">{{ content.titleAccent }}</span>
 				</div>
 
-				<div class="services__stars">
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--1 services-star-animation trig-stagger-1"
+				<ul class="services__list">
+					<li
+						v-for="(item, index) in content.items"
+						:key="item.id"
+						class="services__item services-card-animation"
+						:class="`trig-stagger-${(index % 8) + 2}`"
 						data-trig
-					/>
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--2 services-star-animation trig-stagger-2"
-						data-trig
-					/>
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--3 services-star-animation trig-stagger-3"
-						data-trig
-					/>
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--4 services-star-animation trig-stagger-4"
-						data-trig
-					/>
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--5 services-star-animation trig-stagger-5"
-						data-trig
-					/>
-					<img
-						src="/images/star-icon.svg"
-						alt=""
-						class="services__star services__star--6 services-star-animation trig-stagger-6"
-						data-trig
-					/>
-				</div>
-
-				<div class="services__list">
-					<div class="services__item services__item--web services-card-animation trig-stagger-2" data-trig>
-						<h3 class="services__item-title">ВЕБ-ДИЗАЙН</h3>
-						<p class="services__item-description">
-							создание лэндингов и многостраничных сайтов, ориентированных на
-							удобство пользователя и визуальную привлекательность
-						</p>
-					</div>
-
-					<div class="services__item services__item--print services-card-animation trig-stagger-3" data-trig>
-						<h3 class="services__item-title services__item-title--multiline">
-							ДИЗАЙН<br />ПОЛИГРАФИИ
-						</h3>
-						<p class="services__item-description">
-							разработка запоминающихся макетов для печатных и цифровых
-							материалов: постеров, афиш, флаеров, визиткок, пригласительных
-						</p>
-					</div>
-
-					<div class="services__item services__item--presentations services-card-animation trig-stagger-4" data-trig>
-						<h3 class="services__item-title">ПРЕЗЕНТАЦИИ</h3>
-						<p class="services__item-description">
-							оформление презентаций для бизнеса, обучения и личных проектов,
-							грамотное структурирование информации, акцент на визуализации
-						</p>
-					</div>
-
-					<div class="services__item services__item--banners services-card-animation trig-stagger-5" data-trig>
-						<h3 class="services__item-title services__item-title--multiline">
-							ДИЗАЙН<br />БАННЕРОВ
-						</h3>
-						<p class="services__item-description">
-							разработка рекламных и информационных баннеров для сайтов и
-							социальных сетей под любые задачи и форматы
-						</p>
-					</div>
-
-					<div class="services__item services__item--guides services-card-animation trig-stagger-6" data-trig>
-						<h3 class="services__item-title services__item-title--multiline">
-							ЧЕК-ЛИСТЫ<br />И ГАЙДЫ
-						</h3>
-						<p class="services__item-description">
-							создание наглядных чек-листов, памяток, инструкций и мини-гайдов,
-							которые удобно использовать в работе и делиться с аудиторией
-						</p>
-					</div>
-				</div>
+					>
+						<img src="/images/star-icon.svg" alt="" class="services__star services-star-animation" data-trig />
+						<h3 class="services__item-title" :class="{ 'services__item-title--multiline': item.titleMultiline }" v-html="item.title" />
+						<p class="services__item-description">{{ item.description }}</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 </template>
 
+<script setup lang="ts">
+import type { ServicesContent } from '~/types/site-content'
+
+defineProps<{ content: ServicesContent }>()
+</script>
+
 <style lang="scss" scoped>
 .services {
-	min-height: 100vh;
+	padding: clamp(4rem, 9vw, 7rem) 0;
 	background-color: color(background);
-	padding: spacing(16) 0;
-	position: relative;
 
-	&__content {
-		position: relative;
-		height: 832px; // Высота из дизайна
-		width: 100%;
+	&__layout {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: clamp(2rem, 6vw, 5rem);
+		align-items: start;
 	}
 
 	&__title {
-		position: absolute;
-		top: 91px;
-		right: 0;
-		width: 124px;
-		height: 618px;
-
-		&-main {
-			font-family: font-family(primary);
-			font-size: 7.4rem; // 118px
-			line-height: 1.043;
-			color: color(text-primary);
-			margin: 0;
-			writing-mode: vertical-rl;
-			text-orientation: mixed;
-			text-align: center;
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-
-		&-decorative {
-			font-family: font-family(decorative);
-			font-size: 7.4rem; // 118px
-			line-height: 1.2;
-			margin: 0;
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			writing-mode: vertical-rl;
-			text-orientation: mixed;
-			color: color(primary);
-		}
+		display: grid;
+		justify-items: center;
+		line-height: 1;
 	}
 
-	&__stars {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
-		pointer-events: none;
+	&__title-main,
+	&__title-accent {
+		margin: 0;
+		font-weight: font-weight(normal);
 	}
 
-	&__star {
-		position: absolute;
-		width: 45px;
-		height: 42px;
+	&__title-main {
+		font-family: font-family(primary);
+		font-size: clamp(3rem, 8vw, 7.4rem);
+	}
 
-		// Позиции звездочек согласно дизайну
-		&--1 {
-			top: 30px;
-			left: 622px;
-		}
-
-		&--2 {
-			top: 206px;
-			left: 622px;
-		}
-
-		&--3 {
-			top: 382px;
-			left: 622px;
-		}
-
-		&--4 {
-			top: 558px;
-			left: 622px;
-		}
-
-		&--5 {
-			top: 734px;
-			left: 622px;
-		}
-
-		&--6 {
-			top: 910px;
-			left: 622px;
-		}
+	&__title-accent {
+		font-family: font-family(decorative);
+		font-size: clamp(3rem, 8vw, 7.4rem);
+		color: color(primary);
 	}
 
 	&__list {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
+		display: grid;
+		gap: clamp(1rem, 3vw, 2rem);
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 
 	&__item {
-		position: absolute;
-		width: 1084px; // Уменьшил для контейнера 1280px
-		height: 128px;
-		left: 21px;
+		display: grid;
+		grid-template-columns: auto minmax(9rem, 0.35fr) minmax(0, 1fr);
+		gap: clamp(0.75rem, 2vw, 2rem);
+		align-items: center;
+		padding: clamp(1rem, 2.5vw, 2rem);
+		border-radius: border-radius(xl);
+		background: linear-gradient(90deg, rgba(color(white), 0.74), rgba(color(white), 0));
+	}
 
-		&--web {
-			top: 75px;
+	&__star {
+		width: clamp(1.75rem, 4vw, 2.8rem);
+		aspect-ratio: 45 / 42;
+	}
+
+	&__item-title {
+		font-family: font-family(primary);
+		font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+		font-weight: font-weight(normal);
+		line-height: 1.05;
+		color: color(primary);
+		margin: 0;
+	}
+
+	&__item-description {
+		font-family: font-family(primary);
+		font-size: clamp(1.125rem, 2.8vw, 2.25rem);
+		line-height: 1.45;
+		color: color(text-primary);
+		margin: 0;
+	}
+}
+
+@media (max-width: calc(breakpoint(md) - 1px)) {
+	.services {
+		&__item {
+			grid-template-columns: auto 1fr;
 		}
 
-		&--print {
-			top: 251px;
-		}
-
-		&--presentations {
-			top: 427px;
-		}
-
-		&--banners {
-			top: 603px;
-		}
-
-		&--guides {
-			top: 779px;
-		}
-
-		&-title {
-			font-family: font-family(primary);
-			font-size: 2.5rem; // 40px
-			line-height: 1.15;
-			color: color(primary);
-			margin: 0 0 spacing(2) 0;
-			position: absolute;
-			top: 41px;
-			left: 0;
-			width: 248px;
-
-			&--multiline {
-				line-height: 0.875;
-				top: 25px;
-				height: 78px;
-			}
-		}
-
-		&-description {
-			font-family: font-family(primary);
-			font-size: font-size('3xl'); // 36px
-			line-height: 1.778;
-			color: color(text-primary);
-			margin: 0;
-			position: absolute;
-			top: 0;
-			left: 248px;
-			width: 874px; // Уменьшил для контейнера 1280px (1084-210=874)
-			height: 128px;
+		&__item-description {
+			grid-column: 1 / -1;
 		}
 	}
 }
 
-// Адаптивность
-@media (max-width: breakpoint(lg)) {
+@media (min-width: breakpoint(lg)) {
 	.services {
-		&__content {
-			height: auto;
-			min-height: 800px;
+		&__layout {
+			grid-template-columns: minmax(0, 1fr) auto;
 		}
 
 		&__title {
-			position: static;
-			width: 100%;
-			height: auto;
-			text-align: center;
-			margin-bottom: spacing(8);
-
-			&-main {
-				font-size: font-size('6xl');
-				writing-mode: initial;
-				text-orientation: initial;
-				display: inline;
-				margin-right: spacing(2);
-				position: static;
-			}
-
-			&-decorative {
-				font-size: font-size('6xl');
-				writing-mode: initial;
-				text-orientation: initial;
-				display: inline;
-				position: static;
-			}
-		}
-
-		&__stars {
-			display: none; // Скрыть звездочки на мобильных
-		}
-
-		&__list {
-			position: static;
-			display: flex;
-			flex-direction: column;
-			gap: spacing(8);
-			padding: spacing(4) 0;
-		}
-
-		&__item {
-			position: static !important;
-			width: 100% !important;
-			height: auto !important;
-			left: auto !important;
-			top: auto !important;
-			padding: spacing(6);
-			background-color: color(white);
-			border-radius: border-radius(lg);
-			box-shadow: shadow(md);
-
-			&-title {
-				position: static !important;
-				width: 100% !important;
-				font-size: font-size('2xl');
-				margin-bottom: spacing(4);
-				text-align: center;
-
-				&--multiline {
-					line-height: 1.2;
-					top: auto !important;
-					height: auto !important;
-				}
-			}
-
-			&-description {
-				position: static !important;
-				width: 100% !important;
-				left: auto !important;
-				top: auto !important;
-				height: auto !important;
-				font-size: font-size('lg');
-				line-height: 1.6;
-				text-align: center;
-			}
-		}
-	}
-}
-
-@media (max-width: breakpoint(md)) {
-	.services {
-		padding: spacing(8) 0;
-
-		&__title {
-			&-main {
-				font-size: font-size('5xl');
-			}
-
-			&-decorative {
-				font-size: font-size('5xl');
-			}
-		}
-
-		&__list {
-			gap: spacing(6);
-		}
-
-		&__item {
-			padding: spacing(4);
-
-			&-title {
-				font-size: font-size('xl');
-				margin-bottom: spacing(3);
-			}
-
-			&-description {
-				font-size: font-size('base');
-			}
+			position: sticky;
+			top: spacing(24);
+			order: 2;
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
 		}
 	}
 }
