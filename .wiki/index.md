@@ -41,7 +41,8 @@ LLM Wiki этого проекта по паттерну Karpathy (llm-wiki v3.1
 
 - [[concepts/cms-admin-pending]] — будущая админка, требования
 - [[concepts/vertical-rl-text]] — фирменный приём с вертикальным текстом
-- [[concepts/case-layout-duplication]] — 11 одинаковых секций, проблема
+- [[concepts/case-layout-duplication]] — 11 копий
+- [[concepts/cms-content-schema]] — контракт данных для админки
 
 ## 5. Проблемы / баги
 
@@ -60,7 +61,8 @@ LLM Wiki этого проекта по паттерну Karpathy (llm-wiki v3.1
 ## 7. Сессии / история
 
 - [[sessions/2026-07-08-init]] — первая сессия: разведка + создание wiki
-- [[sessions/2026-07-08-refactor]] — codex-рефакторинг (in-progress)
+- [[sessions/2026-07-08-refactor]] — codex-рефакторинг (completed)
+- [[sessions/2026-07-08-cleanup]] — codex радикальная зачистка (in-progress)
 
 ---
 
