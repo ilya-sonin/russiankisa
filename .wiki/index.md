@@ -62,7 +62,8 @@ LLM Wiki этого проекта по паттерну Karpathy (llm-wiki v3.1
 
 - [[sessions/2026-07-08-init]] — первая сессия: разведка + создание wiki
 - [[sessions/2026-07-08-refactor]] — codex-рефакторинг (completed)
-- [[sessions/2026-07-08-cleanup]] — codex радикальная зачистка (in-progress)
+- [[sessions/2026-07-08-cleanup]] — codex радикальная зачистка (completed)
+- [[sessions/2026-07-08-admin]] — CMS админка v1 (in-progress)
 
 ---
 
