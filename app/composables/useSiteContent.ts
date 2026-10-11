@@ -1,17 +1,7 @@
-/**
- * Composable: загружает SiteContent.
- *
- * Использует $fetch / useRequestFetch. На SSR (prerender) Nitro делает
- * internal call без HTTP-оверхеда — данные доступны до первого render.
- * На клиенте (CSR) после hydration useAsyncData использует сериализованный
- * payload — без дополнительных HTTP-запросов.
- */
+/** Reads the content embedded in the app at build time. */
 import type { SiteContent } from '~/types/site-content'
 
-export async function useSiteContent() {
-	const { data: siteContent } = await useAsyncData<SiteContent>(
-		'site-content',
-		() => $fetch<SiteContent>('/api/content'),
-	)
-	return { siteContent }
+export function useSiteContent() {
+	const { siteContent } = useAppConfig()
+	return { siteContent: siteContent as SiteContent }
 }

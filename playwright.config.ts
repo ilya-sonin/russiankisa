@@ -3,13 +3,10 @@ import { defineConfig, devices } from '@playwright/test'
 /**
  * Playwright config for russiankisa E2E tests.
  *
- * Two flavours:
- *   1. Public projects (desktop / tablet / mobile): anonymous browser, run against the prerendered production build.
- *   2. Admin project (desktop only): reuses an admin auth cookie from tests/e2e/.auth/admin.json.
+ * Public projects run against the generated static build at three viewport sizes.
  *
- * webServer command performs `pnpm build` first so the served bundle matches production
- * (including Nitro prerender of `/`). Uses port 3100 because Docker Desktop's backend
- * already binds 3000 on this machine. Override with E2E_PORT if you ever need to.
+ * webServer builds the static site and serves `dist` with Python's static file server.
+ * Uses port 3100; override with E2E_PORT if needed.
  */
 const PORT = Number(process.env.E2E_PORT ?? 3100)
 
@@ -23,14 +20,17 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: `http://127.0.0.1:${PORT}`,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
-    video: 'retain-on-failure',
+    video: process.env.PLAYWRIGHT_EXECUTABLE_PATH ? 'off' : 'retain-on-failure',
+    launchOptions: process.env.PLAYWRIGHT_EXECUTABLE_PATH
+      ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH }
+      : {},
   },
 
   projects: [
-    // Public site — anonymous browsers across 3 viewports.
+    // Public site across 3 viewports.
     {
       name: 'desktop-chromium',
       testMatch: /public\/.*\.spec\.ts$/,
@@ -55,27 +55,11 @@ export default defineConfig({
       },
     },
 
-    // Admin — setup project first runs the auth flow and saves storageState.
-    {
-      name: 'admin-setup',
-      testMatch: /.*\.setup\.ts$/,
-      use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 832 } },
-    },
-    {
-      name: 'admin-desktop',
-      dependencies: ['admin-setup'],
-      testMatch: /admin\/.*\.spec\.ts$/,
-      use: {
-        ...devices['Desktop Chrome'],
-        viewport: { width: 1280, height: 832 },
-        storageState: 'tests/e2e/.auth/admin.json',
-      },
-    },
   ],
 
   webServer: {
-    command: `pnpm run build && NITRO_PORT=${PORT} node .output/server/index.mjs`,
-    url: `http://localhost:${PORT}`,
+    command: `corepack pnpm run build && python3 -m http.server ${PORT} --bind 127.0.0.1 --directory dist`,
+    url: `http://127.0.0.1:${PORT}`,
     timeout: 180_000,
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',

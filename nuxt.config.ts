@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { loadSiteContent } from './scripts/load-site-content'
+
+const siteContent = loadSiteContent()
+
 export default defineNuxtConfig({
 	compatibilityDate: '2025-08-02',
 	devtools: { enabled: false },
+	appConfig: {
+		siteContent: siteContent as any,
+	} as any,
 
 	modules: ['@nuxtjs/tailwindcss'],
 
@@ -10,6 +17,7 @@ export default defineNuxtConfig({
 	},
 
 	nitro: {
+		preset: 'static',
 		prerender: {
 			routes: ['/'],
 		},
@@ -77,11 +85,4 @@ export default defineNuxtConfig({
 		analyze: false,
 	},
 
-	runtimeConfig: {
-		adminPassword: process.env.ADMIN_PASSWORD ?? 'admin',
-		adminSecret: process.env.ADMIN_SECRET ?? 'russiankisa-dev-secret-change-me',
-		public: {
-			baseURL: process.env.BASE_URL || '/',
-		},
-	},
 })

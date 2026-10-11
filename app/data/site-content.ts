@@ -1,4 +1,4 @@
-import type { PortfolioCase, SiteContent } from '~/types/site-content'
+import type { PortfolioCase, SiteContent } from '../types/site-content'
 
 const portfolio: PortfolioCase[] = [
 	{
