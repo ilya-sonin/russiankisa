@@ -14,19 +14,19 @@ socials:
     label: ВКонтакте
     url: 'https://vk.com/russiankisa'
     qrCode:
-      src: /images/qr-vk.png
+      src: /images/qr-vk.webp
       alt: QR-код ВКонтакте
   - id: telegram
     label: Telegram
     url: 'https://t.me/kt_mch'
     qrCode:
-      src: /images/qr-telegram.png
+      src: /images/qr-telegram.webp
       alt: QR-код Telegram
   - id: instagram
     label: Instagram
     url: 'https://www.instagram.com/kt.mch/'
     qrCode:
-      src: /images/qr-instagram.png
+      src: /images/qr-instagram.webp
       alt: QR-код Instagram
 ---
 

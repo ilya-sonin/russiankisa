@@ -7,10 +7,10 @@ status: 'published'
 layout:
   type: 'two-devices'
   primary:
-    src: '/images/case1-mac.png'
+    src: '/images/case1-mac.webp'
     alt: 'Mac Studio - дизайн проект'
   secondary:
-    src: '/images/case1-iphone.png'
+    src: '/images/case1-iphone.webp'
     alt: 'iPhone - мобильная версия'
 ---
 

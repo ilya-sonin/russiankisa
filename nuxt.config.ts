@@ -70,12 +70,6 @@ export default defineNuxtConfig({
 					crossorigin: '',
 				},
 			],
-			script: [
-				{
-					src: 'https://cdn.jsdelivr.net/npm/trig-js/src/trig.min.js',
-					defer: true,
-				},
-			],
 		},
 	},
 

@@ -38,14 +38,14 @@ withDefaults(
 
 	&__text {
 		font-family: font-family(primary);
-		font-size: font-size('xl');
+		font-size: clamp(1rem, 2vw, font-size('xl'));
 		line-height: 1.8;
 		color: color(text-primary);
 	}
 
 	&__number {
 		font-family: font-family(decorative);
-		font-size: font-size('3xl');
+		font-size: clamp(1.6rem, 3vw, font-size('3xl'));
 		line-height: 1;
 		color: color(primary);
 	}

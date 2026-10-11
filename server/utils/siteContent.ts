@@ -12,6 +12,23 @@ import matter from 'gray-matter'
 import type { SiteContent, PortfolioCase } from '~/types/site-content'
 import { siteContent as fallback } from '~/data/site-content'
 
+const portfolioOrder = [
+	'yudaev-school-desktop-mobile',
+	'yudaev-school-tablet',
+	'first-interface-mobile-tablet',
+	'figma-animation-tablet',
+	'figma-animation-ipad',
+	'site-from-scratch',
+	'retro-pixel-project',
+	'navigation-tablets',
+	'visual-programming-platform',
+	'valentine-coupons-front',
+	'valentine-coupons-back',
+	'moodboard-business-cards',
+] as const
+
+const portfolioOrderMap = new Map<string, number>(portfolioOrder.map((id, index) => [id, index]))
+
 async function readContentFile<T = any>(path: string): Promise<T | null> {
 	try {
 		const fullPath = resolve(process.cwd(), 'content', `${path}.md`)
@@ -53,17 +70,23 @@ export async function loadSiteContent(): Promise<SiteContent> {
 		readContentDir<any>('portfolio'),
 	])
 
-	const portfolio: PortfolioCase[] = portfolioFiles.map(f => ({
-		id: f.id,
-		number: f.number ?? 0,
-		title: f.title ?? '',
-		description: f.description ?? '',
-		images: f.images ?? [],
-		layout: f.layout,
-		status: f.status ?? 'published',
-	}))
+	const portfolio: PortfolioCase[] = portfolioFiles
+		.filter(f => f.status !== 'draft' && !String(f.id ?? '').startsWith('test-'))
+		.map(f => ({
+			id: f.id,
+			number: f.number ?? 0,
+			title: f.title ?? '',
+			description: f.description ?? '',
+			images: f.images ?? [],
+			layout: f.layout,
+			status: f.status ?? 'published',
+		}))
 
-	portfolio.sort((a, b) => a.number - b.number || a.id.localeCompare(b.id))
+	portfolio.sort((a, b) => {
+		const orderA = portfolioOrderMap.get(a.id) ?? Number.MAX_SAFE_INTEGER
+		const orderB = portfolioOrderMap.get(b.id) ?? Number.MAX_SAFE_INTEGER
+		return orderA - orderB || a.number - b.number || a.id.localeCompare(b.id)
+	})
 
 	return {
 		header: header ?? fallback.header,

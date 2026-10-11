@@ -7,7 +7,7 @@ status: 'published'
 layout:
   type: 'single'
   image:
-    src: '/images/case5-ipad-large.png'
+    src: '/images/case5-ipad-large.webp'
     alt: 'iPad Mini - крупный план анимации'
 ---
 

@@ -7,7 +7,7 @@ status: 'published'
 layout:
   type: 'single'
   image:
-    src: '/images/case2-tablet.png'
+    src: '/images/case2-tablet.webp'
     alt: 'Galaxy Tab S8 Ultra - дизайн проект'
 ---
 

@@ -8,13 +8,13 @@ const portfolio: PortfolioCase[] = [
 		description:
 			'Свои первые работы я осуществила благодаря интенсиву Yudaev.School, где впервые познакомилась с Figma и её функционалом.',
 		images: [
-			{ src: '/images/case1-mac.png', alt: 'Mac Studio - дизайн проект' },
-			{ src: '/images/case1-iphone.png', alt: 'iPhone - мобильная версия' },
+			{ src: '/images/case1-mac.webp', alt: 'Mac Studio - дизайн проект' },
+			{ src: '/images/case1-iphone.webp', alt: 'iPhone - мобильная версия' },
 		],
 		layout: {
 			type: 'two-devices',
-			primary: { src: '/images/case1-mac.png', alt: 'Mac Studio - дизайн проект' },
-			secondary: { src: '/images/case1-iphone.png', alt: 'iPhone - мобильная версия' },
+			primary: { src: '/images/case1-mac.webp', alt: 'Mac Studio - дизайн проект' },
+			secondary: { src: '/images/case1-iphone.webp', alt: 'iPhone - мобильная версия' },
 		},
 		status: 'published',
 	},
@@ -24,8 +24,8 @@ const portfolio: PortfolioCase[] = [
 		title: 'Yudaev School: tablet',
 		description:
 			'Свои первые работы я осуществила благодаря интенсиву Yudaev.School, где впервые познакомилась с Figma и её функционалом.',
-		images: [{ src: '/images/case2-tablet.png', alt: 'Galaxy Tab S8 Ultra - дизайн проект' }],
-		layout: { type: 'single', image: { src: '/images/case2-tablet.png', alt: 'Galaxy Tab S8 Ultra - дизайн проект' } },
+		images: [{ src: '/images/case2-tablet.webp', alt: 'Galaxy Tab S8 Ultra - дизайн проект' }],
+		layout: { type: 'single', image: { src: '/images/case2-tablet.webp', alt: 'Galaxy Tab S8 Ultra - дизайн проект' } },
 		status: 'published',
 	},
 	{
@@ -34,13 +34,13 @@ const portfolio: PortfolioCase[] = [
 		title: 'Первый самостоятельный интерфейс',
 		description: 'Моя первая самостоятельная разработка интерфейса сайта, выполненная в рамках интенсива.',
 		images: [
-			{ src: '/images/case3-iphone.png', alt: 'iPhone 13 Pro - мобильная версия' },
-			{ src: '/images/case3-ipad.png', alt: 'iPad Mini - планшетная версия' },
+			{ src: '/images/case3-iphone.webp', alt: 'iPhone 13 Pro - мобильная версия' },
+			{ src: '/images/case3-ipad.webp', alt: 'iPad Mini - планшетная версия' },
 		],
 		layout: {
 			type: 'two-devices',
-			primary: { src: '/images/case3-ipad.png', alt: 'iPad Mini - планшетная версия' },
-			secondary: { src: '/images/case3-iphone.png', alt: 'iPhone 13 Pro - мобильная версия' },
+			primary: { src: '/images/case3-ipad.webp', alt: 'iPad Mini - планшетная версия' },
+			secondary: { src: '/images/case3-iphone.webp', alt: 'iPhone 13 Pro - мобильная версия' },
 		},
 		status: 'published',
 	},
@@ -49,8 +49,8 @@ const portfolio: PortfolioCase[] = [
 		number: 2,
 		title: 'Анимация в Figma: планшет',
 		description: 'Второй интенсивный курс от Yudaev.School был посвящён работе с анимацией в Figma.',
-		images: [{ src: '/images/case4-tablet.png', alt: 'Galaxy Tab S8 Ultra - анимация в Figma' }],
-		layout: { type: 'single', image: { src: '/images/case4-tablet.png', alt: 'Galaxy Tab S8 Ultra - анимация в Figma' } },
+		images: [{ src: '/images/case4-tablet.webp', alt: 'Galaxy Tab S8 Ultra - анимация в Figma' }],
+		layout: { type: 'single', image: { src: '/images/case4-tablet.webp', alt: 'Galaxy Tab S8 Ultra - анимация в Figma' } },
 		status: 'published',
 	},
 	{
@@ -58,8 +58,8 @@ const portfolio: PortfolioCase[] = [
 		number: 2,
 		title: 'Анимация в Figma: крупный план',
 		description: 'Второй интенсивный курс от Yudaev.School был посвящён работе с анимацией в Figma.',
-		images: [{ src: '/images/case5-ipad-large.png', alt: 'iPad Mini - крупный план анимации' }],
-		layout: { type: 'single', image: { src: '/images/case5-ipad-large.png', alt: 'iPad Mini - крупный план анимации' } },
+		images: [{ src: '/images/case5-ipad-large.webp', alt: 'iPad Mini - крупный план анимации' }],
+		layout: { type: 'single', image: { src: '/images/case5-ipad-large.webp', alt: 'iPad Mini - крупный план анимации' } },
 		status: 'published',
 	},
 	{
@@ -68,8 +68,8 @@ const portfolio: PortfolioCase[] = [
 		title: 'Сайт с нуля',
 		description:
 			'На сегодняшний день моей гордостью и любимой работой является проект сайта, созданный мной<br /> с нуля: начиная от визуала и заканчивая лого.',
-		images: [{ src: '/images/case6-mac.png', alt: 'Mac Studio - проект сайта с нуля' }],
-		layout: { type: 'single', image: { src: '/images/case6-mac.png', alt: 'Mac Studio - проект сайта с нуля' } },
+		images: [{ src: '/images/case6-mac.webp', alt: 'Mac Studio - проект сайта с нуля' }],
+		layout: { type: 'single', image: { src: '/images/case6-mac.webp', alt: 'Mac Studio - проект сайта с нуля' } },
 		status: 'published',
 	},
 	{
@@ -79,7 +79,7 @@ const portfolio: PortfolioCase[] = [
 		description:
 			'О проекте:<br /> дизайн сайта выполнен в стиле 1990–2000-х годов<br /> с использованием пиксельной графики — характерного<br />визуального языка той эпохи. Он отсылает ко времени<br /> первых персональных компьютеров и ранних<br /> веб-сайтов, когда изображения создавались<br /> из ярких, чётких пикселей, а интерфейсы отличались<br /> простой геометрией и насыщенными цветами.<br /> Такой ретро-стиль создаёт атмосферу ностальгии<br /> и подчёркивает уникальность проекта, объединяя<br /> современный подход с духом цифрового прошлого.',
 		images: [
-			{ src: '/images/case7-iphone.png', alt: 'iPhone 16 Pro - ретро-проект' },
+			{ src: '/images/case7-iphone.webp', alt: 'iPhone 16 Pro - ретро-проект' },
 			{ src: '/images/pixel-image-3.svg', alt: 'Пиксельная графика 1' },
 			{ src: '/images/pixel-image-2.svg', alt: 'Пиксельная графика 2' },
 			{ src: '/images/pixel-image-1.svg', alt: 'Пиксельная графика 3' },
@@ -95,13 +95,13 @@ const portfolio: PortfolioCase[] = [
 		description:
 			'В проекте уделено особое внимание удобству и интуитивной навигации, чтобы пользователь легко ориентировался и получал удовольствие от взаимодействия с сайтом.',
 		images: [
-			{ src: '/images/case8-tablet-left.png', alt: 'Galaxy Tab S8 Ultra - левая часть интерфейса' },
-			{ src: '/images/case8-tablet-right.png', alt: 'Планшет - правая часть интерфейса' },
+			{ src: '/images/case8-tablet-left.webp', alt: 'Galaxy Tab S8 Ultra - левая часть интерфейса' },
+			{ src: '/images/case8-tablet-right.webp', alt: 'Планшет - правая часть интерфейса' },
 		],
 		layout: {
 			type: 'two-devices',
-			primary: { src: '/images/case8-tablet-left.png', alt: 'Galaxy Tab S8 Ultra - левая часть интерфейса' },
-			secondary: { src: '/images/case8-tablet-right.png', alt: 'Планшет - правая часть интерфейса' },
+			primary: { src: '/images/case8-tablet-left.webp', alt: 'Galaxy Tab S8 Ultra - левая часть интерфейса' },
+			secondary: { src: '/images/case8-tablet-right.webp', alt: 'Планшет - правая часть интерфейса' },
 		},
 		status: 'published',
 	},
@@ -111,8 +111,8 @@ const portfolio: PortfolioCase[] = [
 		title: 'Визуальное программирование',
 		description:
 			'Особое внимание уделено визуальному программированию и творческому контенту, что делает сайт не просто визиткой, а живой платформой для демонстрации идей и проектов.',
-		images: [{ src: '/images/case9-ipad-large.png', alt: 'iPad Mini - визуальное программирование' }],
-		layout: { type: 'single', image: { src: '/images/case9-ipad-large.png', alt: 'iPad Mini - визуальное программирование' } },
+		images: [{ src: '/images/case9-ipad-large.webp', alt: 'iPad Mini - визуальное программирование' }],
+		layout: { type: 'single', image: { src: '/images/case9-ipad-large.webp', alt: 'iPad Mini - визуальное программирование' } },
 		status: 'published',
 	},
 	{
@@ -122,7 +122,7 @@ const portfolio: PortfolioCase[] = [
 		description:
 			'Купоны желаний ко Дню святого Валентина — серия печатных материалов для романтических сюрпризов второй половинке. В проекте я создала дизайн открыток с тёплыми иллюстрациями<br />и лаконичной типографикой, чтобы подарить любимым маленькое исполнение мечты.',
 		images: Array.from({ length: 8 }, (_, index) => ({
-			src: `/images/card-${index + 1}.png`,
+			src: `/images/card-${index + 1}.webp`,
 			alt: `Купон желаний ${index + 1}`,
 		})),
 		layout: { type: 'cards-grid', columns: 4, rows: 2 },
@@ -135,7 +135,7 @@ const portfolio: PortfolioCase[] = [
 		description:
 			'Купоны желаний ко Дню святого Валентина — серия печатных материалов для романтических сюрпризов второй половинке. В проекте я создала дизайн открыток с тёплыми иллюстрациями<br />и лаконичной типографикой, чтобы подарить любимым маленькое исполнение мечты.',
 		images: Array.from({ length: 8 }, (_, index) => ({
-			src: `/images/card-back-${index + 1}.png`,
+			src: `/images/card-back-${index + 1}.webp`,
 			alt: `Купон желаний - обратная сторона ${index + 1}`,
 		})),
 		layout: { type: 'cards-grid', columns: 4, rows: 2 },
@@ -147,16 +147,16 @@ const portfolio: PortfolioCase[] = [
 		title: 'Мудборд и визитки',
 		description: 'Мудборд и визитная карточка компании - проект,<br /> выполненный в рамках обучения в центре АЗы.',
 		images: [
-			{ src: '/images/moodboard-main.png', alt: 'Мудборд компании' },
-			{ src: '/images/business-card-2.png', alt: 'Визитная карточка - вариант 1' },
-			{ src: '/images/business-card-1.png', alt: 'Визитная карточка - вариант 2' },
+			{ src: '/images/moodboard-main.webp', alt: 'Мудборд компании' },
+			{ src: '/images/business-card-2.webp', alt: 'Визитная карточка - вариант 1' },
+			{ src: '/images/business-card-1.webp', alt: 'Визитная карточка - вариант 2' },
 		],
 		layout: {
 			type: 'business-cards',
-			main: { src: '/images/moodboard-main.png', alt: 'Мудборд компании' },
+			main: { src: '/images/moodboard-main.webp', alt: 'Мудборд компании' },
 			variants: [
-				{ src: '/images/business-card-2.png', alt: 'Визитная карточка - вариант 1' },
-				{ src: '/images/business-card-1.png', alt: 'Визитная карточка - вариант 2' },
+				{ src: '/images/business-card-2.webp', alt: 'Визитная карточка - вариант 1' },
+				{ src: '/images/business-card-1.webp', alt: 'Визитная карточка - вариант 2' },
 			],
 		},
 		status: 'published',
@@ -181,14 +181,14 @@ export const siteContent: SiteContent = {
 		decorativeTitle: 'Творческое',
 		ctaText: 'СМОТРЕТЬ РАБОТЫ',
 		ctaTarget: '#portfolio',
-		image: { src: '/images/hero-image.png', alt: 'Creative Portfolio' },
+		image: { src: '/images/hero-image.webp', alt: 'Creative Portfolio' },
 	},
 	about: {
 		intro: 'Привет и добро пожаловать в мой творческий уголок! Меня зовут Екатерина, превращаю визуальный код в искусство.',
 		introAccent: 'я - графический и веб-дизайнер',
 		title: 'КТО',
 		titleAccent: 'Я',
-		photo: { src: '/images/about-photo.png', alt: 'Екатерина - графический и веб-дизайнер' },
+		photo: { src: '/images/about-photo.webp', alt: 'Екатерина - графический и веб-дизайнер' },
 		decorativeTexts: [
 			'работа с визуальными образами для печатных медиа',
 			'создание удобных и красивых цифровых интерфейсов',
@@ -232,10 +232,10 @@ export const siteContent: SiteContent = {
 		titleAccent: 'УСЛУГ',
 		items: [
 			{ id: 'web', title: 'ВЕБ-ДИЗАЙН', description: 'создание лэндингов и многостраничных сайтов, ориентированных на удобство пользователя и визуальную привлекательность' },
-			{ id: 'print', title: 'ДИЗАЙН<br />ПОЛИГРАФИИ', titleMultiline: true, description: 'разработка запоминающихся макетов для печатных и цифровых материалов: постеров, афиш, флаеров, визиткок, пригласительных' },
-			{ id: 'presentations', title: 'ПРЕЗЕНТАЦИИ', description: 'оформление презентаций для бизнеса, обучения и личных проектов, грамотное структурирование информации, акцент на визуализации' },
-			{ id: 'banners', title: 'ДИЗАЙН<br />БАННЕРОВ', titleMultiline: true, description: 'разработка рекламных и информационных баннеров для сайтов и социальных сетей под любые задачи и форматы' },
 			{ id: 'guides', title: 'ЧЕК-ЛИСТЫ<br />И ГАЙДЫ', titleMultiline: true, description: 'создание наглядных чек-листов, памяток, инструкций и мини-гайдов, которые удобно использовать в работе и делиться с аудиторией' },
+			{ id: 'banners', title: 'ДИЗАЙН<br />БАННЕРОВ', titleMultiline: true, description: 'разработка рекламных и информационных баннеров для сайтов и социальных сетей под любые задачи и форматы' },
+			{ id: 'presentations', title: 'ПРЕЗЕНТАЦИИ', description: 'оформление презентаций для бизнеса, обучения и личных проектов, грамотное структурирование информации, акцент на визуализации' },
+			{ id: 'print', title: 'ДИЗАЙН<br />ПОЛИГРАФИИ', titleMultiline: true, description: 'разработка запоминающихся макетов для печатных и цифровых материалов: постеров, афиш, флаеров, визиткок, пригласительных' },
 		],
 	},
 	contact: {
@@ -245,9 +245,9 @@ export const siteContent: SiteContent = {
 		quote: '«Дизайн — это не просто внешний вид и ощущения. Дизайн — это то, как это работает. И настоящая простота приходит не тогда, когда больше нечего добавить, а когда нечего убрать».',
 		quoteAuthor: 'Стив Джобс',
 		socials: [
-			{ id: 'vk', label: 'ВКонтакте', url: 'https://vk.com/russiankisa', qrCode: { src: '/images/qr-vk.png', alt: 'QR-код ВКонтакте' } },
-			{ id: 'telegram', label: 'Telegram', url: 'https://t.me/kt_mch', qrCode: { src: '/images/qr-telegram.png', alt: 'QR-код Telegram' } },
-			{ id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/kt.mch/', qrCode: { src: '/images/qr-instagram.png', alt: 'QR-код Instagram' } },
+			{ id: 'vk', label: 'ВКонтакте', url: 'https://vk.com/russiankisa', qrCode: { src: '/images/qr-vk.webp', alt: 'QR-код ВКонтакте' } },
+			{ id: 'telegram', label: 'Telegram', url: 'https://t.me/kt_mch', qrCode: { src: '/images/qr-telegram.webp', alt: 'QR-код Telegram' } },
+			{ id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/kt.mch/', qrCode: { src: '/images/qr-instagram.webp', alt: 'QR-код Instagram' } },
 		],
 	},
 	portfolio,

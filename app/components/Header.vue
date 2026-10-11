@@ -1,96 +1,88 @@
 <template>
 	<header
 		data-testid="section-header"
-		class="fixed top-0 left-0 w-full transition-all duration-300 ease-in-out"
-		:class="{ 'overflow-hidden': !isMobileMenuOpen, 'z-[10000]': true }"
+		class="site-header"
+		:class="{
+			'site-header--scrolled': isScrolled,
+			'site-header--menu-open': isMobileMenuOpen,
+		}"
 	>
-		<div
-			class="px-4 py-3 transition-all duration-300 relative z-[10001]"
-			:class="{
-				'bg-background shadow-lg': isScrolled || isMobileMenuOpen,
-				'bg-transparent': !isScrolled && !isMobileMenuOpen,
-			}"
-		>
-			<div class="container max-w-full">
-				<div class="flex items-center tablet:justify-center justify-between relative">
-					<nav class="hidden tablet:flex items-center gap-4 lg:gap-6 absolute left-0">
-						<a
-							v-for="link in leftLinks"
-							:key="link.id"
-							:href="link.href"
-							class="nav-link"
-							:class="{ 'text-center leading-[0.78] md:leading-[1.155]': link.multiline }"
-							v-html="link.label"
-						/>
-					</nav>
+		<div class="container site-header__inner">
+			<nav class="site-header__nav site-header__nav--left" aria-label="Основная навигация">
+				<a
+					v-for="link in leftLinks"
+					:key="link.id"
+					:href="link.href"
+					class="nav-link site-header__nav-link"
+					v-html="link.label"
+				/>
+			</nav>
 
-					<div class="tablet:static tablet:order-none relative z-[10002]">
-						<a href="#">
-							<div class="relative w-[140px] h-[55px] lg:w-[120px] lg:h-[47px] tablet:w-[100px] tablet:h-[40px] md:w-[90px] md:h-[36px]">
-								<img
-									:src="content.logo.withCat.src"
-									:alt="content.logo.withCat.alt"
-									class="absolute top-0 left-0 w-full h-full object-contain transition-all duration-400 ease-in-out z-10"
-									:class="{
-										'opacity-0 scale-105': isScrolled || isMobileMenuOpen,
-										'opacity-100 scale-100': !isScrolled && !isMobileMenuOpen,
-									}"
-								/>
-								<img
-									:src="content.logo.withoutCat.src"
-									:alt="content.logo.withoutCat.alt"
-									class="absolute top-0 left-0 w-full h-full object-contain transition-all duration-400 ease-in-out z-0"
-									:class="{
-										'opacity-100 scale-100': isScrolled || isMobileMenuOpen,
-										'opacity-0 scale-95': !isScrolled && !isMobileMenuOpen,
-									}"
-								/>
-							</div>
-						</a>
-					</div>
+			<a href="#" class="site-header__brand" aria-label="В начало страницы">
+				<span class="site-header__logo-frame">
+					<img
+						:src="content.logo.withCat.src"
+						:alt="content.logo.withCat.alt"
+						class="site-header__logo site-header__logo--cat"
+					/>
+					<img
+						:src="content.logo.withoutCat.src"
+						alt=""
+						class="site-header__logo site-header__logo--compact"
+					/>
+				</span>
+			</a>
 
-					<nav class="hidden tablet:flex items-center gap-4 lg:gap-6 absolute right-0">
-						<a
-							v-for="link in rightLinks"
-							:key="link.id"
-							:href="link.href"
-							class="nav-link"
-							v-html="link.label"
-						/>
-					</nav>
+			<nav class="site-header__nav site-header__nav--right" aria-label="Дополнительная навигация">
+				<a
+					v-for="link in rightLinks"
+					:key="link.id"
+					:href="link.href"
+					class="nav-link site-header__nav-link"
+					v-html="link.label"
+				/>
+			</nav>
 
-					<button
-						@click="toggleMobileMenu"
-						class="tablet:hidden absolute right-0 flex flex-col justify-center items-center w-8 h-8 space-y-1 relative z-[10003]"
+			<button
+				type="button"
+				class="site-header__menu-button"
+				:aria-expanded="isMobileMenuOpen"
+				aria-controls="mobile-navigation"
+				:aria-label="isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'"
+				@click="toggleMobileMenu"
+			>
+				<span />
+				<span />
+				<span />
+			</button>
+		</div>
+
+		<transition name="mobile-menu">
+			<nav
+				v-if="isMobileMenuOpen"
+				id="mobile-navigation"
+				class="site-header__mobile-nav"
+				aria-label="Мобильная навигация"
+			>
+				<div class="container site-header__mobile-nav-inner">
+					<a
+						v-for="(link, index) in content.navigation"
+						:key="link.id"
+						:href="link.href"
+						class="nav-link site-header__mobile-link"
+						@click="closeMobileMenu"
 					>
-						<span class="w-6 h-0.5 bg-text-primary transition-all duration-300" :class="{ 'rotate-45 translate-y-1.5': isMobileMenuOpen }" />
-						<span class="w-6 h-0.5 bg-text-primary transition-all duration-300" :class="{ 'opacity-0': isMobileMenuOpen }" />
-						<span class="w-6 h-0.5 bg-text-primary transition-all duration-300" :class="{ '-rotate-45 -translate-y-1.5': isMobileMenuOpen }" />
-					</button>
+						<span class="site-header__mobile-index">0{{ index + 1 }}</span>
+						<span v-html="link.label" />
+					</a>
 				</div>
-			</div>
-		</div>
+			</nav>
+		</transition>
 	</header>
-
-	<transition name="mobile-menu">
-		<div
-			v-if="isMobileMenuOpen"
-			class="tablet:hidden fixed top-[70px] left-0 w-full bg-background flex flex-col items-center justify-start py-8 space-y-6 z-[9998] shadow-lg"
-		>
-			<a
-				v-for="link in content.navigation"
-				:key="link.id"
-				:href="link.href"
-				class="nav-link text-2xl text-center"
-				@click="closeMobileMenu"
-				v-html="link.label"
-			/>
-		</div>
-	</transition>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import type { HeaderContent } from '~/types/site-content'
 
 const props = defineProps<{ content: HeaderContent }>()
@@ -101,7 +93,7 @@ const leftLinks = computed(() => props.content.navigation.slice(0, 2))
 const rightLinks = computed(() => props.content.navigation.slice(2))
 
 const handleScroll = () => {
-	isScrolled.value = window.scrollY > 50
+	isScrolled.value = window.scrollY > 24
 }
 
 const toggleMobileMenu = () => {
@@ -112,26 +104,230 @@ const closeMobileMenu = () => {
 	isMobileMenuOpen.value = false
 }
 
-onMounted(() => window.addEventListener('scroll', handleScroll))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+const handleKeydown = (event: KeyboardEvent) => {
+	if (event.key === 'Escape') closeMobileMenu()
+}
+
+const handleResize = () => {
+	if (window.innerWidth >= 900) closeMobileMenu()
+}
+
+watch(isMobileMenuOpen, (isOpen) => {
+	document.documentElement.style.overflow = isOpen ? 'hidden' : ''
+})
+
+onMounted(() => {
+	handleScroll()
+	window.addEventListener('scroll', handleScroll, { passive: true })
+	window.addEventListener('resize', handleResize, { passive: true })
+	window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+	document.documentElement.style.overflow = ''
+	window.removeEventListener('scroll', handleScroll)
+	window.removeEventListener('resize', handleResize)
+	window.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <style lang="scss" scoped>
-.py-4 {
-	@media (max-width: theme('screens.sm')) {
-		padding-top: 1rem;
-		padding-bottom: 0.4rem;
+.site-header {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: z-index(fixed);
+	color: color(text-primary);
+
+	&::before {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		content: '';
+		background: rgba(color(background), 0);
+		border-bottom: 1px solid transparent;
+		backdrop-filter: blur(0);
+		transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+	}
+
+	&--scrolled::before,
+	&--menu-open::before {
+		background: rgba(color(background), 0.9);
+		border-color: rgba(color(primary), 0.12);
+		backdrop-filter: blur(14px);
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+		align-items: center;
+		min-height: var(--header-height);
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: clamp(1.5rem, 3vw, 3.5rem);
+	}
+
+	&__nav--right {
+		justify-content: flex-end;
+	}
+
+	&__nav-link {
+		position: relative;
+		max-width: 6rem;
+		text-align: center;
+
+		&::after {
+			position: absolute;
+			inset: auto 0 -0.45rem;
+			height: 1px;
+			content: '';
+			background: color(primary);
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: transform 0.25s ease;
+		}
+
+		&:hover::after,
+		&:focus-visible::after {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+	}
+
+	&__brand {
+		display: grid;
+		place-items: center;
+	}
+
+	&__logo-frame {
+		position: relative;
+		display: block;
+		width: clamp(7rem, 10vw, 9rem);
+		height: 3.25rem;
+	}
+
+	&__logo {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		transition: opacity 0.25s ease, transform 0.25s ease;
+	}
+
+	&__logo--compact,
+	&--scrolled &__logo--cat,
+	&--menu-open &__logo--cat {
+		opacity: 0;
+		transform: scale(0.94);
+	}
+
+	&--scrolled &__logo--compact,
+	&--menu-open &__logo--compact {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	&__menu-button,
+	&__mobile-nav {
+		display: none;
+	}
+}
+
+@media (max-width: calc(breakpoint(tablet) - 1px)) {
+	.site-header {
+		&__inner {
+			grid-template-columns: 1fr auto;
+		}
+
+		&__nav {
+			display: none;
+		}
+
+		&__brand {
+			justify-self: start;
+		}
+
+		&__logo-frame {
+			width: clamp(7.5rem, 38vw, 10rem);
+			height: 3.25rem;
+		}
+
+		&__menu-button {
+			display: grid;
+			align-content: center;
+			gap: 0.32rem;
+			width: 2.75rem;
+			height: 2.75rem;
+			padding: 0.65rem;
+			color: color(text-primary);
+			background: transparent;
+			border: 1px solid rgba(color(primary), 0.15);
+			border-radius: border-radius(full);
+			cursor: pointer;
+
+			span {
+				display: block;
+				width: 100%;
+				height: 1.5px;
+				background: currentColor;
+				transition: transform 0.25s ease, opacity 0.2s ease;
+			}
+		}
+
+		&--menu-open &__menu-button span:nth-child(1) {
+			transform: translateY(0.42rem) rotate(45deg);
+		}
+
+		&--menu-open &__menu-button span:nth-child(2) {
+			opacity: 0;
+		}
+
+		&--menu-open &__menu-button span:nth-child(3) {
+			transform: translateY(-0.42rem) rotate(-45deg);
+		}
+
+		&__mobile-nav {
+			position: fixed;
+			inset: var(--header-height) 0 0;
+			display: block;
+			padding-block: clamp(2rem, 8vh, 5rem);
+			background: rgba(color(background), 0.97);
+			backdrop-filter: blur(16px);
+		}
+
+		&__mobile-nav-inner {
+			display: grid;
+		}
+
+		&__mobile-link {
+			display: grid;
+			grid-template-columns: 2.5rem 1fr;
+			align-items: baseline;
+			padding: clamp(1rem, 3vh, 1.5rem) 0;
+			font-size: clamp(2rem, 8vw, 3.25rem);
+			border-bottom: 1px solid rgba(color(primary), 0.16);
+		}
+
+		&__mobile-index {
+			font-family: font-family(system);
+			font-size: 0.7rem;
+			letter-spacing: 0.12em;
+			color: color(primary);
+		}
 	}
 }
 
 .mobile-menu-enter-active,
 .mobile-menu-leave-active {
-	transition: all 0.3s ease;
+	transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .mobile-menu-enter-from,
 .mobile-menu-leave-to {
 	opacity: 0;
-	transform: translateY(-10px);
+	transform: translateY(-0.75rem);
 }
 </style>

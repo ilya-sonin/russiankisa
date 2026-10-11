@@ -7,10 +7,10 @@ status: 'published'
 layout:
   type: 'two-devices'
   primary:
-    src: '/images/case8-tablet-left.png'
+    src: '/images/case8-tablet-left.webp'
     alt: 'Планшет - новый дизайн'
   secondary:
-    src: '/images/case8-tablet-right.png'
+    src: '/images/case8-tablet-right.webp'
     alt: 'Планшет - детали'
 ---
 

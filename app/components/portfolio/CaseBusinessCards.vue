@@ -28,9 +28,9 @@ defineProps<{ layout: BusinessCardsLayout }>()
 .case-business-cards {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	gap: clamp(1.5rem, 4vw, 3rem);
+	gap: clamp(1rem, 3vw, 2.5rem);
 	align-items: center;
-	padding: clamp(1rem, 3vw, 2rem) 0;
+	padding: clamp(0.5rem, 2vw, 1.5rem) 0;
 
 	figure {
 		margin: 0;
@@ -45,18 +45,23 @@ defineProps<{ layout: BusinessCardsLayout }>()
 	}
 
 	&__main img {
-		max-height: clamp(20rem, 58vw, 38rem);
+		max-height: min(60svh, 36rem);
 	}
 
 	&__variants {
 		display: grid;
-		gap: clamp(1rem, 3vw, 2rem);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(0.75rem, 2vw, 1.5rem);
 	}
 }
 
 @media (min-width: breakpoint(md)) {
 	.case-business-cards {
 		grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.85fr);
+
+		&__variants {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 </style>

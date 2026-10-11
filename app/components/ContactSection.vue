@@ -45,20 +45,21 @@ defineProps<{ content: ContactContent }>()
 
 <style lang="scss" scoped>
 .contact-section {
-	padding: clamp(4rem, 9vw, 7rem) 0;
-	background-color: color(background);
-	overflow: hidden;
+	padding: var(--section-space) 0 clamp(3rem, 6vw, 6rem);
+	background:
+		radial-gradient(circle at 80% 88%, rgba(color(primary), 0.055), transparent 28rem),
+		color(background);
+	overflow: clip;
 
 	&__container {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: clamp(2rem, 6vw, 5rem);
+		gap: clamp(2.5rem, 6vw, 5rem);
 	}
 
 	&__title {
 		display: grid;
 		justify-items: center;
-		line-height: 1;
+		line-height: 0.84;
 	}
 
 	&__title-main,
@@ -69,97 +70,141 @@ defineProps<{ content: ContactContent }>()
 
 	&__title-main {
 		font-family: font-family(primary);
-		font-size: clamp(3rem, 8vw, 7.4rem);
+		font-size: clamp(3.5rem, 11vw, 7.2rem);
 	}
 
 	&__title-accent {
 		font-family: font-family(decorative);
-		font-size: clamp(3rem, 8vw, 7.4rem);
+		font-size: clamp(3.5rem, 11vw, 7.2rem);
 		color: color(primary);
+		transform: rotate(-3deg);
 	}
 
 	&__content {
 		display: grid;
-		gap: clamp(1.5rem, 4vw, 3rem);
+		gap: clamp(1.25rem, 4vw, 2.5rem);
 	}
 
 	&__call-to-action {
-		max-width: 46rem;
+		max-width: 60rem;
 		font-family: font-family(primary);
-		font-size: clamp(1.25rem, 3vw, 1.875rem);
-		line-height: 1.6;
+		font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+		line-height: 1.5;
 		margin: 0;
 	}
 
 	&__quote,
 	&__quote-author {
 		font-family: font-family(decorative);
-		font-size: clamp(2rem, 5vw, 3.375rem);
-		line-height: 1;
+		font-size: clamp(1.7rem, 5vw, 3.15rem);
+		line-height: 1.08;
 		color: color(primary);
 		text-align: center;
 		font-style: normal;
 		margin: 0;
 	}
 
-	&__quote-author {
+	&__quote {
+		max-width: 70rem;
 		justify-self: center;
+	}
+
+	&__quote-author {
+		justify-self: end;
+		font-size: clamp(1.65rem, 4vw, 2.75rem);
 	}
 
 	&__qr-codes {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-		gap: clamp(1.5rem, 4vw, 3rem);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(0.6rem, 2.5vw, 2rem);
+		align-items: start;
 	}
 
 	&__qr-item {
 		display: grid;
 		justify-items: center;
-		gap: spacing(3);
+		gap: clamp(0.5rem, 2vw, 1rem);
 	}
 
 	&__qr-image {
-		width: min(100%, 20.5rem);
+		width: min(100%, 18rem);
 		aspect-ratio: 1;
 		object-fit: cover;
-		border-radius: border-radius(xl);
-		box-shadow: shadow(md);
-		transition: transform 0.3s ease;
+		border: 1px solid rgba(color(primary), 0.09);
+		border-radius: clamp(0.75rem, 2vw, 1.2rem);
+		box-shadow: 0 0.75rem 2rem rgba(color(text-primary), 0.08);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
 
-		&:hover {
-			transform: scale(1.04);
-		}
+	&__qr-item:hover &__qr-image {
+		transform: translateY(-0.25rem) scale(1.02);
+		box-shadow: 0 1rem 2.5rem rgba(color(text-primary), 0.12);
 	}
 
 	&__qr-label {
 		font-family: font-family(primary);
-		font-size: clamp(1.5rem, 3vw, 2.125rem);
+		font-size: clamp(0.95rem, 3vw, 1.8rem);
 		line-height: 1.15;
 		color: color(primary);
 		text-align: center;
 	}
 }
 
-@media (min-width: breakpoint(lg)) {
+@media (min-width: 700px) {
 	.contact-section {
-		&__container {
-			grid-template-columns: minmax(0, 1fr) auto;
-		}
-
-		&__title {
-			order: 2;
-			writing-mode: vertical-rl;
-			text-orientation: mixed;
+		&__call-to-action {
+			font-size: clamp(1.35rem, 2.5vw, 1.9rem);
 		}
 
 		&__quote,
 		&__quote-author {
 			text-align: right;
 		}
+	}
+}
 
-		&__quote-author {
-			justify-self: end;
+@media (min-width: 1100px) {
+	.contact-section {
+		min-height: 100svh;
+		display: grid;
+		align-items: center;
+
+		&__container {
+			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			gap: clamp(2.5rem, 5vw, 5rem);
 		}
+
+		&__title {
+			align-self: stretch;
+			justify-items: start;
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			transform: rotate(180deg);
+		}
+
+		&__title-main,
+		&__title-accent {
+			font-size: clamp(4.5rem, 6.5vw, 7rem);
+		}
+
+		&__content {
+			gap: clamp(1.25rem, 2vw, 2rem);
+		}
+
+		&__quote {
+			font-size: clamp(2.15rem, 3.4vw, 3.25rem);
+		}
+
+		&__qr-image {
+			width: min(100%, 17rem);
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.contact-section__qr-label {
+		font-size: 0.8rem;
 	}
 }
 </style>

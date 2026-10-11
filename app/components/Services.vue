@@ -33,20 +33,20 @@ defineProps<{ content: ServicesContent }>()
 
 <style lang="scss" scoped>
 .services {
-	padding: clamp(4rem, 9vw, 7rem) 0;
-	background-color: color(background);
+	padding: var(--section-space) 0;
+	background: color(background);
+	overflow: clip;
 
 	&__layout {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: clamp(2rem, 6vw, 5rem);
-		align-items: start;
+		gap: clamp(2.5rem, 6vw, 5rem);
+		align-items: center;
 	}
 
 	&__title {
 		display: grid;
 		justify-items: center;
-		line-height: 1;
+		line-height: 0.84;
 	}
 
 	&__title-main,
@@ -57,18 +57,19 @@ defineProps<{ content: ServicesContent }>()
 
 	&__title-main {
 		font-family: font-family(primary);
-		font-size: clamp(3rem, 8vw, 7.4rem);
+		font-size: clamp(3.6rem, 12vw, 7.4rem);
 	}
 
 	&__title-accent {
 		font-family: font-family(decorative);
-		font-size: clamp(3rem, 8vw, 7.4rem);
+		font-size: clamp(3.5rem, 12vw, 7.4rem);
 		color: color(primary);
+		transform: rotate(-3deg);
 	}
 
 	&__list {
 		display: grid;
-		gap: clamp(1rem, 3vw, 2rem);
+		gap: clamp(0.8rem, 2vw, 1.25rem);
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -76,61 +77,90 @@ defineProps<{ content: ServicesContent }>()
 
 	&__item {
 		display: grid;
-		grid-template-columns: auto minmax(9rem, 0.35fr) minmax(0, 1fr);
-		gap: clamp(0.75rem, 2vw, 2rem);
+		grid-template-columns: 2.5rem minmax(0, 1fr);
+		gap: 0.6rem 1rem;
 		align-items: center;
-		padding: clamp(1rem, 2.5vw, 2rem);
-		border-radius: border-radius(xl);
-		background: linear-gradient(90deg, rgba(color(white), 0.74), rgba(color(white), 0));
+		padding: clamp(1rem, 3vw, 1.5rem);
+		background: linear-gradient(105deg, rgba(color(white), 0.8), rgba(color(white), 0.35));
+		border: 1px solid rgba(color(primary), 0.09);
+		border-radius: clamp(0.9rem, 2vw, 1.4rem);
+		box-shadow: 0 0.6rem 1.5rem rgba(color(text-primary), 0.03);
 	}
 
 	&__star {
-		width: clamp(1.75rem, 4vw, 2.8rem);
+		width: clamp(1.9rem, 6vw, 2.7rem);
 		aspect-ratio: 45 / 42;
 	}
 
 	&__item-title {
 		font-family: font-family(primary);
-		font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+		font-size: clamp(1.5rem, 4.8vw, 2.15rem);
 		font-weight: font-weight(normal);
-		line-height: 1.05;
+		line-height: 1.02;
 		color: color(primary);
-		margin: 0;
 	}
 
 	&__item-description {
+		grid-column: 1 / -1;
 		font-family: font-family(primary);
-		font-size: clamp(1.125rem, 2.8vw, 2.25rem);
-		line-height: 1.45;
+		font-size: clamp(1.08rem, 3.6vw, 1.55rem);
+		line-height: 1.42;
 		color: color(text-primary);
-		margin: 0;
 	}
 }
 
-@media (max-width: calc(breakpoint(md) - 1px)) {
+@media (min-width: 700px) {
 	.services {
 		&__item {
-			grid-template-columns: auto 1fr;
+			grid-template-columns: 2.8rem minmax(11rem, 0.42fr) minmax(0, 1fr);
+			gap: clamp(1rem, 2vw, 1.75rem);
 		}
 
 		&__item-description {
-			grid-column: 1 / -1;
+			grid-column: auto;
+			font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+			line-height: 1.3;
 		}
 	}
 }
 
-@media (min-width: breakpoint(lg)) {
+@media (min-width: 1100px) {
 	.services {
+		min-height: 100svh;
+		display: grid;
+		align-items: center;
+
 		&__layout {
-			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			gap: clamp(2.5rem, 5vw, 5rem);
 		}
 
 		&__title {
-			position: sticky;
-			top: spacing(24);
-			order: 2;
+			align-self: stretch;
+			justify-items: start;
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
+			transform: rotate(180deg);
+		}
+
+		&__title-main,
+		&__title-accent {
+			font-size: clamp(4.5rem, 6.5vw, 7rem);
+		}
+
+		&__item {
+			grid-template-columns: 2.8rem minmax(12rem, 16rem) minmax(0, 1fr);
+			min-height: 6.1rem;
+			padding: 0.8rem clamp(1.25rem, 2vw, 2rem);
+		}
+
+		&__item-title {
+			font-size: clamp(1.45rem, 1.8vw, 2rem);
+		}
+
+		&__item-description {
+			font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+			line-height: 1.22;
 		}
 	}
 }

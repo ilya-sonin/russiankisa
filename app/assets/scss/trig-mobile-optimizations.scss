@@ -3,17 +3,17 @@
 /* Ускорение анимаций на мобильных */
 @media (max-width: 480px) {
 	[data-trig] {
-		transition-duration: 0.3s !important;
+		transition-duration: 0.32s !important;
 	}
 	
-	.trig-stagger-1 { transition-delay: 0.05s !important; }
-	.trig-stagger-2 { transition-delay: 0.1s !important; }
-	.trig-stagger-3 { transition-delay: 0.15s !important; }
-	.trig-stagger-4 { transition-delay: 0.2s !important; }
-	.trig-stagger-5 { transition-delay: 0.25s !important; }
-	.trig-stagger-6 { transition-delay: 0.3s !important; }
-	.trig-stagger-7 { transition-delay: 0.35s !important; }
-	.trig-stagger-8 { transition-delay: 0.4s !important; }
+	.trig-stagger-1 { transition-delay: 0.02s !important; }
+	.trig-stagger-2 { transition-delay: 0.04s !important; }
+	.trig-stagger-3 { transition-delay: 0.06s !important; }
+	.trig-stagger-4 { transition-delay: 0.08s !important; }
+	.trig-stagger-5 { transition-delay: 0.1s !important; }
+	.trig-stagger-6 { transition-delay: 0.12s !important; }
+	.trig-stagger-7 { transition-delay: 0.14s !important; }
+	.trig-stagger-8 { transition-delay: 0.16s !important; }
 }
 
 /* Отключение сложных анимаций на слабых устройствах */

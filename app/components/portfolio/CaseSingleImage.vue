@@ -14,7 +14,7 @@ defineProps<{ layout: SingleImageLayout }>()
 .case-single-image {
 	display: grid;
 	margin: 0;
-	min-height: clamp(20rem, 52vw, 42rem);
+	min-height: 0;
 	align-items: center;
 
 	&--left { justify-items: start; }
@@ -23,7 +23,7 @@ defineProps<{ layout: SingleImageLayout }>()
 
 	&__image {
 		width: min(100%, 52rem);
-		max-height: clamp(18rem, 58vw, 40rem);
+		max-height: min(66svh, 40rem);
 		object-fit: contain;
 		filter: drop-shadow(0 1.25rem 2rem rgba(0, 0, 0, 0.12));
 	}

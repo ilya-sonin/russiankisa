@@ -7,12 +7,12 @@ status: 'published'
 layout:
   type: 'business-cards'
   main:
-    src: '/images/moodboard-main.png'
+    src: '/images/moodboard-main.webp'
     alt: 'Мудборд компании'
   variants:
-    - src: '/images/business-card-2.png'
+    - src: '/images/business-card-2.webp'
       alt: 'Визитная карточка - вариант 1'
-    - src: '/images/business-card-1.png'
+    - src: '/images/business-card-1.webp'
       alt: 'Визитная карточка - вариант 2'
 ---
 

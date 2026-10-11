@@ -7,7 +7,7 @@ status: 'published'
 layout:
   type: 'single'
   image:
-    src: '/images/case9-ipad-large.png'
+    src: '/images/case9-ipad-large.webp'
     alt: 'iPad Mini - визуальное программирование'
 ---
 

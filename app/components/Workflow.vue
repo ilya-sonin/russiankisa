@@ -8,7 +8,7 @@
 				</div>
 
 				<div class="workflow__diagram">
-					<picture class="workflow__path trig-fade-in trig-stagger-2" data-trig>
+					<picture class="workflow__path trig-fade-in trig-stagger-2" data-trig aria-hidden="true">
 						<source media="(min-width: 1024px)" :srcset="content.pathImages.desktop.src" />
 						<source media="(min-width: 768px)" :srcset="content.pathImages.tablet.src" />
 						<img :src="content.pathImages.mobile.src" :alt="content.pathImages.mobile.alt" class="workflow__path-svg" />
@@ -23,8 +23,10 @@
 							data-trig
 						>
 							<span class="workflow__marker" aria-hidden="true" />
-							<h3 class="workflow__step-title" v-html="step.title" />
-							<p class="workflow__step-description">{{ step.description }}</p>
+							<div class="workflow__step-copy">
+								<h3 class="workflow__step-title" v-html="step.title" />
+								<p class="workflow__step-description">{{ step.description }}</p>
+							</div>
 						</li>
 					</ol>
 				</div>
@@ -41,20 +43,20 @@ defineProps<{ content: WorkflowContent }>()
 
 <style lang="scss" scoped>
 .workflow {
-	padding: clamp(4rem, 9vw, 7rem) 0;
-	background-color: color(background);
+	padding: var(--section-space) 0;
+	background: color(background);
+	overflow: clip;
 
 	&__layout {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: clamp(2rem, 6vw, 5rem);
+		gap: clamp(2.5rem, 6vw, 5rem);
 		align-items: center;
 	}
 
 	&__title {
 		display: grid;
 		justify-items: center;
-		line-height: 1;
+		line-height: 0.84;
 	}
 
 	&__title-main,
@@ -65,105 +67,178 @@ defineProps<{ content: WorkflowContent }>()
 
 	&__title-main {
 		font-family: font-family(primary);
-		font-size: clamp(3rem, 8vw, 7.4rem);
+		font-size: clamp(3.6rem, 12vw, 7.4rem);
 	}
 
 	&__title-accent {
 		font-family: font-family(decorative);
-		font-size: clamp(3.5rem, 9vw, 8.75rem);
+		font-size: clamp(3.3rem, 12vw, 7.8rem);
 		color: color(primary);
+		transform: rotate(-3deg);
 	}
 
 	&__diagram {
-		display: grid;
-		gap: clamp(1.5rem, 4vw, 3rem);
+		position: relative;
 	}
 
 	&__path {
+		position: absolute;
+		inset: 0.5rem 0;
+		z-index: 0;
 		display: block;
-		justify-self: center;
-		width: min(100%, 64rem);
+		opacity: 0.2;
+		pointer-events: none;
 	}
 
 	&__path-svg {
 		display: block;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: fill;
 	}
 
 	&__steps {
+		position: relative;
+		z-index: 1;
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: spacing(4);
+		gap: 0.8rem;
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		counter-reset: workflow-step;
 	}
 
 	&__step {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: spacing(2) spacing(4);
+		grid-template-columns: 2.6rem minmax(0, 1fr);
+		gap: clamp(0.8rem, 2vw, 1.25rem);
 		align-items: start;
-		padding: spacing(4);
-		background-color: rgba(color(primary), 0.05);
-		border-radius: border-radius(xl);
+		padding: clamp(1rem, 3vw, 1.4rem);
+		background: rgba(color(white), 0.76);
+		border: 1px solid rgba(color(primary), 0.12);
+		border-radius: clamp(0.9rem, 2vw, 1.35rem);
+		box-shadow: 0 0.6rem 1.5rem rgba(color(text-primary), 0.035);
+		backdrop-filter: blur(8px);
+		counter-increment: workflow-step;
 	}
 
 	&__marker {
-		grid-row: span 2;
-		width: clamp(0.8rem, 1.5vw, 1.35rem);
+		display: grid;
+		place-items: center;
+		width: 2.6rem;
 		aspect-ratio: 1;
-		margin-top: 0.45em;
+		font-family: font-family(primary);
+		font-size: 1.1rem;
+		color: color(background);
+		background: color(primary);
 		border-radius: border-radius(full);
-		background-color: color(primary);
+
+		&::after {
+			content: counter(workflow-step, decimal-leading-zero);
+		}
+	}
+
+	&__step-copy {
+		display: grid;
+		gap: 0.25rem;
 	}
 
 	&__step-title {
 		font-family: font-family(primary);
-		font-size: clamp(1.25rem, 2.7vw, 2.25rem);
+		font-size: clamp(1.3rem, 3.5vw, 2rem);
 		font-weight: font-weight(normal);
-		line-height: 1.2;
-		margin: 0;
+		line-height: 1.05;
 		color: color(text-primary);
 	}
 
 	&__step-description {
 		font-family: font-family(decorative);
-		font-size: clamp(1.25rem, 2.7vw, 2.25rem);
-		line-height: 1.2;
-		margin: 0;
-		color: color(text-primary);
+		font-size: clamp(1.25rem, 3.7vw, 2rem);
+		line-height: 1.05;
+		color: color(primary);
 	}
 }
 
-@media (min-width: breakpoint(md)) {
+@media (min-width: 700px) {
 	.workflow {
+		&__steps {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+		}
+
+		&__step {
+			min-height: 9rem;
+		}
+
+		&__path {
+			opacity: 0.16;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.workflow {
+		min-height: 100svh;
+		display: grid;
+		align-items: center;
+
 		&__layout {
-			grid-template-columns: auto minmax(0, 1fr);
+			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			gap: clamp(2.5rem, 5vw, 5rem);
 		}
 
 		&__title {
-			align-self: stretch;
-			justify-items: start;
+			align-self: center;
+			justify-items: center;
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
 			transform: rotate(180deg);
 		}
 
+		&__title-main,
+		&__title-accent {
+			font-size: clamp(4.5rem, 6.5vw, 7rem);
+		}
+
+		&__diagram {
+			display: grid;
+			align-items: center;
+			min-height: clamp(34rem, 48vw, 44rem);
+		}
+
+		&__path {
+			inset: 3% 0;
+			opacity: 0.7;
+		}
+
 		&__steps {
 			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-template-rows: repeat(2, minmax(0, 1fr));
+			gap: clamp(1rem, 2.2vw, 2rem);
+			align-items: center;
 		}
 
 		&__step {
 			grid-template-columns: 1fr;
 			justify-items: center;
+			min-height: 11.5rem;
+			padding: clamp(1rem, 1.8vw, 1.4rem);
 			text-align: center;
+			background: rgba(color(background), 0.88);
+			border-color: rgba(color(primary), 0.15);
 		}
 
 		&__marker {
-			grid-row: auto;
-			margin: 0;
+			width: 2.4rem;
+			font-size: 0.95rem;
+		}
+
+		&__step-title {
+			font-size: clamp(1.2rem, 1.7vw, 1.8rem);
+		}
+
+		&__step-description {
+			font-size: clamp(1.25rem, 1.65vw, 1.8rem);
 		}
 	}
 }

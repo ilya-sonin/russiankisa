@@ -7,10 +7,10 @@ status: 'published'
 layout:
   type: 'two-devices'
   primary:
-    src: '/images/case3-ipad.png'
+    src: '/images/case3-ipad.webp'
     alt: 'iPad Mini - планшетная версия'
   secondary:
-    src: '/images/case3-iphone.png'
+    src: '/images/case3-iphone.webp'
     alt: 'iPhone 13 Pro - мобильная версия'
 ---
 

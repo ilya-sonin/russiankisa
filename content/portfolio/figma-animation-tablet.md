@@ -7,7 +7,7 @@ status: 'published'
 layout:
   type: 'single'
   image:
-    src: '/images/case4-tablet.png'
+    src: '/images/case4-tablet.webp'
     alt: 'Galaxy Tab S8 Ultra - анимация в Figma'
 ---
 

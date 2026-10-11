@@ -1,9 +1,9 @@
+@use 'trig-animations';
+@use 'trig-mobile-optimizations';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import 'trig-animations.scss';
-@import 'trig-mobile-optimizations.scss';
 
 @font-face {
 	font-family: 'Disruptors Script';
@@ -11,6 +11,13 @@
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
+}
+
+:root {
+	--page-gutter: clamp(1rem, 3.2vw, 2.75rem);
+	--section-space: clamp(4.5rem, 8vw, 7.5rem);
+	--header-height: 5rem;
+	--content-width: 90rem;
 }
 
 .decorative-text,
@@ -25,9 +32,14 @@
 	padding: 0;
 }
 
+*:where(:not(html, body)) {
+	min-width: 0;
+}
+
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	scroll-padding-top: calc(var(--header-height) + 1rem);
 	overflow-x: hidden;
 }
 
@@ -39,6 +51,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
+}
+
+::selection {
+	color: color(background);
+	background: color(primary);
 }
 
 h1,
@@ -68,7 +85,11 @@ img {
 }
 
 .btn {
-	@apply bg-primary text-background border-none rounded-button px-8 py-4 font-primary text-4xl font-normal leading-[1.155] cursor-pointer transition-all duration-300 ease-in-out no-underline inline-block text-center;
+	@apply bg-primary text-background border-none rounded-button font-primary font-normal cursor-pointer transition-all duration-300 ease-in-out no-underline inline-block text-center;
+	padding: clamp(0.75rem, 1.4vw, 1rem) clamp(1.4rem, 2.8vw, 2.25rem);
+	font-size: clamp(1.1rem, 2vw, 2rem);
+	line-height: 1.1;
+	box-shadow: 0 0.75rem 2rem rgba(color(primary), 0.14);
 
 	&:hover {
 		@apply -translate-y-0.5 shadow-lg opacity-90;
@@ -77,30 +98,17 @@ img {
 	&:active {
 		@apply translate-y-0;
 	}
+
+	&:focus-visible {
+		outline: 2px solid color(text-primary);
+		outline-offset: 4px;
+	}
 }
 
 .container {
-	@apply max-w-desktop mx-auto px-4 w-full;
-
-	@media (max-width: theme('screens.xl')) {
-		@apply max-w-6xl;
-	}
-
-	@media (max-width: theme('screens.lg')) {
-		@apply max-w-5xl;
-	}
-
-	@media (max-width: theme('screens.tablet')) {
-		@apply max-w-4xl px-2;
-	}
-
-	@media (max-width: theme('screens.md')) {
-		@apply max-w-3xl px-2;
-	}
-
-	@media (max-width: theme('screens.sm')) {
-		@apply max-w-full px-2;
-	}
+	width: min(100%, var(--content-width));
+	margin-inline: auto;
+	padding-inline: var(--page-gutter);
 }
 
 .hero-title {
@@ -112,11 +120,20 @@ img {
 }
 
 .nav-link {
-	@apply font-primary text-lg font-normal leading-[1.155] text-text-primary no-underline transition-colors duration-200;
+	@apply font-primary font-normal text-text-primary no-underline transition-colors duration-200;
+	font-size: clamp(1rem, 1.35vw, 1.2rem);
+	line-height: 1.1;
 
 	&:hover {
 		@apply text-primary;
 	}
+}
+
+.nav-link:focus-visible,
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid color(primary);
+	outline-offset: 4px;
 }
 
 @media (max-width: theme('screens.xl')) {
@@ -158,9 +175,6 @@ img {
 		@apply text-9xl;
 	}
 
-	.btn {
-		@apply text-xl px-6 py-3;
-	}
 }
 
 @media (max-width: theme('screens.sm')) {
@@ -172,7 +186,8 @@ img {
 		@apply text-6xl;
 	}
 
-	.btn {
-		@apply text-base px-6 py-3;
+	:root {
+		--header-height: 4.5rem;
+		--page-gutter: clamp(1rem, 5vw, 1.35rem);
 	}
 }

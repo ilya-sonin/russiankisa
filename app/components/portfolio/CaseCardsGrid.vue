@@ -24,10 +24,10 @@ defineProps<{ layout: CardsGridLayout; images: AssetRef[] }>()
 <style lang="scss" scoped>
 .case-cards-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
-	gap: clamp(1rem, 2.5vw, 2rem);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(0.65rem, 2.5vw, 1.5rem);
 	align-items: center;
-	padding: clamp(1rem, 3vw, 2rem) 0;
+	padding: clamp(0.5rem, 2vw, 1.25rem) 0;
 
 	&__card {
 		margin: 0;
@@ -42,6 +42,12 @@ defineProps<{ layout: CardsGridLayout; images: AssetRef[] }>()
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+	}
+}
+
+@media (min-width: breakpoint(md)) {
+	.case-cards-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 }
 

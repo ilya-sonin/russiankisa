@@ -8,7 +8,7 @@ layout:
   type: 'cards-grid'
   columns: 5
   images:
-    - src: '/images/case7-iphone.png'
+    - src: '/images/case7-iphone.webp'
       alt: 'iPhone 16 Pro - ретро-проект'
     - src: '/images/pixel-image-3.svg'
       alt: 'Пиксельная графика 1'

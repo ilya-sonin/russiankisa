@@ -6,7 +6,7 @@ intro: >-
   превращаю визуальный код в искусство.
 introAccent: я - графический и веб-дизайнер
 photo:
-  src: /images/about-photo.png
+  src: /images/about-photo.webp
   alt: Екатерина - графический и веб-дизайнер
 decorativeTexts:
   - работа с визуальными образами для печатных медиа

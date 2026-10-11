@@ -14,6 +14,7 @@
 			<header class="portfolio-case-layout__header">
 				<CaseLabel
 					:number="item.number"
+					position="left"
 					class="portfolio-case-layout__case-label trig-scale-up trig-stagger-1"
 					data-trig
 				/>
@@ -36,17 +37,22 @@ defineProps<{ item: PortfolioCase }>()
 
 <style lang="scss" scoped>
 .portfolio-case-layout {
-	padding: clamp(4rem, 8vw, 6rem) 0;
-	background-color: color(background);
-	overflow: hidden;
+	position: relative;
+	padding: clamp(3.75rem, 8vw, 7rem) 0;
+	background: color(background);
+	border-top: 1px solid rgba(color(primary), 0.09);
+	overflow: clip;
+
+	&:nth-child(even) {
+		background: linear-gradient(110deg, rgba(color(white), 0.18), rgba(color(primary), 0.018));
+	}
 
 	&__container {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		gap: clamp(2rem, 5vw, 4rem);
-		max-width: 1280px;
-		margin: 0 auto;
-		padding: 0 spacing(4);
+		gap: clamp(1.75rem, 5vw, 3.5rem);
+		width: min(100%, var(--content-width));
+		margin-inline: auto;
+		padding-inline: var(--page-gutter);
 	}
 
 	&__title {
@@ -55,43 +61,30 @@ defineProps<{ item: PortfolioCase }>()
 
 	&__header {
 		display: grid;
-		gap: spacing(4);
+		gap: 0.8rem;
 	}
 
 	&__case-label {
-		justify-self: center;
+		justify-self: start;
 	}
 
 	&__description {
+		max-width: 62rem;
 		font-family: font-family(primary);
-		font-size: clamp(1.125rem, 2.4vw, 1.6875rem);
-		line-height: 1.35;
+		font-size: clamp(1.1rem, 3.6vw, 1.65rem);
+		line-height: 1.4;
 		color: color(text-primary);
-		text-align: center;
+		text-align: left;
 		margin: 0;
 	}
 }
 
-@media (min-width: breakpoint(md)) {
+@media (min-width: 700px) {
 	.portfolio-case-layout {
-		&__container {
-			grid-template-columns: minmax(5rem, 8rem) minmax(0, 1fr);
-			grid-template-areas:
-				'title header'
-				'title content';
-		}
-
-		&__title {
-			display: block;
-			grid-area: title;
-			position: sticky;
-			top: spacing(20);
-		}
-
 		&__header {
-			grid-area: header;
-			grid-template-columns: 1fr auto;
+			grid-template-columns: minmax(0, 1fr) auto;
 			align-items: start;
+			gap: 2rem;
 		}
 
 		&__case-label {
@@ -100,7 +93,35 @@ defineProps<{ item: PortfolioCase }>()
 		}
 
 		&__description {
-			text-align: left;
+			font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.portfolio-case-layout {
+		min-height: 100svh;
+		display: grid;
+		align-items: center;
+
+		&__container {
+			grid-template-columns: clamp(5.5rem, 7vw, 7.5rem) minmax(0, 1fr);
+			grid-template-areas:
+				'title header'
+				'title content';
+			align-items: center;
+			column-gap: clamp(2.5rem, 5vw, 5rem);
+			row-gap: clamp(1.5rem, 3vw, 2.5rem);
+		}
+
+		&__title {
+			display: inline-grid;
+			grid-area: title;
+			align-self: stretch;
+		}
+
+		&__header {
+			grid-area: header;
 		}
 
 		&__content {

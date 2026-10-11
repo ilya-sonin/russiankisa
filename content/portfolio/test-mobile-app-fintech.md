@@ -7,7 +7,7 @@ status: 'published'
 layout:
   type: 'single'
   image:
-    src: '/images/case6-mac.png'
+    src: '/images/case6-mac.webp'
     alt: 'Mac Studio - финтех приложение'
 ---
 

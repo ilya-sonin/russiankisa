@@ -2,6 +2,7 @@
 title: vanilla-css-animations — почему CSS, а не библиотека
 type: decision
 status: recorded
+updated: 2026-07-12
 ---
 
 # vanilla-css-animations
@@ -34,11 +35,11 @@ trig-js (CDN)        →    добавляет класс `.trig` на `[data-tr
 ✅ **GPU-accelerated** — `transform` + `opacity` идут на композитный поток
 ✅ **`prefers-reduced-motion` уважается** — нативный CSS, не надо доп. кода
 ✅ **Bundle-size 0 KB** — все стили уже есть
-✅ **Совместимость** — работает без JS (если trig-js не загрузится, элементы просто не анимируются, но `opacity: 0` останется — ⚠ TODO graceful fallback)
+✅ **Совместимость** — CSS-анимации остаются простыми; с 2026-07-12 есть локальный fallback `app/plugins/trig-reveal.client.ts`, который добавляет `.trig` через `IntersectionObserver`, если CDN-скрипт не сработал.
 
 ### Минусы
 
-❌ **Trig-js из CDN** — если jsdelivr недоступен, ничего не анимируется
+❌ **Trig-js из CDN** — внешний скрипт всё ещё подключён, но видимость контента больше не зависит только от jsdelivr
 ❌ **Нет timeline-анимаций** — только enter/leave, нельзя сделать «последовательно: A → подождать 2s → B»
 ❌ **Зависимость от магии trig-js** — мы не контролируем, когда срабатывает `.trig`
 ❌ **Нет scroll-driven анимаций** — только enter-viewport
@@ -54,21 +55,15 @@ trig-js (CDN)        →    добавляет класс `.trig` на `[data-tr
 
 ## Что можно улучшить
 
-### Короткое
+### Сделано
 
-1. Добавить fallback для `trig-js` — если скрипт не загрузился, убрать `opacity: 0`:
-
-```html
-<noscript>
-  <style>
-    [data-trig] { opacity: 1 !important; transform: none !important; }
-  </style>
-</noscript>
-```
+1. Добавлен локальный fallback `app/plugins/trig-reveal.client.ts`.
+2. Он ищет `[data-trig]`, добавляет `.trig` при попадании в viewport и раскрывает уже видимые элементы после mount/load.
+3. Если `IntersectionObserver` недоступен, fallback сразу раскрывает все `[data-trig]`.
 
 ### Среднее
 
-1. Заменить trig-js на `useIntersectionObserver` из VueUse:
+1. Полностью заменить CDN trig-js на локальный код или VueUse `useIntersectionObserver`:
 
 ```ts
 // composables/useTrigReveal.ts
@@ -97,4 +92,4 @@ export function useTrigReveal() {
 - CDN-зависимость не критична
 - Сейчас всё работает
 
-Добавить graceful fallback (короткое решение) — 1 час работы.
+CDN можно удалить отдельной задачей, если после визуального QA fallback полностью покрывает нужное поведение.

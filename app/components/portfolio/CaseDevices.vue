@@ -17,11 +17,11 @@ defineProps<{ layout: TwoDevicesLayout }>()
 
 <style lang="scss" scoped>
 .case-devices {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr);
-	gap: clamp(1.5rem, 4vw, 3rem);
-	align-items: center;
-	min-height: clamp(24rem, 58vw, 42rem);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: clamp(0.5rem, 2vw, 1.5rem);
+	min-height: 0;
 
 	&__device {
 		display: grid;
@@ -29,9 +29,18 @@ defineProps<{ layout: TwoDevicesLayout }>()
 		margin: 0;
 	}
 
+	&__device--primary {
+		flex: 1 1 72%;
+	}
+
+	&__device--secondary {
+		flex: 0 1 28%;
+		align-self: flex-end;
+	}
+
 	&__device img {
 		width: 100%;
-		max-height: clamp(18rem, 58vw, 39rem);
+		max-height: min(62svh, 38rem);
 		object-fit: contain;
 		filter: drop-shadow(0 1.25rem 2rem rgba(0, 0, 0, 0.12));
 	}
@@ -41,17 +50,13 @@ defineProps<{ layout: TwoDevicesLayout }>()
 	}
 
 	&__device--secondary img {
-		max-width: 22rem;
+		max-width: 20rem;
 	}
 }
 
 @media (min-width: breakpoint(md)) {
 	.case-devices {
-		grid-template-columns: minmax(0, 2fr) minmax(10rem, 1fr);
-
-		&__device--secondary {
-			align-self: end;
-		}
+		gap: clamp(1.5rem, 4vw, 3rem);
 	}
 }
 </style>
