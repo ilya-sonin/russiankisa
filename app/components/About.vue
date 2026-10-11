@@ -5,8 +5,7 @@
 				<div class="about__intro trig-fade-in trig-stagger-1" data-trig>
 					<p class="about__intro-text">
 						{{ introBefore }}
-						<span class="decorative-text">{{ content.introAccent }}</span>
-						{{ introAfter }}
+						<span class="decorative-text">{{ content.introAccent }}</span>{{ introAfter }}
 					</p>
 				</div>
 
@@ -29,7 +28,7 @@
 
 				<div class="about__tools">
 					<h3 class="about__tools-title">
-						{{ content.toolsTitle }}<span class="decorative-text">{{ content.toolsTitleAccent }}</span> :
+						{{ content.toolsTitle }}<span class="decorative-text">{{ content.toolsTitleAccent }}</span>:
 					</h3>
 					<ul class="about__tools-grid">
 						<li
@@ -104,6 +103,7 @@ const introAfter = computed(() => `, ${introParts.value[1]?.trim() ?? ''}`)
 
 	&__intro-text .decorative-text,
 	&__tools-title .decorative-text {
+		font-family: font-family(primary);
 		font-size: 1em;
 		line-height: inherit;
 		color: color(primary);
@@ -164,8 +164,9 @@ const introAfter = computed(() => `, ${introParts.value[1]?.trim() ?? ''}`)
 		font-family: font-family(primary);
 		font-size: clamp(1.35rem, 3.4vw, 2rem);
 		font-weight: font-weight(normal);
-		line-height: 1.2;
+		line-height: 1.35;
 		text-align: center;
+		text-transform: uppercase;
 		margin: 0 0 clamp(1.25rem, 3vw, 2rem);
 	}
 
@@ -194,7 +195,7 @@ const introAfter = computed(() => `, ${introParts.value[1]?.trim() ?? ''}`)
 
 	&__tool-name {
 		font-family: font-family(primary);
-		font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+		font-size: clamp(0.9rem, 2.5vw, 1.125rem);
 		line-height: 1.1;
 	}
 }
@@ -221,8 +222,14 @@ const introAfter = computed(() => `, ${introParts.value[1]?.trim() ?? ''}`)
 		}
 
 		&__tools-grid {
-			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
+	}
+}
+
+@media (min-width: 900px) {
+	.about__tools-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 

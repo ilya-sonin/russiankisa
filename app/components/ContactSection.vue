@@ -29,7 +29,12 @@
 						rel="noopener noreferrer"
 					>
 						<img :src="social.qrCode.src" :alt="social.qrCode.alt" class="contact-section__qr-image" />
-						<span class="contact-section__qr-label">{{ social.label }}</span>
+						<span class="contact-section__qr-label">
+							{{ social.label }}
+							<svg class="contact-section__link-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+								<path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
 					</a>
 				</div>
 			</div>
@@ -93,25 +98,25 @@ defineProps<{ content: ContactContent }>()
 		margin: 0;
 	}
 
-	&__quote,
-	&__quote-author {
-		font-family: font-family(decorative);
-		font-size: clamp(1.7rem, 5vw, 3.15rem);
-		line-height: 1.08;
+	&__quote {
+		font-family: font-family(primary);
+		font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+		line-height: 1.5;
 		color: color(primary);
-		text-align: center;
-		font-style: normal;
+		max-width: 70rem;
+		justify-self: center;
+		padding-inline-start: clamp(1rem, 2vw, 1.75rem);
+		border-inline-start: 2px solid rgba(color(primary), 0.3);
 		margin: 0;
 	}
 
-	&__quote {
-		max-width: 70rem;
-		justify-self: center;
-	}
-
 	&__quote-author {
+		font-family: font-family(decorative);
 		justify-self: end;
-		font-size: clamp(1.65rem, 4vw, 2.75rem);
+		font-size: clamp(2.25rem, 4vw, 3rem);
+		line-height: 1.2;
+		font-style: normal;
+		color: color(primary);
 	}
 
 	&__qr-codes {
@@ -149,17 +154,19 @@ defineProps<{ content: ContactContent }>()
 		color: color(primary);
 		text-align: center;
 	}
+
+	&__link-arrow {
+		display: inline-block;
+		width: 0.7em;
+		height: 0.7em;
+		margin-inline-start: 0.25em;
+	}
 }
 
 @media (min-width: 700px) {
 	.contact-section {
 		&__call-to-action {
 			font-size: clamp(1.35rem, 2.5vw, 1.9rem);
-		}
-
-		&__quote,
-		&__quote-author {
-			text-align: right;
 		}
 	}
 }
@@ -171,29 +178,28 @@ defineProps<{ content: ContactContent }>()
 		align-items: center;
 
 		&__container {
-			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			grid-template-columns: clamp(8.5rem, 10vw, 10rem) minmax(0, 1fr);
 			gap: clamp(2.5rem, 5vw, 5rem);
 		}
 
 		&__title {
-			align-self: stretch;
-			justify-items: start;
-			writing-mode: vertical-rl;
-			text-orientation: mixed;
+			align-self: center;
+			grid-auto-flow: column;
+			gap: 0.5rem;
 			transform: rotate(180deg);
 		}
 
 		&__title-main,
 		&__title-accent {
-			font-size: clamp(4.5rem, 6.5vw, 7rem);
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			font-size: clamp(3rem, 4vw, 3.75rem);
+			line-height: 1;
+			transform: none;
 		}
 
 		&__content {
 			gap: clamp(1.25rem, 2vw, 2rem);
-		}
-
-		&__quote {
-			font-size: clamp(2.15rem, 3.4vw, 3.25rem);
 		}
 
 		&__qr-image {
@@ -202,9 +208,32 @@ defineProps<{ content: ContactContent }>()
 	}
 }
 
-@media (max-width: 360px) {
-	.contact-section__qr-label {
-		font-size: 0.8rem;
+@media (max-width: calc(breakpoint(sm) - 1px)) {
+	.contact-section {
+		&__qr-codes {
+			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+
+		&__qr-item {
+			grid-template-columns: 4.5rem minmax(0, 1fr);
+			align-items: center;
+			gap: 1.25rem;
+			padding: 0.75rem;
+			background: rgba(color(white), 0.6);
+			border: 1px solid rgba(color(primary), 0.12);
+			border-radius: 1rem;
+		}
+
+		&__qr-image {
+			border-radius: 0.5rem;
+			box-shadow: none;
+		}
+
+		&__qr-label {
+			justify-self: start;
+			font-size: 1.4rem;
+		}
 	}
 }
 </style>

@@ -1,66 +1,53 @@
-/* Trig.js Animation Styles */
-
-/* Базовые анимации появления */
-.trig-fade-in {
+/* Animate individual properties so section-title rotations remain intact. */
+.trig-fade-in,
+.trig-slide-left,
+.trig-slide-right,
+.trig-scale-up,
+.trig-rotate-in,
+.hero-title-animation,
+.hero-decorative-animation,
+.hero-image-animation,
+.about-photo-animation,
+.about-tools-animation,
+.workflow-step-animation,
+.services-star-animation,
+.services-card-animation,
+.portfolio-device-animation,
+.contact-qr-animation {
 	opacity: 0;
-	transform: translateY(18px);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		opacity 0.45s ease,
+		translate 0.45s ease,
+		scale 0.45s ease,
+		rotate 0.45s ease;
+
+	&.trig {
+		opacity: 1;
+		translate: none;
+		scale: 1;
+		rotate: 0deg;
+	}
 }
 
-.trig-fade-in.trig {
-	opacity: 1;
-	transform: translateY(0);
+.trig-fade-in,
+.about-tools-animation,
+.workflow-step-animation,
+.services-card-animation,
+.portfolio-device-animation {
+	translate: 0 18px;
 }
 
-/* Анимации слайда слева */
-.trig-slide-left {
-	opacity: 0;
-	transform: translateX(-24px);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.trig-slide-left { translate: -24px 0; }
+.trig-slide-right { translate: 24px 0; }
+.trig-scale-up { scale: 0.96; }
+.trig-rotate-in { rotate: -5deg; scale: 0.96; }
+.hero-title-animation { translate: 0 20px; scale: 0.98; }
+.hero-decorative-animation { translate: -24px 0; rotate: -3deg; }
+.hero-image-animation { translate: 16px 0; scale: 0.96; }
+.about-photo-animation { scale: 0.96; rotate: 3deg; }
+.services-star-animation { scale: 0.9; rotate: 45deg; }
+.contact-qr-animation { scale: 0.96; rotate: -2deg; }
 
-.trig-slide-left.trig {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-/* Анимации слайда справа */
-.trig-slide-right {
-	opacity: 0;
-	transform: translateX(24px);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.trig-slide-right.trig {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-/* Анимации масштабирования */
-.trig-scale-up {
-	opacity: 0;
-	transform: scale(0.8);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.trig-scale-up.trig {
-	opacity: 1;
-	transform: scale(1);
-}
-
-/* Анимации вращения */
-.trig-rotate-in {
-	opacity: 0;
-	transform: rotate(-10deg) scale(0.9);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.trig-rotate-in.trig {
-	opacity: 1;
-	transform: rotate(0deg) scale(1);
-}
-
-/* Stagger анимации для групп элементов */
 .trig-stagger-1 { transition-delay: 0.03s; }
 .trig-stagger-2 { transition-delay: 0.06s; }
 .trig-stagger-3 { transition-delay: 0.09s; }
@@ -70,188 +57,36 @@
 .trig-stagger-7 { transition-delay: 0.21s; }
 .trig-stagger-8 { transition-delay: 0.24s; }
 
-/* Специальные анимации для Hero секции */
-.hero-title-animation {
-	opacity: 0;
-	transform: translateY(20px) scale(0.98);
-	transition: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-title-animation.trig {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-
-.hero-decorative-animation {
-	opacity: 0;
-	transform: translateX(-30px) rotate(-5deg);
-	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-decorative-animation.trig {
-	opacity: 1;
-	transform: translateX(0) rotate(0deg);
-}
-
-.hero-image-animation {
-	opacity: 0;
-	transform: translateX(16px) scale(0.96);
-	transition: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-image-animation.trig {
-	opacity: 1;
-	transform: translateX(0) scale(1);
-}
-
-/* Анимации для About секции */
-.about-photo-animation {
-	opacity: 0;
-	transform: scale(0.8) rotate(5deg);
-	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.about-photo-animation.trig {
-	opacity: 1;
-	transform: scale(1) rotate(0deg);
-}
-
-.about-tools-animation {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.about-tools-animation.trig {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* Анимации для Workflow секции */
-.workflow-step-animation {
-	opacity: 0;
-	transform: translateY(16px) scale(0.98);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.workflow-step-animation.trig {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-
 .workflow-path-animation {
 	opacity: 0;
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 1000;
-	transition: stroke-dashoffset 1.2s ease-in-out, opacity 0.35s ease;
-}
+	transition: stroke-dashoffset 1.2s ease, opacity 0.35s ease;
 
-.workflow-path-animation.trig {
-	opacity: 1;
-	stroke-dashoffset: 0;
-}
-
-/* Анимации для Services секции */
-.services-star-animation {
-	opacity: 0;
-	transform: scale(0) rotate(180deg);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.services-star-animation.trig {
-	opacity: 1;
-	transform: scale(1) rotate(0deg);
-}
-
-.services-card-animation {
-	opacity: 0;
-	transform: translateY(18px);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.services-card-animation.trig {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* Анимации для Portfolio секции */
-.portfolio-device-animation {
-	opacity: 0;
-	transform: translateY(20px) scale(0.98);
-	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-device-animation.trig {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-
-/* Анимации для Contact секции */
-.contact-qr-animation {
-	opacity: 0;
-	transform: scale(0.7) rotate(-10deg);
-	transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-qr-animation.trig {
-	opacity: 1;
-	transform: scale(1) rotate(0deg);
-}
-
-/* Параллакс эффекты */
-.trig-parallax {
-	transform: translateY(var(--trig-px, 0));
-}
-
-.trig-parallax-reverse {
-	transform: translateY(var(--trig-px-reverse, 0));
-}
-
-/* Адаптивность - уменьшаем анимации на мобильных */
-@media (max-width: 768px) {
-	.trig-fade-in,
-	.trig-slide-left,
-	.trig-slide-right,
-	.trig-scale-up,
-	.trig-rotate-in,
-	.hero-title-animation,
-	.hero-decorative-animation,
-	.hero-image-animation,
-	.about-photo-animation,
-	.about-tools-animation,
-	.workflow-step-animation,
-	.services-star-animation,
-	.services-card-animation,
-	.portfolio-device-animation,
-	.contact-qr-animation {
-		transition-duration: 0.5s;
-	}
-	
-	/* Уменьшаем сдвиги на мобильных */
-	.trig-fade-in { transform: translateY(20px); }
-	.trig-slide-left { transform: translateX(-30px); }
-	.trig-slide-right { transform: translateX(30px); }
-}
-
-/* Настройки для пользователей с ограниченной анимацией */
-@media (prefers-reduced-motion: reduce) {
-	.trig-fade-in,
-	.trig-slide-left,
-	.trig-slide-right,
-	.trig-scale-up,
-	.trig-rotate-in,
-	.hero-title-animation,
-	.hero-decorative-animation,
-	.hero-image-animation,
-	.about-photo-animation,
-	.about-tools-animation,
-	.workflow-step-animation,
-	.services-star-animation,
-	.services-card-animation,
-	.portfolio-device-animation,
-	.contact-qr-animation {
-		transition: none;
-		transform: none;
+	&.trig {
 		opacity: 1;
+		stroke-dashoffset: 0;
+	}
+}
+
+.trig-parallax { translate: 0 var(--trig-px, 0); }
+.trig-parallax-reverse { translate: 0 var(--trig-px-reverse, 0); }
+
+/* Prerendered content stays visible before hydration and with JavaScript disabled. */
+html:not(.reveal-ready) [data-trig] {
+	opacity: 1;
+	translate: none;
+	scale: none;
+	rotate: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-trig] {
+		transition: none !important;
+		animation: none !important;
+		translate: none !important;
+		scale: none !important;
+		rotate: none !important;
+		opacity: 1 !important;
 	}
 }

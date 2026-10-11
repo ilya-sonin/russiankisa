@@ -51,14 +51,14 @@ withDefaults(
 
 	&__decorative {
 		font-family: font-family(decorative);
-		font-size: clamp(2.5rem, 5vw, 3.375rem);
+		font-size: clamp(2.5rem, 4vw, 3.1rem);
 		line-height: 1.2;
 		color: color(primary);
 	}
 
 	&__main {
 		font-family: font-family(primary);
-		font-size: clamp(2.5rem, 5vw, 3.375rem);
+		font-size: clamp(2.5rem, 4vw, 3.1rem);
 		line-height: 1.05;
 		color: color(text-primary);
 	}

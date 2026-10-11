@@ -54,7 +54,11 @@ export default defineConfig({
         ...devices['Pixel 5'],
       },
     },
-
+    {
+      name: 'responsive-chromium',
+      testMatch: /responsive\/.*\.spec\.ts$/,
+      use: { ...devices['Desktop Chrome'] },
+    },
   ],
 
   webServer: {

@@ -18,7 +18,7 @@
 				/>
 			</nav>
 
-			<a href="#" class="site-header__brand" aria-label="В начало страницы">
+			<a ref="brandLink" href="#" class="site-header__brand" aria-label="В начало страницы" @click="closeMobileMenu">
 				<span class="site-header__logo-frame">
 					<img
 						:src="content.logo.withCat.src"
@@ -44,6 +44,7 @@
 			</nav>
 
 			<button
+				ref="menuButton"
 				type="button"
 				class="site-header__menu-button"
 				:aria-expanded="isMobileMenuOpen"
@@ -60,6 +61,7 @@
 		<transition name="mobile-menu">
 			<nav
 				v-if="isMobileMenuOpen"
+				ref="mobileNav"
 				id="mobile-navigation"
 				class="site-header__mobile-nav"
 				aria-label="Мобильная навигация"
@@ -82,13 +84,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import type { HeaderContent } from '~/types/site-content'
 
 const props = defineProps<{ content: HeaderContent }>()
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+const menuButton = ref<HTMLButtonElement | null>(null)
+const brandLink = ref<HTMLAnchorElement | null>(null)
+const mobileNav = ref<HTMLElement | null>(null)
 const leftLinks = computed(() => props.content.navigation.slice(0, 2))
 const rightLinks = computed(() => props.content.navigation.slice(2))
 
@@ -105,15 +110,37 @@ const closeMobileMenu = () => {
 }
 
 const handleKeydown = (event: KeyboardEvent) => {
-	if (event.key === 'Escape') closeMobileMenu()
+	if (!isMobileMenuOpen.value) return
+	if (event.key === 'Escape') {
+		event.preventDefault()
+		closeMobileMenu()
+	}
+	if (event.key !== 'Tab') return
+	const links = Array.from(mobileNav.value?.querySelectorAll<HTMLAnchorElement>('a') ?? [])
+	const first = menuButton.value
+	const last = links.at(-1)
+	if (event.shiftKey && document.activeElement === first) {
+		event.preventDefault()
+		last?.focus()
+	}
+	else if (!event.shiftKey && document.activeElement === last) {
+		event.preventDefault()
+		first?.focus()
+	}
 }
 
 const handleResize = () => {
 	if (window.innerWidth >= 900) closeMobileMenu()
 }
 
-watch(isMobileMenuOpen, (isOpen) => {
+watch(isMobileMenuOpen, async (isOpen) => {
 	document.documentElement.style.overflow = isOpen ? 'hidden' : ''
+	await nextTick()
+	if (isOpen) mobileNav.value?.querySelector<HTMLAnchorElement>('a')?.focus({ preventScroll: true })
+	else if (document.activeElement !== brandLink.value) {
+		if (menuButton.value?.getClientRects().length) menuButton.value.focus({ preventScroll: true })
+		else brandLink.value?.focus({ preventScroll: true })
+	}
 })
 
 onMounted(() => {
@@ -176,6 +203,10 @@ onUnmounted(() => {
 	&__nav-link {
 		position: relative;
 		max-width: 6rem;
+		display: grid;
+		align-content: center;
+		min-height: 2.75rem;
+		padding-block: 0.5rem;
 		text-align: center;
 
 		&::after {
@@ -267,6 +298,7 @@ onUnmounted(() => {
 			border: 1px solid rgba(color(primary), 0.15);
 			border-radius: border-radius(full);
 			cursor: pointer;
+			touch-action: manipulation;
 
 			span {
 				display: block;
@@ -296,6 +328,9 @@ onUnmounted(() => {
 			padding-block: clamp(2rem, 8vh, 5rem);
 			background: rgba(color(background), 0.97);
 			backdrop-filter: blur(16px);
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			padding-bottom: max(2rem, env(safe-area-inset-bottom));
 		}
 
 		&__mobile-nav-inner {

@@ -9,8 +9,8 @@
 
 				<div class="workflow__diagram">
 					<picture class="workflow__path trig-fade-in trig-stagger-2" data-trig aria-hidden="true">
-						<source media="(min-width: 1024px)" :srcset="content.pathImages.desktop.src" />
-						<source media="(min-width: 768px)" :srcset="content.pathImages.tablet.src" />
+						<source media="(min-width: 1440px)" :srcset="content.pathImages.desktop.src" />
+						<source media="(min-width: 700px)" :srcset="content.pathImages.tablet.src" />
 						<img :src="content.pathImages.mobile.src" :alt="content.pathImages.mobile.alt" class="workflow__path-svg" />
 					</picture>
 
@@ -140,21 +140,24 @@ defineProps<{ content: WorkflowContent }>()
 
 	&__step-copy {
 		display: grid;
-		gap: 0.25rem;
+		gap: 0.6rem;
+		width: 100%;
 	}
 
 	&__step-title {
 		font-family: font-family(primary);
 		font-size: clamp(1.3rem, 3.5vw, 2rem);
 		font-weight: font-weight(normal);
-		line-height: 1.05;
+		line-height: 1.15;
 		color: color(text-primary);
+		overflow-wrap: anywhere;
+		hyphens: auto;
 	}
 
 	&__step-description {
-		font-family: font-family(decorative);
-		font-size: clamp(1.25rem, 3.7vw, 2rem);
-		line-height: 1.05;
+		font-family: font-family(primary);
+		font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+		line-height: 1.4;
 		color: color(primary);
 	}
 }
@@ -183,7 +186,7 @@ defineProps<{ content: WorkflowContent }>()
 		align-items: center;
 
 		&__layout {
-			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			grid-template-columns: clamp(7.5rem, 9vw, 9rem) minmax(0, 1fr);
 			gap: clamp(2.5rem, 5vw, 5rem);
 		}
 
@@ -193,29 +196,29 @@ defineProps<{ content: WorkflowContent }>()
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
 			transform: rotate(180deg);
+			line-height: 1;
 		}
 
 		&__title-main,
 		&__title-accent {
-			font-size: clamp(4.5rem, 6.5vw, 7rem);
+			font-size: clamp(3rem, 4.2vw, 3.75rem);
 		}
 
 		&__diagram {
 			display: grid;
 			align-items: center;
-			min-height: clamp(34rem, 48vw, 44rem);
+			min-height: 0;
 		}
 
 		&__path {
 			inset: 3% 0;
-			opacity: 0.7;
+			opacity: 0.16;
 		}
 
 		&__steps {
-			grid-template-columns: repeat(4, minmax(0, 1fr));
-			grid-template-rows: repeat(2, minmax(0, 1fr));
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: clamp(1rem, 2.2vw, 2rem);
-			align-items: center;
+			align-items: stretch;
 		}
 
 		&__step {
@@ -234,11 +237,28 @@ defineProps<{ content: WorkflowContent }>()
 		}
 
 		&__step-title {
-			font-size: clamp(1.2rem, 1.7vw, 1.8rem);
+			font-size: clamp(1.2rem, 1.4vw, 1.45rem);
 		}
 
 		&__step-description {
-			font-size: clamp(1.25rem, 1.65vw, 1.8rem);
+			font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+		}
+	}
+}
+
+@media (min-width: 1440px) {
+	.workflow {
+		&__diagram {
+			min-height: 34rem;
+		}
+
+		&__path {
+			opacity: 0.5;
+		}
+
+		&__steps {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-template-rows: repeat(2, minmax(0, 1fr));
 		}
 	}
 }

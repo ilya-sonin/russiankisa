@@ -98,6 +98,8 @@ defineProps<{ content: ServicesContent }>()
 		font-weight: font-weight(normal);
 		line-height: 1.02;
 		color: color(primary);
+		overflow-wrap: anywhere;
+		hyphens: auto;
 	}
 
 	&__item-description {
@@ -109,10 +111,10 @@ defineProps<{ content: ServicesContent }>()
 	}
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
 	.services {
 		&__item {
-			grid-template-columns: 2.8rem minmax(11rem, 0.42fr) minmax(0, 1fr);
+			grid-template-columns: 2.8rem minmax(15.75rem, 0.48fr) minmax(0, 1fr);
 			gap: clamp(1rem, 2vw, 1.75rem);
 		}
 
@@ -131,21 +133,22 @@ defineProps<{ content: ServicesContent }>()
 		align-items: center;
 
 		&__layout {
-			grid-template-columns: clamp(6.5rem, 8vw, 8.5rem) minmax(0, 1fr);
+			grid-template-columns: clamp(7.5rem, 9vw, 9rem) minmax(0, 1fr);
 			gap: clamp(2.5rem, 5vw, 5rem);
 		}
 
 		&__title {
-			align-self: stretch;
-			justify-items: start;
+			align-self: center;
+			justify-items: center;
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
 			transform: rotate(180deg);
+			line-height: 1;
 		}
 
 		&__title-main,
 		&__title-accent {
-			font-size: clamp(4.5rem, 6.5vw, 7rem);
+			font-size: clamp(3rem, 4.2vw, 3.75rem);
 		}
 
 		&__item {

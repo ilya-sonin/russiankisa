@@ -16,12 +16,14 @@ useSeoMeta({
 <template>
 	<div class="page">
 		<Header :content="siteContent.header" />
-		<Hero :content="siteContent.hero" />
-		<About :content="siteContent.about" />
-		<Workflow :content="siteContent.workflow" />
-		<Services :content="siteContent.services" />
-		<Portfolio :cases="siteContent.portfolio" />
-		<ContactSection :content="siteContent.contact" />
+		<main>
+			<Hero :content="siteContent.hero" />
+			<About :content="siteContent.about" />
+			<Workflow :content="siteContent.workflow" />
+			<Services :content="siteContent.services" />
+			<Portfolio :cases="siteContent.portfolio" />
+			<ContactSection :content="siteContent.contact" />
+		</main>
 		<DevScreenSize />
 	</div>
 </template>

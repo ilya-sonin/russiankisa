@@ -16,6 +16,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 	}
 
 	const initReveal = () => {
+		document.documentElement.classList.add('reveal-ready')
 		const elements = Array.from(document.querySelectorAll('[data-trig]'))
 
 		if (!('IntersectionObserver' in window)) {

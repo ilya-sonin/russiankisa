@@ -50,6 +50,8 @@ defineProps<{ content: HeroContent }>()
 
 	&__copy {
 		display: grid;
+		width: 100%;
+		container-type: inline-size;
 		justify-items: center;
 		gap: clamp(1.5rem, 4vh, 2.5rem);
 		text-align: center;
@@ -57,26 +59,30 @@ defineProps<{ content: HeroContent }>()
 
 	&__title {
 		display: grid;
+		width: 100%;
 		justify-items: center;
+		gap: 0.1em;
 		font-family: font-family(primary);
-		font-size: clamp(3.7rem, 17vw, 5.8rem);
+		font-size: clamp(2.4rem, 13vw, 6.5rem);
+		font-size: clamp(2.4rem, 16cqi, 6.5rem);
 		font-weight: font-weight(normal);
-		line-height: 0.78;
+		line-height: 0.95;
 		letter-spacing: -0.025em;
 	}
 
 	&__decorative {
 		position: relative;
 		z-index: 1;
-		font-size: 0.78em;
-		line-height: 0.9;
-		transform: translateY(0.06em) rotate(-2deg);
+		font-size: 1.25em;
+		line-height: 0.8;
+		transform: rotate(-2deg);
 	}
 
 	&__main-title {
 		position: relative;
 		z-index: 0;
 		display: block;
+		white-space: nowrap;
 	}
 
 	&__button {
@@ -91,7 +97,7 @@ defineProps<{ content: HeroContent }>()
 
 		img {
 			display: block;
-			width: clamp(8rem, 34vw, 11rem);
+			width: clamp(9rem, 36vw, 13rem);
 			aspect-ratio: 500 / 512;
 			object-fit: contain;
 			pointer-events: none;
@@ -104,10 +110,10 @@ defineProps<{ content: HeroContent }>()
 	}
 }
 
-@media (min-width: breakpoint(sm)) {
+@media (min-width: breakpoint(tablet)) {
 	.hero {
 		&__container {
-			grid-template-columns: minmax(0, 1.5fr) minmax(12rem, 0.5fr);
+			grid-template-columns: minmax(0, 1.75fr) minmax(0, 0.65fr);
 			align-items: center;
 			justify-items: stretch;
 			gap: clamp(1rem, 3vw, 3rem);
@@ -120,13 +126,13 @@ defineProps<{ content: HeroContent }>()
 
 		&__title {
 			justify-items: start;
-			font-size: clamp(6.2rem, 13.1vw, 12rem);
-			line-height: 0.76;
+			font-size: clamp(4rem, 10vw, 11rem);
+			font-size: clamp(4rem, 16cqi, 11rem);
 		}
 
 		&__decorative {
-			font-size: 0.82em;
-			transform: translateX(0.08em) translateY(0.09em) rotate(-2deg);
+			font-size: 1.1em;
+			transform: translateX(0.04em) rotate(-2deg);
 		}
 
 		&__image--mobile {
@@ -136,38 +142,41 @@ defineProps<{ content: HeroContent }>()
 		&__image--desktop {
 			display: block;
 			justify-self: end;
-			align-self: end;
-			margin-bottom: clamp(1rem, 4vh, 3rem);
+			align-self: center;
 		}
 
 		&__image img {
-			width: clamp(12rem, 25vw, 24rem);
+			width: min(100%, 24rem);
 		}
 	}
 }
 
-@media (min-width: breakpoint(xl)) {
+@media (max-height: 600px) and (min-width: breakpoint(sm)) {
 	.hero {
-		&__container {
-			grid-template-columns: minmax(0, 1.75fr) minmax(18rem, 0.5fr);
-		}
-
-		&__title {
-			font-size: clamp(9.5rem, 13.4vw, 12.5rem);
-		}
-	}
-}
-
-@media (min-width: breakpoint(sm)) and (max-height: 720px) {
-	.hero {
+		min-height: 100svh;
+		padding-top: calc(var(--header-height) + 1.5rem);
 		padding-bottom: 2rem;
 
+		&__container {
+			grid-template-columns: minmax(0, 1.75fr) minmax(0, 0.65fr);
+			align-items: center;
+		}
+
 		&__title {
-			font-size: clamp(5.5rem, 11vw, 9rem);
+			font-size: clamp(2.4rem, 10vw, 7rem);
+			font-size: clamp(2.4rem, 16cqi, 7rem);
+		}
+
+		&__image--mobile {
+			display: none;
+		}
+
+		&__image--desktop {
+			display: block;
 		}
 
 		&__image img {
-			width: clamp(10rem, 21vw, 18rem);
+			width: min(100%, 12rem);
 		}
 	}
 }

@@ -105,7 +105,7 @@ defineProps<{ item: PortfolioCase }>()
 		align-items: center;
 
 		&__container {
-			grid-template-columns: clamp(5.5rem, 7vw, 7.5rem) minmax(0, 1fr);
+			grid-template-columns: clamp(8rem, 10vw, 10rem) minmax(0, 1fr);
 			grid-template-areas:
 				'title header'
 				'title content';

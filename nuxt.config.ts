@@ -58,21 +58,22 @@ export default defineNuxtConfig({
 			],
 			link: [
 				{
-					rel: 'preconnect',
-					href: 'https://fonts.googleapis.com',
-				},
-				{
-					rel: 'preconnect',
-					href: 'https://fonts.gstatic.com',
+					rel: 'preload',
+					href: '/fonts/oranienbaum-cyrillic-400-normal.woff2',
+					as: 'font',
+					type: 'font/woff2',
 					crossorigin: '',
 				},
 				{
-					rel: 'stylesheet',
-					href: 'https://fonts.googleapis.com/css2?family=Oranienbaum:wght@400&display=swap',
+					rel: 'preload',
+					href: '/fonts/oranienbaum-latin-400-normal.woff2',
+					as: 'font',
+					type: 'font/woff2',
+					crossorigin: '',
 				},
 				{
 					rel: 'preload',
-					href: "/fonts/Disruptor's Script.otf",
+					href: '/fonts/disruptors-script.otf',
 					as: 'font',
 					type: 'font/otf',
 					crossorigin: '',
